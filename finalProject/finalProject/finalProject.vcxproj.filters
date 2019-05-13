@@ -13,5 +13,156 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="2DframeWork">
+      <UniqueIdentifier>{e6850773-16a0-42ac-a497-6944ec78d6bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DframeWork\action">
+      <UniqueIdentifier>{48bb7b9b-386b-461b-8dbd-8c9eb79e3633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DframeWork\animation">
+      <UniqueIdentifier>{46a969a6-5545-443e-aff3-50aa94c1378b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DframeWork\image">
+      <UniqueIdentifier>{688b32c7-e6f6-435d-8747-7b48d1fa1a12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DframeWork\Manager">
+      <UniqueIdentifier>{0e5d4a08-6c88-47ee-b02f-7e82514dcebe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DframeWork\singletoneBase">
+      <UniqueIdentifier>{427b1fe7-520e-4897-a233-38f582a4cf8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DframeWork\timer">
+      <UniqueIdentifier>{c461e3bc-39a5-46ca-87a9-18fb0f05d04c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DframeWork\utils">
+      <UniqueIdentifier>{e219d859-f842-4858-982a-5aee6b8f866d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DframeWork\prograssbar">
+      <UniqueIdentifier>{da6a7ffe-648a-454f-aca0-66c50da00400}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mainGame">
+      <UniqueIdentifier>{5eeac829-f058-4a84-a41f-5b70f4826370}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="winMain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="image.cpp">
+      <Filter>2DframeWork\image</Filter>
+    </ClCompile>
+    <ClCompile Include="action.cpp">
+      <Filter>2DframeWork\action</Filter>
+    </ClCompile>
+    <ClCompile Include="animation.cpp">
+      <Filter>2DframeWork\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="imageManager.cpp">
+      <Filter>2DframeWork\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="iniDataManager.cpp">
+      <Filter>2DframeWork\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="keyAniManager.cpp">
+      <Filter>2DframeWork\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="keyManager.cpp">
+      <Filter>2DframeWork\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneManager.cpp">
+      <Filter>2DframeWork\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="soundManager.cpp">
+      <Filter>2DframeWork\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="timeManager.cpp">
+      <Filter>2DframeWork\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="timer.cpp">
+      <Filter>2DframeWork\timer</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>2DframeWork\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="collision.cpp">
+      <Filter>2DframeWork\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="gameNode.cpp">
+      <Filter>2DframeWork</Filter>
+    </ClCompile>
+    <ClCompile Include="progressBar.cpp">
+      <Filter>2DframeWork\prograssbar</Filter>
+    </ClCompile>
+    <ClCompile Include="mainGame.cpp">
+      <Filter>mainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="image.h">
+      <Filter>2DframeWork\image</Filter>
+    </ClInclude>
+    <ClInclude Include="action.h">
+      <Filter>2DframeWork\action</Filter>
+    </ClInclude>
+    <ClInclude Include="animation.h">
+      <Filter>2DframeWork\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="imageManager.h">
+      <Filter>2DframeWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="iniDataManager.h">
+      <Filter>2DframeWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="keyAniManager.h">
+      <Filter>2DframeWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="keyManager.h">
+      <Filter>2DframeWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneManager.h">
+      <Filter>2DframeWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="soundManager.h">
+      <Filter>2DframeWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="timeManager.h">
+      <Filter>2DframeWork\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>2DframeWork\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>2DframeWork\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="collision.h">
+      <Filter>2DframeWork\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="gameNode.h">
+      <Filter>2DframeWork</Filter>
+    </ClInclude>
+    <ClInclude Include="progressBar.h">
+      <Filter>2DframeWork\prograssbar</Filter>
+    </ClInclude>
+    <ClInclude Include="mainGame.h">
+      <Filter>mainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="commonMacroFunction.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="randomFunction.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="singletonBase.h">
+      <Filter>2DframeWork\singletoneBase</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
