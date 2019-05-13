@@ -43,6 +43,9 @@
     <Filter Include="mainGame">
       <UniqueIdentifier>{5eeac829-f058-4a84-a41f-5b70f4826370}</UniqueIdentifier>
     </Filter>
+    <Filter Include="mainGame\example">
+      <UniqueIdentifier>{a5baa67d-0125-46df-a51d-89362e53775f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="winMain.cpp">
@@ -98,6 +101,9 @@
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="tank.cpp">
+      <Filter>mainGame\example</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +169,9 @@
     </ClInclude>
     <ClInclude Include="singletonBase.h">
       <Filter>2DframeWork\singletoneBase</Filter>
+    </ClInclude>
+    <ClInclude Include="tank.h">
+      <Filter>mainGame\example</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
