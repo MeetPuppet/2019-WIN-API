@@ -16,7 +16,7 @@ HRESULT tank::init()
 {
 	_direction = TANKDIRECTION_RIGHT;
 
-	_image = IMAGEMANAGER->addFrameImage("tank", "tank.bmp", 0, 0, 256, 128, 8, 4, true, RGB(255, 0, 255));
+	_image = IMAGEMANAGER->addFrameImage("tank", "tank/tank.bmp", 0, 0, 256, 128, 8, 4, true, RGB(255, 0, 255));
 
 	_speed = 200.0f;
 

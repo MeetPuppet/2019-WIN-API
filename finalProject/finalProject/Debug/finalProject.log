@@ -1,14 +1,14 @@
 ﻿  tank.cpp
-e:\github\2019-win-api\finalproject\finalproject\tank.cpp(95): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\tank.cpp(103): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\tank.cpp(111): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\tank.cpp(119): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\tank.cpp(127): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\tank.cpp(77): warning C4101: 'tileIndex' :참조되지 않은 지역 변수입니다.
-e:\github\2019-win-api\finalproject\finalproject\tank.cpp(78): warning C4101: 'tileX' :참조되지 않은 지역 변수입니다.
-e:\github\2019-win-api\finalproject\finalproject\tank.cpp(78): warning C4101: 'tileY' :참조되지 않은 지역 변수입니다.
-e:\github\2019-win-api\finalproject\finalproject\tank.cpp(137): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\tank.cpp(138): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\tank.cpp(139): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\tank.cpp(140): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  finalProject.vcxproj -> E:\GitHub\2019-WIN-API\finalProject\Debug\finalProject.exe
+d:\2019-win-api\finalproject\finalproject\tank.cpp(95): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\tank.cpp(103): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\tank.cpp(111): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\tank.cpp(119): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\tank.cpp(127): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\tank.cpp(77): warning C4101: 'tileIndex' :참조되지 않은 지역 변수입니다.
+d:\2019-win-api\finalproject\finalproject\tank.cpp(78): warning C4101: 'tileX' :참조되지 않은 지역 변수입니다.
+d:\2019-win-api\finalproject\finalproject\tank.cpp(78): warning C4101: 'tileY' :참조되지 않은 지역 변수입니다.
+d:\2019-win-api\finalproject\finalproject\tank.cpp(137): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\tank.cpp(138): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\tank.cpp(139): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\tank.cpp(140): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  finalProject.vcxproj -> D:\2019-WIN-API\finalProject\Debug\finalProject.exe
