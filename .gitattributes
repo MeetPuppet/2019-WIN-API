@@ -1,0 +1,6 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+web/dist/*.h linguist-vendored
+web/template/*.h linguist-vendored
+web/vendor/*.h linguist-vendored
