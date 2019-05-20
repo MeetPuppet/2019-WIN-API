@@ -46,6 +46,12 @@
     <Filter Include="mainGame\example">
       <UniqueIdentifier>{a5baa67d-0125-46df-a51d-89362e53775f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="mainGame\example\tank">
+      <UniqueIdentifier>{2fa1db0d-c56b-4a28-a558-636ab3b4d702}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mainGame\example\playerMake">
+      <UniqueIdentifier>{2fabb2db-b74e-412d-9230-9d9bfcf05cbe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="winMain.cpp">
@@ -61,9 +67,6 @@
       <Filter>2DframeWork\animation</Filter>
     </ClCompile>
     <ClCompile Include="imageManager.cpp">
-      <Filter>2DframeWork\Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="iniDataManager.cpp">
       <Filter>2DframeWork\Manager</Filter>
     </ClCompile>
     <ClCompile Include="keyAniManager.cpp">
@@ -103,7 +106,10 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="tank.cpp">
-      <Filter>mainGame\example</Filter>
+      <Filter>mainGame\example\tank</Filter>
+    </ClCompile>
+    <ClCompile Include="playerNode.cpp">
+      <Filter>mainGame\example\playerMake</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -117,9 +123,6 @@
       <Filter>2DframeWork\animation</Filter>
     </ClInclude>
     <ClInclude Include="imageManager.h">
-      <Filter>2DframeWork\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="iniDataManager.h">
       <Filter>2DframeWork\Manager</Filter>
     </ClInclude>
     <ClInclude Include="keyAniManager.h">
@@ -171,7 +174,10 @@
       <Filter>2DframeWork\singletoneBase</Filter>
     </ClInclude>
     <ClInclude Include="tank.h">
-      <Filter>mainGame\example</Filter>
+      <Filter>mainGame\example\tank</Filter>
+    </ClInclude>
+    <ClInclude Include="playerNode.h">
+      <Filter>mainGame\example\playerMake</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

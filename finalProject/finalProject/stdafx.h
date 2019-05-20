@@ -21,7 +21,6 @@
 #include "soundManager.h"
 //#include "txtData.h" - 2019.05.13 기억안나는건 주석처리
 //#include "effectManager.h" - 2019.05.13 기억안나는건 주석처리
-#include "iniDataManager.h"
 #include "sceneManager.h"
 #include "keyAniManager.h"
 //#include "database.h" - 2019.05.13 기억안나는건 주석처리
@@ -49,7 +48,7 @@ using namespace HEXA_UTIL;
 #define SCENEMANAGER sceneManager::getSingleton()
 #define KEYANIMANAGER keyAniManager::getSingleton()
 //#define TXTDATA txtData::getSingleton() - 2019.05.13 기억안나는건 주석처리
-#define INIDATA iniDataManager::getSingleton()
+//#define INIDATA iniDataManager::getSingleton()
 //#define DATABASE database::getSingleton() - 2019.05.13 기억안나는건 주석처리
 
 //=============================================================
