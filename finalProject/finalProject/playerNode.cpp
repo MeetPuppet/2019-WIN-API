@@ -7,8 +7,8 @@
 #define WIDTH 540  //이미지 가로길이
 #define HEIGHT 360 //이미지 세로길이
 
-#define SPEED 200
-#define JUMPSPEED 5
+#define SPEED 300
+#define JUMPSPEED 6
 #define FRAMETIME 0.2
 
 playerNode::playerNode()
@@ -31,7 +31,7 @@ playerNode::~playerNode()
 
 HRESULT playerNode::init(const char* keyName, const char* fileName )
 {			//프레임이미지 저장용			호출명	 파일위치  가로	  세로
-	image = IMAGEMANAGER->addFrameImage("mario","image/player/fireSuit.bmp", WIDTH, HEIGHT,
+	image = IMAGEMANAGER->addFrameImage(keyName, fileName, WIDTH, HEIGHT,
 										7, 2, //프레임X,Y갯수
 										true, //지우는 색이 있는가 ?
 										RGB(255,0,255));//지울 색의 RGB값
@@ -86,6 +86,16 @@ void playerNode::render()
 		x, y,//xy값
 		image->getFrameX(), //image에서 설정되고 있는 프레임값들
 		image->getFrameY());//
+
+	//시간출력용
+	//디버그, 릴리즈 모드에 따라서 출력이 다름
+	TIMEMANAGER->render(getMemDC());
+	//이동속도 적용에 문제가 있어보여서 넣은것
+	
+	//적용값이 이상해 보일때 이렇게 출력해서 보면 편함
+	char str[256];
+	sprintf_s(str, "SPEED * ElapsedTime : %f", speed);
+	TextOut(getMemDC(), 0, 60, str, strlen(str));
 }
 void playerNode::stateUpdate() {
 	//시간에 따라 돌리면 좋다.
@@ -106,19 +116,19 @@ void playerNode::stateUpdate() {
 		//오른쪽 이냐는 뜻
 		if (image->getFrameY() == 0) {
 			x += speed;
+			//좌우 이속이 달라보이는데 분명 맞게 돌아감
 		}
 		else if (image->getFrameY() == 1) {
 			x -= speed;
 		}
-		//이유를 파악하지 못하고 있는데 좌우 속도가 다름
 		break;
 	case SIT:
 		break;
 	case JUMP:
 		//점프값 만큼 위로 올라간다.
-		y -= JumpPower;
+		y -= JumpPower;// JUMPSPEED로 초기화됨
 		//시간 반영을 위해 실시간으로 빼주기
-		JumpPower -= JUMPSPEED * TIMEMANAGER->getElapsedTime();
+		JumpPower -= JUMPSPEED* 1.8 * TIMEMANAGER->getElapsedTime();
 
 		//이건 충돌할 걸 아무거 해줘도 된다.
 		//지금 당장은 시작점을 받아서 만들었다.
@@ -143,26 +153,28 @@ void playerNode::keySet()
 	if (KEYMANAGER->isOnceKeyDown(VK_DOWN)) {
 		//그냥 한번 둬봄
 	}
-	if (KEYMANAGER->isOnceKeyDown(VK_LEFT)) {
+	if (KEYMANAGER->isOnceKeyDown(VK_LEFT) && state != JUMP) {
 		image->setFrameX(1);
 		image->setFrameY(1);//왼쪽으로 프레임Y 설정(이미지 아랫부분)
 		state = MOVE;
 	}
-	else if (KEYMANAGER->isOnceKeyUp(VK_LEFT)) {
+	else if (KEYMANAGER->isOnceKeyUp(VK_LEFT) && state == MOVE
+		&& image->getFrameY() == 1) {
 		image->setFrameX(0);//이건 stateFrameUpdate()에서 돌려도 무방
 		state = IDLE;
 	}
-	if (KEYMANAGER->isOnceKeyDown(VK_RIGHT)) {
+	if (KEYMANAGER->isOnceKeyDown(VK_RIGHT) && state != JUMP) {
 		image->setFrameX(1);
 		image->setFrameY(0);//왼쪽으로 프레임Y 설정(이미지 윗부분)
 		state = MOVE;
 	}
-	else if (KEYMANAGER->isOnceKeyUp(VK_RIGHT)) {
+	else if (KEYMANAGER->isOnceKeyUp(VK_RIGHT) && state == MOVE
+		&& image->getFrameY() == 0) {
 		image->setFrameX(0);//이건 stateFrameUpdate()에서 돌려도 무방
 		state = IDLE;
 	}
 
-	if (KEYMANAGER->isOnceKeyDown('Z')) {//z키가 눌리면
+	if (KEYMANAGER->isOnceKeyDown('Z') && state != JUMP) {//점프상태가 아니고 z키가 눌리면
 		state = JUMP;
 		image->setFrameX(5);
 		//점프 시작지점을 받아서
