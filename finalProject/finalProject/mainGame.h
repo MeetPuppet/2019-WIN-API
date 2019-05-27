@@ -7,6 +7,7 @@ class mainGame : public gameNode//2D 프레임워크 대부분은 노드에서 먼저 돌아감
 {
 private:
 	playerNode* p;
+	playerNode* q;
 
 public:
 	virtual HRESULT init();			
