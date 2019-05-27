@@ -134,8 +134,8 @@ void playerNode::stateUpdate() {
 		//Áö±Ý ´çÀåÀº ½ÃÀÛÁ¡À» ¹Þ¾Æ¼­ ¸¸µé¾ú´Ù.
 		if (jumpStartY < y) {
 			y = jumpStartY;
-			state = IDLE;
 			image->setFrameX(0);
+			state = IDLE;
 		}
 		break;
 	}
@@ -151,8 +151,13 @@ void playerNode::keySet()
 	if (KEYMANAGER->isOnceKeyDown(VK_UP)) {
 		//±×³É ÇÑ¹ø µÖº½
 	}
-	if (KEYMANAGER->isOnceKeyDown(VK_DOWN) && state == IDLE) {
+	if (KEYMANAGER->isOnceKeyDown(VK_DOWN) && state != JUMP) {
 		image->setFrameX(6);
+		//state = SIT;
+		//±×³É ÇÑ¹ø µÖº½
+	}
+	else if (KEYMANAGER->isOnceKeyUp(VK_DOWN) && state != JUMP) {
+		image->setFrameX(0);
 		//state = SIT;
 		//±×³É ÇÑ¹ø µÖº½
 	}

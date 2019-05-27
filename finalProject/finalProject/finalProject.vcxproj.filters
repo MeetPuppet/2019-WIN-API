@@ -52,6 +52,9 @@
     <Filter Include="mainGame\example\playerMake">
       <UniqueIdentifier>{2fabb2db-b74e-412d-9230-9d9bfcf05cbe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="mainGame\example\enemyMake">
+      <UniqueIdentifier>{5a8c34a3-2347-4791-b5ef-46cbb46cee24}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="winMain.cpp">
@@ -110,6 +113,9 @@
     </ClCompile>
     <ClCompile Include="playerNode.cpp">
       <Filter>mainGame\example\playerMake</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyNode.cpp">
+      <Filter>mainGame\example\enemyMake</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +184,9 @@
     </ClInclude>
     <ClInclude Include="playerNode.h">
       <Filter>mainGame\example\playerMake</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyNode.h">
+      <Filter>mainGame\example\enemyMake</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
