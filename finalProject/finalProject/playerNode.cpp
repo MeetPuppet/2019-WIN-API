@@ -29,12 +29,12 @@ playerNode::~playerNode()
 {
 }
 
-HRESULT playerNode::init(const char* keyName, const char* fileName )
+HRESULT playerNode::init(const char* keyName, const char* fileName , int playerNumber)
 {			//프레임이미지 저장용			호출명	 파일위치  가로	  세로
 	image = IMAGEMANAGER->addFrameImage(keyName, fileName, WIDTH, HEIGHT,
 										7, 2, //프레임X,Y갯수
 										true, //지우는 색이 있는가 ?
-										RGB(255,0,255));//지울 색의 RGB값
+										RGB(255,255,255));//지울 색의 RGB값
 	//현재 함수가 돌면 이미지를 map이라는 STL에 저장하고 그 위치의 주소값을 돌려줌
 	//그러면 image는 만들어둔 구조체+클래스의 값을 가진 변수를 가르키게 됨
 	//호출명을 설정하는 이유는 IMAGEMANAGER->findImage(keyName) 로 찾아내기 위해서임(편함)
@@ -57,7 +57,7 @@ HRESULT playerNode::init(const char* keyName, const char* fileName )
 	//얘는 점프하는 순간 작동하게 됨
 
 	time = 0;
-
+	playerNum = playerNumber;
 	//잘돌았으니까
 	return S_OK;
 	//만약 void 라면 없으면 되는것
@@ -73,8 +73,14 @@ void playerNode::update()
 	//당장 여기 업데이트 순서는 별로 상관없음
 	//상태값으로 업뎃
 	stateUpdate();
-	//키에 의한 업뎃
-	keySet();
+	if (playerNum == 1) {
+		//키에 의한 업뎃
+		keySet();
+	}
+	else {
+		//키에 의한 업뎃
+		keySet2();
+	}
 	//프레임 업뎃
 	stateFrameUpdate();
 }
@@ -203,6 +209,67 @@ void playerNode::keySet()
 	}
 }
 
+void playerNode::keySet2()
+{
+	//이미지에서 상하(Y)로 볼때는
+	//왼쪽이 아래쪽(1), 오른쪽이 위쪽(0)이다 이다.
+	//좌우(X)는 아래함수 stateUpdate()를 참조바람
+
+	//상하좌우 방향키
+	if (KEYMANAGER->isOnceKeyDown('W')) {
+		//그냥 한번 둬봄
+	}
+	if (KEYMANAGER->isOnceKeyDown('S') && state != JUMP) {
+		image->setFrameX(6);
+		//state = SIT;
+		//그냥 한번 둬봄
+	}
+	else if (KEYMANAGER->isOnceKeyUp('S') && state != JUMP) {
+		image->setFrameX(0);
+		//state = SIT;
+		//그냥 한번 둬봄
+	}
+	if (KEYMANAGER->isOnceKeyDown('A') && state != JUMP) {
+		image->setFrameX(1);
+		image->setFrameY(1);//왼쪽으로 프레임Y 설정(이미지 아랫부분)
+		state = MOVE;
+	}
+	else if (KEYMANAGER->isOnceKeyUp('A') && state == MOVE
+		&& image->getFrameY() == 1) {
+		image->setFrameX(0);//이건 stateFrameUpdate()에서 돌려도 무방
+		state = IDLE;
+	}
+	if (KEYMANAGER->isOnceKeyDown('D') && state != JUMP) {
+		image->setFrameX(1);
+		image->setFrameY(0);//왼쪽으로 프레임Y 설정(이미지 윗부분)
+		state = MOVE;
+	}
+	else if (KEYMANAGER->isOnceKeyUp('D') && state == MOVE
+		&& image->getFrameY() == 0) {
+		image->setFrameX(0);//이건 stateFrameUpdate()에서 돌려도 무방
+		state = IDLE;
+	}
+
+	if (KEYMANAGER->isStayKeyDown('S') && state == JUMP) {
+		speed = SPEED * TIMEMANAGER->getElapsedTime();
+		x += speed;
+	}
+	if (KEYMANAGER->isStayKeyDown('A') && state == JUMP) {
+		speed = SPEED * TIMEMANAGER->getElapsedTime();
+		x -= speed;
+	}
+
+	if (KEYMANAGER->isOnceKeyDown('G') && state != JUMP) {//점프상태가 아니고 z키가 눌리면
+		state = JUMP;
+		image->setFrameX(5);
+		//점프 시작지점을 받아서
+		jumpStartY = y;
+		//나중에 다시 여기 닿으면 꺼짐
+
+		//점프 속도 설정
+		JumpPower = JUMPSPEED;
+	}
+}
 //별다른일 없으면 프레임의 좌우를 관리해주는 함수
 void playerNode::stateFrameUpdate()
 {

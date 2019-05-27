@@ -18,6 +18,8 @@ class playerNode :
 	public gameNode
 {
 private:
+	int playerNum;
+
 	float time;//원래는 계산하는게 맞지만 꼼수를 위해서
 	image* image;//이미지를 등록하여 이 포인터에 연결시킴
 	int x, y;//캐릭터의 중심점 설정
@@ -33,7 +35,7 @@ public:
 	~playerNode();
 	//게임노드는 3개의 함수를 반드시 작성해야함
 	//HRESULT는 그냥 잘 돌았는지 판단하기 위해서 사용하는것
-	HRESULT init(const char* keyName, const char* fileName);//클래스 초기화용 할당시 해줘도 좋지만 이해를 돕기위해 init을 쓰기를 권장함
+	HRESULT init(const char* keyName, const char* fileName, int playerNumber);//클래스 초기화용 할당시 해줘도 좋지만 이해를 돕기위해 init을 쓰기를 권장함
 
 	void update();//말 그대로 업데이트를 담당하는 함수
 
@@ -48,6 +50,7 @@ public:
 	inline void stateUpdate();
 	//키셋을 포함한 프레임 상하를 관리해주는 함수
 	inline void keySet();
+	inline void keySet2();
 	//별다른일 없으면 프레임의 좌우를 관리해주는 함수
 	inline void stateFrameUpdate();
 };
