@@ -111,7 +111,7 @@ void playerNode::stateUpdate() {
 		break;
 	case MOVE:						//시간 간격을 1이하의 float값으로 돌려줌
 		elapsedTime = TIMEMANAGER->getElapsedTime();
-		speed = SPEED * elapsedTime;
+		speed = SPEED * TIMEMANAGER->getElapsedTime();
 
 		//오른쪽 이냐는 뜻
 		if (image->getFrameY() == 0) {
@@ -135,6 +135,7 @@ void playerNode::stateUpdate() {
 		if (jumpStartY < y) {
 			y = jumpStartY;
 			state = IDLE;
+			image->setFrameX(0);
 		}
 		break;
 	}
@@ -150,7 +151,9 @@ void playerNode::keySet()
 	if (KEYMANAGER->isOnceKeyDown(VK_UP)) {
 		//그냥 한번 둬봄
 	}
-	if (KEYMANAGER->isOnceKeyDown(VK_DOWN)) {
+	if (KEYMANAGER->isOnceKeyDown(VK_DOWN) && state == IDLE) {
+		image->setFrameX(6);
+		//state = SIT;
 		//그냥 한번 둬봄
 	}
 	if (KEYMANAGER->isOnceKeyDown(VK_LEFT) && state != JUMP) {
@@ -172,6 +175,15 @@ void playerNode::keySet()
 		&& image->getFrameY() == 0) {
 		image->setFrameX(0);//이건 stateFrameUpdate()에서 돌려도 무방
 		state = IDLE;
+	}
+
+	if (KEYMANAGER->isStayKeyDown(VK_RIGHT) && state == JUMP) {
+		speed = SPEED * TIMEMANAGER->getElapsedTime();
+		x += speed;
+	}
+	if (KEYMANAGER->isStayKeyDown(VK_LEFT) && state == JUMP) {
+		speed = SPEED * TIMEMANAGER->getElapsedTime();
+		x -= speed;
 	}
 
 	if (KEYMANAGER->isOnceKeyDown('Z') && state != JUMP) {//점프상태가 아니고 z키가 눌리면
@@ -201,7 +213,7 @@ void playerNode::stateFrameUpdate()
 	{
 	case IDLE://IDLE 상태일때의 업데이트
 		    //이미지의 프레임 위치를 0번으로
-		image->setFrameX(0);//키 땔때 써도 됨
+		//image->setFrameX(0);//키 땔때 써도 됨
 		break;
 	case MOVE://이하생략
 		//시간을 계속 더해줌(꼼수)
