@@ -16,7 +16,7 @@ HRESULT mainGame::init()			//초기화 함수
 	
 	p = new playerNode;//객체 할당
 	q = new playerNode;//객체 할당
-	p->init("mario","image/player/fireSuit.bmp",1);//객체 초기화
+	p->init("mario","image/player/mario.bmp",1);//객체 초기화
 	q->init("ruigi", "image/player/Luigi.bmp",2);//객체 초기화
 	return S_OK;
 }

@@ -1,15 +1,13 @@
-﻿  mainGame.cpp
-  playerNode.cpp
+﻿  playerNode.cpp
 d:\2019-win-api\finalproject\finalproject\playernode.cpp(124): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 d:\2019-win-api\finalproject\finalproject\playernode.cpp(128): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(135): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(137): warning C4244: '-=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(193): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(197): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(255): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(259): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(297): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(303): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
-  winMain.cpp
-  코드를 생성하고 있습니다...
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(138): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(140): warning C4244: '-=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(196): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(200): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(263): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(268): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(272): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(316): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(322): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
   finalProject.vcxproj -> D:\2019-WIN-API\finalProject\Debug\finalProject.exe

@@ -27,6 +27,9 @@ private:
 
 	float speed;
 	float JumpPower;//점프파워 설정(중력적용에 필요)
+	bool jumpagain = FALSE;
+	bool step = FALSE;
+	int HP = 2;		// 1이 작은 상태, 2가 버섯, 3이 꽃, 0이 되면 사망
 	PLAYERSTATE state;//상태값
 	//지금은 여기까지만
 	int jumpStartY;//점프가 시작된 지점(이건 그냥 설명을 위해서 만든거)

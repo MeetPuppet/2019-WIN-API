@@ -132,6 +132,9 @@ void playerNode::stateUpdate() {
 		break;
 	case JUMP:
 		//점프값 만큼 위로 올라간다.
+		if (250 < y && y < 300) {
+			jumpagain = TRUE;
+		}
 		y -= JumpPower;// JUMPSPEED로 초기화됨
 		//시간 반영을 위해 실시간으로 빼주기
 		JumpPower -= JUMPSPEED* 1.8 * TIMEMANAGER->getElapsedTime();
@@ -154,9 +157,9 @@ void playerNode::keySet()
 	//좌우(X)는 아래함수 stateUpdate()를 참조바람
 
 	//상하좌우 방향키
-	if (KEYMANAGER->isOnceKeyDown(VK_UP)) {
-		//그냥 한번 둬봄
-	}
+	//if (KEYMANAGER->isOnceKeyDown(VK_UP)) {
+	//	//그냥 한번 둬봄
+	//}
 	if (KEYMANAGER->isOnceKeyDown(VK_DOWN) && state != JUMP) {
 		image->setFrameX(6);
 		//state = SIT;
@@ -197,7 +200,7 @@ void playerNode::keySet()
 		x -= speed;
 	}
 
-	if (KEYMANAGER->isOnceKeyDown('Z') && state != JUMP) {//점프상태가 아니고 z키가 눌리면
+	if (KEYMANAGER->isOnceKeyDown(VK_UP) && state != JUMP) {//점프상태가 아니고 z키가 눌리면
 		state = JUMP;
 		image->setFrameX(5);
 		//점프 시작지점을 받아서
@@ -206,6 +209,12 @@ void playerNode::keySet()
 
 		//점프 속도 설정
 		JumpPower = JUMPSPEED;
+	}
+	if (state == JUMP && jumpagain == TRUE) {
+		image->setFrameX(1);
+		JumpPower = JUMPSPEED;
+		image->setFrameX(5);
+		jumpagain = FALSE;
 	}
 }
 
@@ -216,9 +225,9 @@ void playerNode::keySet2()
 	//좌우(X)는 아래함수 stateUpdate()를 참조바람
 
 	//상하좌우 방향키
-	if (KEYMANAGER->isOnceKeyDown('W')) {
-		//그냥 한번 둬봄
-	}
+	//if (KEYMANAGER->isOnceKeyDown('W')) {
+	//	//그냥 한번 둬봄
+	//}
 	if (KEYMANAGER->isOnceKeyDown('S') && state != JUMP) {
 		image->setFrameX(6);
 		//state = SIT;
@@ -249,6 +258,10 @@ void playerNode::keySet2()
 		image->setFrameX(0);//이건 stateFrameUpdate()에서 돌려도 무방
 		state = IDLE;
 	}
+	if (KEYMANAGER->isStayKeyDown('D') && state == JUMP) {
+		speed = SPEED * TIMEMANAGER->getElapsedTime();
+		x += speed;
+	}
 
 	if (KEYMANAGER->isStayKeyDown('S') && state == JUMP) {
 		speed = SPEED * TIMEMANAGER->getElapsedTime();
@@ -259,7 +272,7 @@ void playerNode::keySet2()
 		x -= speed;
 	}
 
-	if (KEYMANAGER->isOnceKeyDown('G') && state != JUMP) {//점프상태가 아니고 z키가 눌리면
+	if (KEYMANAGER->isOnceKeyDown('W') && state != JUMP) {//점프상태가 아니고 z키가 눌리면
 		state = JUMP;
 		image->setFrameX(5);
 		//점프 시작지점을 받아서
@@ -268,6 +281,12 @@ void playerNode::keySet2()
 
 		//점프 속도 설정
 		JumpPower = JUMPSPEED;
+	}
+	if (state == JUMP && jumpagain == TRUE) {
+		image->setFrameX(1);
+		JumpPower = JUMPSPEED;
+		image->setFrameX(5);
+		jumpagain = FALSE;
 	}
 }
 //별다른일 없으면 프레임의 좌우를 관리해주는 함수
