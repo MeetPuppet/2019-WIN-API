@@ -225,5 +225,10 @@ void imageManager::frameRender(string strKey, HDC hdc, int destX, int destY, int
 void imageManager::alphaRender(string strKey, HDC hdc, int destX, int destY, BYTE alpha)
 {
 	image* img = findImage(strKey);
-	if ( img ) img->alphaRender(hdc, destX, destY, alpha);
+	if (img) img->alphaRender(hdc, destX, destY, alpha);
+}
+void imageManager::alphaFrameRender(string strKey, HDC hdc, int destX, int destY, int currentFrameX, int currentFrameY, BYTE alpha)
+{
+	image* img = findImage(strKey);
+	if (img) img->alphaFrameRender(hdc, destX, destY, currentFrameX, currentFrameY, alpha);
 }

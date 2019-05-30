@@ -40,6 +40,7 @@ public:
 
 	void alphaRender(string strKey, HDC hdc, int destX, int destY, BYTE alpha);
 
+	void alphaFrameRender(string strKey, HDC hdc, int destX, int destY, int currentFrameX, int currentFrameY, BYTE alpha);
 
 	imageManager();
 	~imageManager();

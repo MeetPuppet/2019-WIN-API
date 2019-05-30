@@ -525,13 +525,46 @@ void image::alphaRender(HDC hdc, int destX, int destY, BYTE alpha)
 	}
 }
 
-void image::alphaRender(HDC hdc, int destX, int destY, int sourX, int sourY, int sourWidth, int sourHeight, BYTE alpha)
+void image::alphaFrameRender(HDC hdc, int destX, int destY, int currentFrameX, int currentFrameY, BYTE alpha)
 {
-	//(!호호우홍) 만들어서 호호우홍에게 줄 것.
-	//(호호우홍) -> 고기파티를 하는데, 그 전에 친구들에게
-	//알파이미지를 먹일껀지 여부를 체크해서 알파를 먹이게끔 수정해서 주시요!
-	//알파프레임렌더도 만들어서 사용법과 함께 친구들에게 주시요
-	//그리고 고기파티 하시요!
+
+	_imageInfo->currentFrameX = currentFrameX;
+	_imageInfo->currentFrameY = currentFrameY;
+	_blendFunc.SourceConstantAlpha = alpha;
+
+	if (_trans)
+	{
+		BitBlt(_blendImage->hMemDC, 
+			0, 0, 
+			_imageInfo->frameWidth,
+			_imageInfo->frameHeight,
+			hdc, 
+			destX, destY, SRCCOPY);
+
+		GdiTransparentBlt(_blendImage->hMemDC,
+			0,
+			0,
+			_imageInfo->frameWidth,
+			_imageInfo->frameHeight,
+			_imageInfo->hMemDC,
+			_imageInfo->currentFrameX * _imageInfo->frameWidth,
+			_imageInfo->currentFrameY * _imageInfo->frameHeight,
+			_imageInfo->frameWidth,
+			_imageInfo->frameHeight,
+			_transColor);
+
+		AlphaBlend(hdc, destX, destY, _imageInfo->frameWidth,
+			_imageInfo->frameHeight,
+			_blendImage->hMemDC, 
+			0, 0, 
+			_imageInfo->frameWidth, _imageInfo->frameHeight,
+			_blendFunc);
+	}
+	else
+	{
+		AlphaBlend(hdc, destX, destY, _imageInfo->width,
+			_imageInfo->height, _blendImage->hMemDC, 0, 0, _imageInfo->width, _imageInfo->height, _blendFunc);
+	}
 
 }
 
