@@ -71,3 +71,21 @@ void enemyManger::LinkTarget(POINT* targetPoint)
 			vGoomba[i]->LinkToTarget(targetPoint);
 	}
 }
+
+bool enemyManger::enemyCollisionCheck(RECT rc)
+{
+	if (GoombaCollisionCheck(rc)) {
+		return true;
+	}
+	return false;
+}
+bool enemyManger::GoombaCollisionCheck(const RECT& rc)
+{
+	RECT temp;
+	for (int i = 0; i < vGoomba.size(); ++i) {
+		if (IntersectRect(&temp,&vGoomba[i]->getRect(),&rc)) {
+			return true;
+		}
+	}
+	return false;
+}

@@ -11,6 +11,7 @@ private:
 	vector<Goomba*> vGoomba;
 	void goombaUpdate();
 	void goombaRender();
+	bool GoombaCollisionCheck(const RECT& rc);
 public:
 	enemyManger();
 	~enemyManger();
@@ -19,6 +20,7 @@ public:
 	void release();
 	void update();
 	void render();
+	bool enemyCollisionCheck(RECT rc);
 
 	void makeGoomba(POINT point);
 	//죽이기는 나중에 조건을 달것

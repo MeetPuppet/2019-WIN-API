@@ -34,7 +34,7 @@ HRESULT playerNode::init(const char* keyName, const char* fileName , int playerN
 	image = IMAGEMANAGER->addFrameImage(keyName, fileName, WIDTH, HEIGHT,
 										7, 2, //프레임X,Y갯수
 										true, //지우는 색이 있는가 ?
-										RGB(255,255,255));//지울 색의 RGB값
+										RGB(255,0,255));//지울 색의 RGB값
 	//현재 함수가 돌면 이미지를 map이라는 STL에 저장하고 그 위치의 주소값을 돌려줌
 	//그러면 image는 만들어둔 구조체+클래스의 값을 가진 변수를 가르키게 됨
 	//호출명을 설정하는 이유는 IMAGEMANAGER->findImage(keyName) 로 찾아내기 위해서임(편함)

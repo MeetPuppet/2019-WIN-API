@@ -57,8 +57,11 @@ void mainGame::update()				//연산 함수
 
 	p->update();//객체 업데이트
 	q->update();
+	//RECT를 넣어주면 충돌했는지 안했는지 bool값으로 반환 해주는 함수
+	//if (E_Manager->enemyCollisionCheck(RECT)) {}
 
 	E_Manager->update();
+
 	//오른쪽 마우스키 누른자리에 적 생성
 	if (KEYMANAGER->isOnceKeyDown(VK_RBUTTON)) {
 		E_Manager->makeGoomba(_ptMouse);
