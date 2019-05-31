@@ -138,7 +138,8 @@ public:
 
 	inline void setFrameX(int frameX)
 	{
-		_imageInfo->currentFrameX = frameX;
+		if (frameX < 0) _imageInfo->currentFrameX = 0;
+		else _imageInfo->currentFrameX = frameX;
 		if (_imageInfo->maxFrameX < frameX) _imageInfo->maxFrameX = frameX;
 	}
 

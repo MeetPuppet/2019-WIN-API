@@ -1,13 +1,16 @@
 #include "stdafx.h"
 #include "mainGame.h"
 
+#include "enemyManger.h"
 
 mainGame::mainGame()
 {
+	E_Manager = NULL;
 }
 
 mainGame::~mainGame()
 {
+
 }
 
 HRESULT mainGame::init()			//초기화 함수
@@ -18,6 +21,11 @@ HRESULT mainGame::init()			//초기화 함수
 	q = new playerNode;//객체 할당
 	p->init("mario","image/player/mario.bmp",1);//객체 초기화
 	q->init("ruigi", "image/player/Luigi.bmp",2);//객체 초기화
+
+	if (E_Manager == NULL) {
+		E_Manager = new enemyManger;
+		E_Manager->init();
+	}
 	return S_OK;
 }
 
@@ -26,6 +34,10 @@ void mainGame::release()			//메모리 해제 함수
 	gameNode::release();
 	delete p;//할당 해제
 	delete q;
+
+	if (E_Manager) {
+		delete E_Manager;
+	}
 }
 
 void mainGame::update()				//연산 함수
@@ -34,6 +46,12 @@ void mainGame::update()				//연산 함수
 
 	p->update();//객체 업데이트
 	q->update();
+
+	E_Manager->update();
+	//오른쪽 마우스키 누른자리에 적 생성
+	if (KEYMANAGER->isOnceKeyDown(VK_RBUTTON)) {
+		E_Manager->makeGoomba(_ptMouse);
+	}
 }
 
 void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
@@ -42,6 +60,7 @@ void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
 	PatBlt(getMemDC(), 0, 0, WINSIZEX, WINSIZEY, WHITENESS);
 	//==================== 건들지마라 ======================
 
+	E_Manager->render();
 	p->render();//객체 출력
 	q->render();
 	

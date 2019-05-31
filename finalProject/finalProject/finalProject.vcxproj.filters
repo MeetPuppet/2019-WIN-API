@@ -52,8 +52,14 @@
     <Filter Include="mainGame\example\playerMake">
       <UniqueIdentifier>{2fabb2db-b74e-412d-9230-9d9bfcf05cbe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="mainGame\example\enemyMake">
-      <UniqueIdentifier>{5a8c34a3-2347-4791-b5ef-46cbb46cee24}</UniqueIdentifier>
+    <Filter Include="mainGame\enemyManager">
+      <UniqueIdentifier>{40f1b7f5-d6a1-43f2-8e2c-c19fe43c9440}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mainGame\enemyManager\enemys">
+      <UniqueIdentifier>{63bf9198-fee2-4862-9332-45c241020fde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mainGame\enemyManager\node">
+      <UniqueIdentifier>{89c149e2-3a13-4ef2-a5aa-8c30e0a3ab03}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -115,7 +121,13 @@
       <Filter>mainGame\example\playerMake</Filter>
     </ClCompile>
     <ClCompile Include="enemyNode.cpp">
-      <Filter>mainGame\example\enemyMake</Filter>
+      <Filter>mainGame\enemyManager\node</Filter>
+    </ClCompile>
+    <ClCompile Include="Goomba.cpp">
+      <Filter>mainGame\enemyManager\enemys</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyManger.cpp">
+      <Filter>mainGame\enemyManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -186,7 +198,13 @@
       <Filter>mainGame\example\playerMake</Filter>
     </ClInclude>
     <ClInclude Include="enemyNode.h">
-      <Filter>mainGame\example\enemyMake</Filter>
+      <Filter>mainGame\enemyManager\node</Filter>
+    </ClInclude>
+    <ClInclude Include="Goomba.h">
+      <Filter>mainGame\enemyManager\enemys</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyManger.h">
+      <Filter>mainGame\enemyManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
