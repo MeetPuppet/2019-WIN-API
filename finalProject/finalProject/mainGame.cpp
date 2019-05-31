@@ -3,9 +3,13 @@
 
 #include "enemyManger.h"
 
+//임시
+#include "Stage1.h"
+
 mainGame::mainGame()
 {
 	E_Manager = NULL;
+	stage1 = NULL;
 }
 
 mainGame::~mainGame()
@@ -26,6 +30,10 @@ HRESULT mainGame::init()			//초기화 함수
 		E_Manager = new enemyManger;
 		E_Manager->init();
 	}
+	if (stage1 == NULL) {
+		stage1 = new Stage1;
+		stage1->init();
+	}
 	return S_OK;
 }
 
@@ -37,6 +45,9 @@ void mainGame::release()			//메모리 해제 함수
 
 	if (E_Manager) {
 		delete E_Manager;
+	}
+	if (stage1) {
+		delete stage1;
 	}
 }
 
@@ -52,6 +63,9 @@ void mainGame::update()				//연산 함수
 	if (KEYMANAGER->isOnceKeyDown(VK_RBUTTON)) {
 		E_Manager->makeGoomba(_ptMouse);
 	}
+
+	stage1->update();
+	stage1->setMainPosition({p->getX(), 0});
 }
 
 void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
@@ -60,6 +74,7 @@ void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
 	PatBlt(getMemDC(), 0, 0, WINSIZEX, WINSIZEY, WHITENESS);
 	//==================== 건들지마라 ======================
 
+	stage1->render();
 	E_Manager->render();
 	p->render();//객체 출력
 	q->render();

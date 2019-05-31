@@ -61,6 +61,12 @@
     <Filter Include="mainGame\enemyManager\node">
       <UniqueIdentifier>{89c149e2-3a13-4ef2-a5aa-8c30e0a3ab03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="mainGame\map">
+      <UniqueIdentifier>{833ef552-572e-42b5-a80f-fba83cb73065}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mainGame\map\tool">
+      <UniqueIdentifier>{d26d1c2f-3f6e-4f2c-86eb-f83cb6406cc3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="winMain.cpp">
@@ -129,6 +135,12 @@
     <ClCompile Include="enemyManger.cpp">
       <Filter>mainGame\enemyManager</Filter>
     </ClCompile>
+    <ClCompile Include="mapTool.cpp">
+      <Filter>mainGame\map\tool</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1.cpp">
+      <Filter>mainGame\map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="image.h">
@@ -185,9 +197,6 @@
     <ClInclude Include="randomFunction.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="singletonBase.h">
       <Filter>2DframeWork\singletoneBase</Filter>
     </ClInclude>
@@ -205,6 +214,18 @@
     </ClInclude>
     <ClInclude Include="enemyManger.h">
       <Filter>mainGame\enemyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="tileNode.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="mapTool.h">
+      <Filter>mainGame\map\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1.h">
+      <Filter>mainGame\map</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
