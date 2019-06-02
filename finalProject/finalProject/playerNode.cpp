@@ -88,10 +88,19 @@ void playerNode::update()
 void playerNode::render() 
 {
 	//     프레임렌더 얘를써야복사가능 
-	image->frameRender(getMemDC(), 
-		x, y,//xy값
-		image->getFrameX(), //image에서 설정되고 있는 프레임값들
-		image->getFrameY());//
+	if (state == SHOOT && getShoot % 2 == 1) {
+		image->alphaFrameRender(getMemDC(),
+			x, y,//xy값
+			image->getFrameX(), //image에서 설정되고 있는 프레임값들
+			image->getFrameY(), 50);//
+	}
+	else
+	{
+		image->frameRender(getMemDC(),
+			x, y,//xy값
+			image->getFrameX(), //image에서 설정되고 있는 프레임값들
+			image->getFrameY());//
+	}
 
 	//시간출력용
 	//디버그, 릴리즈 모드에 따라서 출력이 다름
@@ -142,6 +151,14 @@ void playerNode::stateUpdate() {
 			y = jumpStartY;
 			image->setFrameX(0);
 			state = IDLE;
+		}
+		break;
+	case SHOOT:
+		getShoot -= 1;
+		if (getShoot <= 0) {
+			state = oldSTATE;
+			x = oldx;
+			y = oldy;
 		}
 		break;
 	}
