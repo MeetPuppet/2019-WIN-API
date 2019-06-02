@@ -6,6 +6,7 @@
 
 mapTool::mapTool()
 {
+	mode = 0;
 }
 
 
@@ -18,14 +19,14 @@ HRESULT mapTool::init()
 {
 	gameNode::init(true);
 	IMAGEMANAGER->addFrameImage("Tiles", "image/tile/Tiles.bmp", 480, 160, 6, 2, true,RGB(255,0,255));
-	IMAGEMANAGER->addFrameImage("itemBox", "image/tile/itemBox.bmp", 320, 80, 4, 1, true, RGB(255, 0, 255));
-	
+	//IMAGEMANAGER->addFrameImage("itemBox", "image/tile/itemBox.bmp", 320, 80, 4, 1, true, RGB(255, 0, 255));
+	//load();
+
 	for (int i = 0; i < TILEY; ++i) {
 		for (int j = 0; j < TILEX; ++j) {
 			tiles[(i*TILEX) + j].rc = { j*TILESIZE,i*TILESIZE
 									,j*TILESIZE + TILESIZE
 									,i*TILESIZE + TILESIZE };
-			
 		}
 	}
 	frameIndex = 0;
@@ -34,17 +35,39 @@ HRESULT mapTool::init()
 void mapTool::update() 
 {
 	gameNode::update();
+	if (KEYMANAGER->isOnceKeyDown(VK_NUMPAD0)) {
+		if (mode == 0) {
+			mode = 1;
+		}
+		else {
+			mode = 0;
+		}
+	}
 	if (KEYMANAGER->isOnceKeyDown('Q')) {
 		frameIndex = 0;
 	}
-	if (KEYMANAGER->isOnceKeyDown('S')) {
+	else if (KEYMANAGER->isOnceKeyDown('1')) {
+		frameIndex = 1;
+	}
+	else if (KEYMANAGER->isOnceKeyDown('2')) {
+		frameIndex = 5;//배치 이따위로 한거 개 후회됨
+	}
+	//오브젝트
+	else if (KEYMANAGER->isOnceKeyDown('3')) {
+		frameIndex = 2;
+	}
+	else if (KEYMANAGER->isOnceKeyDown('4')) {
+		frameIndex = 3;
+	}
+	else if (KEYMANAGER->isOnceKeyDown('5')) {
+		frameIndex = 4;
+	}
+	//2~5까지는 오브젝트로
+	else if (KEYMANAGER->isOnceKeyDown('S')) {
 		save();
 	}
-	if (KEYMANAGER->isOnceKeyDown('L')) {
+	else if (KEYMANAGER->isOnceKeyDown('L')) {
 		load();
-	}
-	if (KEYMANAGER->isOnceKeyDown('1')) {
-		frameIndex = 1;
 	}
 	if (KEYMANAGER->isStayKeyDown(VK_LEFT) && tiles[0].rc.left < 10) {
 		for (int i = 0; i < MAX; ++i) {
@@ -52,7 +75,7 @@ void mapTool::update()
 			tiles[i].rc.right += 10;
 		}
 	}
-	if (KEYMANAGER->isStayKeyDown(VK_RIGHT) && tiles[TILEX-1].rc.right > WINSIZEX+10) {
+	else if (KEYMANAGER->isStayKeyDown(VK_RIGHT) && tiles[TILEX-1].rc.right > WINSIZEX+10) {
 		for (int i = 0; i < MAX; ++i) {
 			tiles[i].rc.left -= 10;
 			tiles[i].rc.right -= 10;
@@ -61,7 +84,20 @@ void mapTool::update()
 	if (KEYMANAGER->isStayKeyDown(VK_LBUTTON)) {
 		for (int i = 0; i < MAX; ++i) {
 			if (PtInRect(&tiles[i].rc, _ptMouse)) {
-				tiles[i].terrainFrameX = frameIndex;
+				if (frameIndex == 1 || frameIndex == 5) {
+					tiles[i].terrainFrameX = frameIndex;
+					tiles[i].terrainFrameY = mode;
+				}
+				else if (frameIndex == 0) {
+					tiles[i].terrainFrameX = frameIndex;
+					tiles[i].objFrameX = frameIndex;
+					tiles[i].objFrameY = mode;
+				}
+				else {
+					tiles[i].terrainFrameX = 0;
+					tiles[i].objFrameX = frameIndex;
+					tiles[i].objFrameY = mode;
+				}
 				break;
 			}
 		}
@@ -80,6 +116,18 @@ void mapTool::render()
 				tiles[i].terrainFrameX, tiles[i].terrainFrameY);
 	}
 
+	//실제 스테이지에서 부를때는 obj랑 deco 매니저를 돌려서 만들 것
+	for (int i = 0; i < MAX; ++i) {
+
+		if (tiles[i].objFrameX == 0)
+			continue;
+		if (tiles[i].rc.right > 0 && tiles[i].rc.left < 1200)
+			IMAGEMANAGER->frameRender("Tiles", getMemDC(),
+				tiles[i].rc.left, tiles[i].rc.top,
+				tiles[i].objFrameX, tiles[i].objFrameY);
+	}
+
+	TIMEMANAGER->render(getMemDC());
 	//==================== 건들지마라 =======================
 	this->getBackBuffer()->render(getHDC(), 0, 0);
 }
@@ -104,11 +152,7 @@ void mapTool::load()
 
 	file = CreateFile("map/save1.map", GENERIC_READ, FALSE, NULL,
 		OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-	if (FAILED(file)) {
-		return;
-	}
-	memset(attribute, 0, sizeof(DWORD) * TILEX * TILEY);
-	memset(pos, 0, sizeof(int) * 2);
+
 
 	ReadFile(file, tiles, sizeof(tagTile)*MAX, &read, NULL);
 

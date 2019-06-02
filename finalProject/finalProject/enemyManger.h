@@ -2,13 +2,13 @@
 #include <vector>
 #include "gameNode.h"
 
-class Goomba;
+class enemyNode;
 
 class enemyManger :
 	public gameNode
 {
 private:
-	vector<Goomba*> vGoomba;
+	vector<enemyNode*> vEnemy;
 	void goombaUpdate();
 	void goombaRender();
 	bool GoombaCollisionCheck(const RECT& rc);
@@ -27,5 +27,7 @@ public:
 	void KillGoomba();
 
 	void LinkTarget(POINT* targetPoint = NULL);
+
+	void moveWorld(int x);
 };
 

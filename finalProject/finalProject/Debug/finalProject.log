@@ -1,22 +1,6 @@
 ﻿  mainGame.cpp
-d:\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  playerNode.cpp
-d:\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(124): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(128): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(135): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(137): warning C4244: '-=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(193): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(197): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(309): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(314): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(318): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(362): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
-d:\2019-win-api\finalproject\finalproject\playernode.cpp(368): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
-  winMain.cpp
-d:\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
-  finalProject.vcxproj -> D:\2019-WIN-API\finalProject\Debug\finalProject.exe
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(80): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(88): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(89): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\maingame.cpp(93): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  finalProject.vcxproj -> E:\GitHub\2019-WIN-API\finalProject\Debug\finalProject.exe

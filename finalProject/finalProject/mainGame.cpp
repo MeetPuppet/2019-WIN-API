@@ -2,13 +2,13 @@
 #include "mainGame.h"
 
 #include "enemyManger.h"
-
-//임시
+#include "objectManger.h"
 #include "Stage1.h"
 
 mainGame::mainGame()
 {
 	E_Manager = NULL;
+	O_Manger = NULL;
 	stage1 = NULL;
 }
 
@@ -30,8 +30,17 @@ HRESULT mainGame::init()			//초기화 함수
 		E_Manager = new enemyManger;
 		E_Manager->init();
 	}
+	if (O_Manger == NULL) {
+		O_Manger = new objectManger;
+		O_Manger->init();
+	}
 	if (stage1 == NULL) {
 		stage1 = new Stage1;
+
+		//생성용 참고
+		if (O_Manger)//init보다 먼저 돌릴것
+			stage1->LinkToOBJ(O_Manger);
+
 		stage1->init();
 	}
 	return S_OK;
@@ -45,6 +54,9 @@ void mainGame::release()			//메모리 해제 함수
 
 	if (E_Manager) {
 		delete E_Manager;
+	}
+	if (O_Manger) {
+		delete O_Manger;
 	}
 	if (stage1) {
 		delete stage1;
@@ -60,15 +72,37 @@ void mainGame::update()				//연산 함수
 	//RECT를 넣어주면 충돌했는지 안했는지 bool값으로 반환 해주는 함수
 	//if (E_Manager->enemyCollisionCheck(RECT)) {}
 
-	E_Manager->update();
 
 	//오른쪽 마우스키 누른자리에 적 생성
 	if (KEYMANAGER->isOnceKeyDown(VK_RBUTTON)) {
 		E_Manager->makeGoomba(_ptMouse);
 	}
 
-	stage1->update();
-	stage1->setMainPosition({p->getX(), 0});
+
+	if (E_Manager) {
+		E_Manager->update();
+	}
+	if (O_Manger) {
+		O_Manger->update();
+	}
+	if (stage1) {
+		stage1->update();
+		stage1->setMainPosition({ p->getX(), 0 });
+	}
+
+	int moveSpeed = p->getSpeed();
+	if (p->getX() > 800 && stage1->getEdge1()>1200+p->getSpeed()) {
+		p->moveX(-moveSpeed);
+		E_Manager->moveWorld(-moveSpeed);
+		O_Manger->moveWorld(-moveSpeed);
+		stage1->moveX(-moveSpeed);
+	}
+	else if (p->getX() < 400 && stage1->getEdge0() < 0 - p->getSpeed()) {
+		p->moveX(moveSpeed);
+		E_Manager->moveWorld(moveSpeed);
+		O_Manger->moveWorld(moveSpeed);
+		stage1->moveX(moveSpeed);
+	}
 }
 
 void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
@@ -77,13 +111,19 @@ void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
 	PatBlt(getMemDC(), 0, 0, WINSIZEX, WINSIZEY, WHITENESS);
 	//==================== 건들지마라 ======================
 
-	stage1->render();
-	E_Manager->render();
+	if (stage1) {
+		stage1->render();
+	}
+	if (O_Manger) {
+		O_Manger->render();
+	}
+	if (E_Manager) {
+		E_Manager->render();
+	}
 	p->render();//객체 출력
 	q->render();
 	
 	//==================== 건들지마라 =======================
-	
 	this->getBackBuffer()->render(getHDC(), 0, 0);
 
 }
