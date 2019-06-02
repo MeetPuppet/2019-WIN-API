@@ -133,9 +133,6 @@ void playerNode::stateUpdate() {
 		break;
 	case JUMP:
 		//점프값 만큼 위로 올라간다.
-		if (250 < y && y < 300) {
-			jumpagain = TRUE;
-		}
 		y -= JumpPower;// JUMPSPEED로 초기화됨
 		//시간 반영을 위해 실시간으로 빼주기
 		JumpPower -= JUMPSPEED* 1.8 * TIMEMANAGER->getElapsedTime();
@@ -210,6 +207,55 @@ void playerNode::keySet()
 
 		//점프 속도 설정
 		JumpPower = JUMPSPEED;
+	}
+	if (KEYMANAGER->isOnceKeyDown(VK_HOME)) {
+		HP--;
+		if (HP == 1) {
+			oldx = x;
+			oldy = y;
+			oldSTATE = state;
+			oldFrameX = image->getFrameX();
+			oldFrameY = image->getFrameY();
+			init("littlemario", "image/player/littlemario.bmp", 3);
+			x = oldx;
+			y = oldy;
+			state = oldSTATE;
+			image->setFrameX(oldFrameX);
+			image->setFrameY(oldFrameY);
+		}
+		if (HP == 0) {
+
+		}
+	}
+	if (KEYMANAGER->isOnceKeyDown(VK_RETURN)) {
+		HP++;
+		if (HP == 2) {
+			oldx = x;
+			oldy = y;
+			oldSTATE = state;
+			oldFrameX = image->getFrameX();
+			oldFrameY = image->getFrameY();
+			init("mario", "image/player/mario.bmp", 1);
+			x = oldx;
+			y = oldy;
+			state = oldSTATE;
+			image->setFrameX(oldFrameX);
+			image->setFrameY(oldFrameY);
+		}
+		if (HP == 3) {
+
+		}
+	}
+	if (KEYMANAGER->isOnceKeyDown(VK_END)) {
+		if (state != SHOOT) {
+			oldx = x;
+			oldy = y;
+			oldSTATE = state;
+			getShoot = 50;
+			state = SHOOT;
+		}
+		else
+			state = oldSTATE;
 	}
 	if (state == JUMP && jumpagain == TRUE) {
 		image->setFrameX(1);

@@ -6,7 +6,8 @@ enum PLAYERSTATE {
 	/*아무것도 안함*/IDLE,//여기서 부터 0
 	/*	 이동	 */MOVE,
 	/*	 앉기	 */SIT,
-	/*	 점프	 */JUMP//여기는 3으로 설정됨
+	/*	 점프	 */JUMP,//여기는 3으로 설정됨
+	/*   피격    */SHOOT
 };//만약 IDLE = 1 로 설정해주면 JUMP는 4가 됨
 //무조건 1씩 올라감
 //마우스 올려둬보면 이해가 편할 것임
@@ -30,6 +31,10 @@ private:
 	bool jumpagain = FALSE;
 	bool step = FALSE;
 	int HP = 2;		// 1이 작은 상태, 2가 버섯, 3이 꽃, 0이 되면 사망
+	int getShoot;	// 피격 시 무적시간이 생기는 초
+	int oldx, oldy;
+	PLAYERSTATE oldSTATE;
+	int oldFrameX, oldFrameY;	// 피격 혹은 버섯 등으로 체력이 바뀔 시 이미지를 바꾸기 전에 미리 저장해두는 기존 위치들
 	PLAYERSTATE state;//상태값
 	//지금은 여기까지만
 	int jumpStartY;//점프가 시작된 지점(이건 그냥 설명을 위해서 만든거)
