@@ -17,7 +17,7 @@ class enemyNode :
 protected:
 	image* img;//이미지
 	E_STATE state;
-	POINT p;//중점위치
+	Point p;//중점위치
 	RECT rc;//충돌용 사각형
 
 	float FrameCheck;
@@ -35,14 +35,14 @@ public:
 	~enemyNode();
 
 	// 중점 기준 배치
-	virtual HRESULT init(const char* keyName, POINT point);
+	virtual HRESULT init(const char* keyName, Point point);
 	virtual void release();
 	virtual void update();
 	virtual void render();
 	virtual void FrameSeter();
 
 	//충돌 확인용
-	POINT getPoint() { return p; }
+	Point getPoint() { return p; }
 	RECT getRect() { return rc; }
 
 	//플레이어 할당이 해제될 경우 동작을 막을 것

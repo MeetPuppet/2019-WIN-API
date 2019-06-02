@@ -32,17 +32,28 @@ void Goomba::render()
 
 void Goomba::FrameSeter()
 {
-	if (img->getMaxFrameX() > FrameCheck) {
-		FrameCheck += ENEMY_FRAME_SPEEDER * TIMEMANAGER->getElapsedTime();
-		if (FrameCheck >= 2) {
-			frameX = 1;
+	switch (state)
+	{
+	case EL_PATROL:
+	case EL_CHASE:
+	case ER_PATROL:
+	case ER_CHASE:
+		if (img->getMaxFrameX() > FrameCheck) {
+			FrameCheck += ENEMY_FRAME_SPEEDER * TIMEMANAGER->getElapsedTime();
+			if (FrameCheck >= 2) {
+				frameX = 1;
+			}
+			else
+				frameX = FrameCheck;
 		}
-		else
+		else {
+			FrameCheck = 0;
 			frameX = FrameCheck;
-	}
-	else{
-		FrameCheck = 0;
-		frameX = FrameCheck;
+		}
+		break;
+	case DEAD:
+		frameX = 2;
+		break;
 	}
 }
 

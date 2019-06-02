@@ -40,8 +40,8 @@ void Stage1::update()
 	}
 	else if (tiles[TILEX - 1].rc.right > WINSIZEX + 10 && mainLocate.x > 1000) {
 		for (int i = 0; i < MAX; ++i) {
-			tiles[i].rc.left += 10;
-			tiles[i].rc.right += 10;
+			tiles[i].rc.left -= 10;
+			tiles[i].rc.right -= 10;
 		}
 	}
 

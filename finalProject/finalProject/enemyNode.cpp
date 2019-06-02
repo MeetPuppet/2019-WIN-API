@@ -6,7 +6,7 @@
 enemyNode::enemyNode()
 {
 	img = NULL;
-	p = { 0,0 };
+	p(0,0);
 	speed = 0;
 	gravity = 0;
 	FrameCheck = 0;
@@ -22,7 +22,7 @@ enemyNode::~enemyNode()
 {
 	release();
 }
-HRESULT enemyNode::init(const char* keyName,POINT point)
+HRESULT enemyNode::init(const char* keyName, Point point)
 {
 	img = IMAGEMANAGER->findImage(keyName);
 
@@ -69,12 +69,13 @@ void enemyNode::render()
 	img->frameRender(getMemDC(), rc.left, rc.top, frameX, frameY);
 
 	//스프라이트 애니메이션 체크용
-	//char str[256];
-	//sprintf_s(str, "enemy frameX : %f", FrameCheck);
-	//TextOut(getMemDC(), 0, 60, str, strlen(str));
+	char str[256];
+	sprintf_s(str, "enemy POINT : %.0f, %.0f,%.2f", p.x,p.y, speed);
+	TextOut(getMemDC(), 0, 60, str, strlen(str));
 }
 void enemyNode::FrameSeter()
 {
+	if (state == DEAD) return;
 	if (img->getMaxFrameX() > FrameCheck) {
 		FrameCheck += ENEMY_FRAME_SPEEDER * TIMEMANAGER->getElapsedTime();
 	}
@@ -82,17 +83,41 @@ void enemyNode::FrameSeter()
 		FrameCheck = 0;
 	}
 	frameX = FrameCheck;
+
+	switch (state)
+	{
+	case EL_PATROL:
+	case EL_CHASE:
+		frameY = 0;
+		break;
+	case ER_PATROL:
+	case ER_CHASE:
+		frameY = 1;
+		break;
+	case DEAD:
+
+		break;
+	}
 }
 
 
 void enemyNode::AI(POINT* playerPoint)
 {
+	if (state == DEAD) return;
 	if (playerSearch(playerPoint)) {
 		if (playerPoint->x > p.x) {
 			state = ER_CHASE;
 		}
 		else {
 			state = EL_CHASE;
+		}
+	}
+	else {
+		if (frameY == 1) {
+			state = ER_PATROL;
+		}
+		else {
+			state = EL_PATROL;
 		}
 	}
 }

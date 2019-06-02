@@ -4,8 +4,8 @@
 //그리고 속성에서 버전맞추어줄때
 //문자집합도 멀티바이트로 맞추어 줘야 고칠게 없음
 
-#define WIDTH 540  //이미지 가로길이
-#define HEIGHT 360 //이미지 세로길이
+#define WIDTH 560  //이미지 가로길이
+#define HEIGHT 320 //이미지 세로길이
 
 #define SPEED 300
 #define JUMPSPEED 6
@@ -95,13 +95,13 @@ void playerNode::render()
 
 	//시간출력용
 	//디버그, 릴리즈 모드에 따라서 출력이 다름
-	TIMEMANAGER->render(getMemDC());
+	//TIMEMANAGER->render(getMemDC());
 	//이동속도 적용에 문제가 있어보여서 넣은것
 	
 	//적용값이 이상해 보일때 이렇게 출력해서 보면 편함
-	char str[256];
-	sprintf_s(str, "SPEED * ElapsedTime : %f", speed);
-	TextOut(getMemDC(), 0, 60, str, strlen(str));
+	//char str[256];
+	//sprintf_s(str, "SPEED * ElapsedTime : %f", speed);
+	//TextOut(getMemDC(), 0, 60, str, strlen(str));
 }
 void playerNode::stateUpdate() {
 	//시간에 따라 돌리면 좋다.

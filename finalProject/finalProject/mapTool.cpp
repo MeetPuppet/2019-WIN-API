@@ -11,12 +11,15 @@ mapTool::mapTool()
 
 mapTool::~mapTool()
 {
+	gameNode::release();
 }
 
 HRESULT mapTool::init()
 {
+	gameNode::init(true);
 	IMAGEMANAGER->addFrameImage("Tiles", "image/tile/Tiles.bmp", 480, 160, 6, 2, true,RGB(255,0,255));
-
+	IMAGEMANAGER->addFrameImage("itemBox", "image/tile/itemBox.bmp", 320, 80, 4, 1, true, RGB(255, 0, 255));
+	
 	for (int i = 0; i < TILEY; ++i) {
 		for (int j = 0; j < TILEX; ++j) {
 			tiles[(i*TILEX) + j].rc = { j*TILESIZE,i*TILESIZE
@@ -30,6 +33,7 @@ HRESULT mapTool::init()
 }
 void mapTool::update() 
 {
+	gameNode::update();
 	if (KEYMANAGER->isOnceKeyDown('Q')) {
 		frameIndex = 0;
 	}
@@ -41,18 +45,6 @@ void mapTool::update()
 	}
 	if (KEYMANAGER->isOnceKeyDown('1')) {
 		frameIndex = 1;
-	}
-	if (KEYMANAGER->isOnceKeyDown('2')) {
-		frameIndex = 2;
-	}
-	if (KEYMANAGER->isOnceKeyDown('3')) {
-		frameIndex = 3;
-	}
-	if (KEYMANAGER->isOnceKeyDown('4')) {
-		frameIndex = 4;
-	}
-	if (KEYMANAGER->isOnceKeyDown('5')) {
-		frameIndex = 5;
 	}
 	if (KEYMANAGER->isStayKeyDown(VK_LEFT) && tiles[0].rc.left < 10) {
 		for (int i = 0; i < MAX; ++i) {
@@ -77,13 +69,19 @@ void mapTool::update()
 	
 }
 void mapTool::render() 
-{
+{//흰색 도화지 한장~
+	PatBlt(getMemDC(), 0, 0, WINSIZEX, WINSIZEY, WHITENESS);
+	//==================== 건들지마라 ======================
+
 	for (int i = 0; i < MAX; ++i) {
-		if(tiles[i].rc.right > 0 && tiles[i].rc.left < 1200)
-		IMAGEMANAGER->frameRender("Tiles",getMemDC(),
-			tiles[i].rc.left, tiles[i].rc.top,
-			tiles[i].terrainFrameX, tiles[i].terrainFrameY);
+		if (tiles[i].rc.right > 0 && tiles[i].rc.left < 1200)
+			IMAGEMANAGER->frameRender("Tiles", getMemDC(),
+				tiles[i].rc.left, tiles[i].rc.top,
+				tiles[i].terrainFrameX, tiles[i].terrainFrameY);
 	}
+
+	//==================== 건들지마라 =======================
+	this->getBackBuffer()->render(getHDC(), 0, 0);
 }
 
 
@@ -106,7 +104,11 @@ void mapTool::load()
 
 	file = CreateFile("map/save1.map", GENERIC_READ, FALSE, NULL,
 		OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-	
+	if (FAILED(file)) {
+		return;
+	}
+	memset(attribute, 0, sizeof(DWORD) * TILEX * TILEY);
+	memset(pos, 0, sizeof(int) * 2);
 
 	ReadFile(file, tiles, sizeof(tagTile)*MAX, &read, NULL);
 

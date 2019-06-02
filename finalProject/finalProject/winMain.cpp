@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "mainGame.h"
+#include "mapTool.h"
+#include "switcher.h"
 
 HINSTANCE _hInstance;	//APP 메시지 번호
 HWND	_hWnd;			//APP 고유 번호
@@ -7,7 +9,8 @@ HWND	_hWnd;			//APP 고유 번호
 
 POINT _ptMouse;
 BOOL _leftMouseButton = FALSE;
-mainGame _mg;
+extern SWITCHER switchCheck = SWITCH;
+gameNode* _mg = new switcher;
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);	//윈도우 프로시져 의 함수 프로토 타입
 
@@ -50,7 +53,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmd
 
 	ShowWindow(_hWnd, cmdShow);		//윈도우 창 화면에 띄워라
 
-	if (FAILED(_mg.init()))
+	if (FAILED(_mg->init()))
 	{
 		return 0;
 	}
@@ -79,20 +82,47 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmd
 		else
 		{
 			TIMEMANAGER->update(60.0f);
-			_mg.update();
-			_mg.render();
+			switch (switchCheck)
+			{
+			case SWITCH:
+				if (_mg->whatSet() != SWITCH) {
+					delete _mg;
+					_mg = new switcher;
+					_mg->init();
+					switchCheck = SWITCH;
+				}
+				break;
+			case MAINGAME:
+				if (_mg->whatSet() != MAINGAME) {
+					delete _mg;
+					_mg = new mainGame;
+					_mg->init();
+					switchCheck = MAINGAME;
+				}
+				break;
+			case MAPTOOL:
+				if (_mg->whatSet() != MAPTOOL) {
+					delete _mg;
+					_mg = new mapTool;
+					_mg->init();
+					switchCheck = MAPTOOL;
+				}
+				break;
+			}
+			_mg->update();
+			_mg->render();
 		}
 	}
 	
 
-	_mg.release();
+	_mg->release();
 
 	return message.wParam;
 }
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 {
-	return _mg.MainProc(hWnd, iMessage, wParam, lParam);
+	return _mg->MainProc(hWnd, iMessage, wParam, lParam);
 }
 
 //클라이언트 영역 재조정 함수

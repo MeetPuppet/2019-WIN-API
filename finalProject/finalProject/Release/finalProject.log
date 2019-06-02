@@ -1,12 +1,11 @@
-﻿  playerNode.cpp
-e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(113): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(117): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(124): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(206): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
-e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(212): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+﻿  switcher.cpp
+e:\github\2019-win-api\finalproject\finalproject\switcher.cpp(52): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+e:\github\2019-win-api\finalproject\finalproject\switcher.cpp(59): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
   코드를 생성하고 있습니다.
-  4 of 514 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+  1 of 662 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    10 functions had inline decision re-evaluated but remain unchanged
+    4 functions had inline decision re-evaluated but remain unchanged
   코드를 생성했습니다.
   finalProject.vcxproj -> E:\GitHub\2019-WIN-API\finalProject\Release\finalProject.exe

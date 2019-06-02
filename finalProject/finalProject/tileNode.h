@@ -7,7 +7,7 @@
 #define BIGSTAGE 10
 #define ONESCENE 1
 
-//타일 갯수(X 1200/80개(15개)*9, Y 800/80개)
+//타일 갯수(X 1200/80개(15개), Y 800/80개)
 #define TILEX (WINSIZEX*BIGSTAGE)/TILESIZE
 #define TILEY WINSIZEY/TILESIZE
 
@@ -31,23 +31,23 @@ enum TERRAIN
 {
 	TR_NONE,
 	TR_GROUND,
-	TR_BREAKABLE1,
-	TR_BREAKABLE2,
-	TR_UNBREAKABLE1,
-	TR_UNBREAKABLE2,
-	TR_DECORATION
+	TR_LOCK=5
 };
 
 //오브젝트 대한 정의
 enum OBJECT
 {
 	OBJ_NONE,
-	OBJ_COINBOX,
-	OBJ_PIPE,
-	OBJ_COIN,
-	OBJ_AXE,
+	OBJ_BLOCK,
+	OBJ_ITEMBOX,
 
-	OBJ_SHELL
+	OBJ_PIPE,//왼쪽 상단만 지정되도록 할 것
+	OBJ_COIN,
+	OBJ_AXE,//지형 또는 오브젝트와 연동될 필요가 있음
+
+	OBJ_FLAG_HEAD,
+	OBJ_FLAG_BODY,
+	OBJ_FLAG_TAIL
 };
 
 //포지션 (나중에 클래스와 연동키 위함)

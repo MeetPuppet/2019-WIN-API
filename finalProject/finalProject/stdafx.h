@@ -67,3 +67,37 @@ extern HINSTANCE _hInstance;
 extern HWND	_hWnd;			
 extern POINT _ptMouse;
 extern BOOL _leftMouseButton;
+
+
+struct Point {
+	float x;
+	float y;
+
+	Point() {
+		x = 0;
+		y = 0;
+	}
+	Point(const Point& other) {
+		x = other.x;
+		y = other.y;
+	}
+	Point(POINT p) {
+		x = p.x;
+		y = p.y;
+	}
+
+	//입력용 제발 숫자만
+	template<typename T>
+	Point operator()(T a, T b) {
+		x = a;
+		y = b;
+		return *this;
+	}
+};
+
+enum SWITCHER {
+	SWITCH,
+	MAINGAME,
+	MAPTOOL
+};
+extern SWITCHER switchCheck;

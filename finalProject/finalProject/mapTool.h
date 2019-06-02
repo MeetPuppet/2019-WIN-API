@@ -7,6 +7,7 @@ class mapTool :
 {
 private:
 	int frameIndex;
+
 	tagTile tiles[TILEX*TILEY];
 
 	//기억상 속성값을 넣어두었던것만 기억남
@@ -14,7 +15,7 @@ private:
 	DWORD attribute[TILEX*TILEY];
 
 	//충돌판단용?
-	int _pos[2];
+	int pos[2];
 
 public:
 	mapTool();
@@ -25,6 +26,7 @@ public:
 	void render();
 	LRESULT MainProc(HWND, UINT, WPARAM, LPARAM);
 
+	SWITCHER whatSet() override { return MAPTOOL; }
 	void save();
 	void load();
 };

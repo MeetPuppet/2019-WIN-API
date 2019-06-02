@@ -21,6 +21,7 @@ public:
 	virtual void update();			
 	virtual void render();	
 
+	SWITCHER whatSet() override { return MAINGAME; }
 
 	mainGame();
 	~mainGame();

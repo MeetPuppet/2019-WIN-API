@@ -17,6 +17,7 @@ public:
 	virtual void update();		//연산 함수
 	virtual void render();		//그려주는 함수(a.k.a WM_PAINT)
 
+	virtual SWITCHER whatSet() { return SWITCH; }
 	//백버퍼 접근자
 	image* getBackBuffer() { return _backBuffer; }
 	

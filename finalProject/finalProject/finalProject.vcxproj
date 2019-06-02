@@ -142,6 +142,7 @@
     <ClCompile Include="action.cpp" />
     <ClCompile Include="animation.cpp" />
     <ClCompile Include="collision.cpp" />
+    <ClCompile Include="decorator.cpp" />
     <ClCompile Include="enemyManger.cpp" />
     <ClCompile Include="enemyNode.cpp" />
     <ClCompile Include="gameNode.cpp" />
@@ -152,12 +153,15 @@
     <ClCompile Include="keyManager.cpp" />
     <ClCompile Include="mainGame.cpp" />
     <ClCompile Include="mapTool.cpp" />
+    <ClCompile Include="objectManger.cpp" />
+    <ClCompile Include="objectNode.cpp" />
     <ClCompile Include="playerNode.cpp" />
     <ClCompile Include="progressBar.cpp" />
     <ClCompile Include="sceneManager.cpp" />
     <ClCompile Include="soundManager.cpp" />
     <ClCompile Include="Stage1.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="switcher.cpp" />
     <ClCompile Include="tank.cpp" />
     <ClCompile Include="timeManager.cpp" />
     <ClCompile Include="timer.cpp" />
@@ -169,6 +173,7 @@
     <ClInclude Include="animation.h" />
     <ClInclude Include="collision.h" />
     <ClInclude Include="commonMacroFunction.h" />
+    <ClInclude Include="decorator.h" />
     <ClInclude Include="enemyManger.h" />
     <ClInclude Include="enemyNode.h" />
     <ClInclude Include="gameNode.h" />
@@ -179,6 +184,8 @@
     <ClInclude Include="keyManager.h" />
     <ClInclude Include="mainGame.h" />
     <ClInclude Include="mapTool.h" />
+    <ClInclude Include="objectManger.h" />
+    <ClInclude Include="objectNode.h" />
     <ClInclude Include="playerNode.h" />
     <ClInclude Include="progressBar.h" />
     <ClInclude Include="randomFunction.h" />
@@ -187,6 +194,7 @@
     <ClInclude Include="soundManager.h" />
     <ClInclude Include="Stage1.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="switcher.h" />
     <ClInclude Include="tank.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="tileNode.h" />
