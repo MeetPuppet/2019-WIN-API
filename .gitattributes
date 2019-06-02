@@ -4,3 +4,7 @@
 web/dist/*.h linguist-vendored
 web/template/*.h linguist-vendored
 web/vendor/*.h linguist-vendored
+
+ignore_dir/E:/GitHub/2019-WIN-API/finalProject/Debug
+ignore_dir/E:/GitHub/2019-WIN-API/finalProject/Release
+ignore_dir/E:/GitHub/2019-WIN-API/finalProject/finalProject/.vs

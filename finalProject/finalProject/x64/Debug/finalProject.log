@@ -1,0 +1,174 @@
+﻿  action.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  animation.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  collision.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  decorator.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  enemyManger.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  enemyNode.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\enemynode.cpp(29): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\enemynode.cpp(32): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\enemynode.cpp(63): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\enemynode.cpp(74): error C2664: 'BOOL TextOutW(HDC,int,int,LPCWSTR,int)': 인수 4을(를) 'char [256]'에서 'LPCWSTR'(으)로 변환할 수 없습니다.
+  e:\github\2019-win-api\finalproject\finalproject\enemynode.cpp(74): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+e:\github\2019-win-api\finalproject\finalproject\enemynode.cpp(85): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\enemynode.cpp(129): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  gameNode.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\gamenode.cpp(92): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\gamenode.cpp(93): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\gamenode.cpp(87): warning C4101: 'hdc' :참조되지 않은 지역 변수입니다.
+e:\github\2019-win-api\finalproject\finalproject\gamenode.cpp(86): warning C4101: 'ps' :참조되지 않은 지역 변수입니다.
+  Goomba.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\goomba.cpp(47): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\goomba.cpp(51): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  image.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\image.cpp(86): error C2664: 'HANDLE LoadImageW(HINSTANCE,LPCWSTR,UINT,int,int,UINT)': 인수 2을(를) 'const char *'에서 'LPCWSTR'(으)로 변환할 수 없습니다.
+  e:\github\2019-win-api\finalproject\finalproject\image.cpp(86): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+e:\github\2019-win-api\finalproject\finalproject\image.cpp(91): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\image.cpp(140): error C2664: 'HANDLE LoadImageW(HINSTANCE,LPCWSTR,UINT,int,int,UINT)': 인수 2을(를) 'const char *'에서 'LPCWSTR'(으)로 변환할 수 없습니다.
+  e:\github\2019-win-api\finalproject\finalproject\image.cpp(140): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+e:\github\2019-win-api\finalproject\finalproject\image.cpp(147): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\image.cpp(196): error C2664: 'HANDLE LoadImageW(HINSTANCE,LPCWSTR,UINT,int,int,UINT)': 인수 2을(를) 'const char *'에서 'LPCWSTR'(으)로 변환할 수 없습니다.
+  e:\github\2019-win-api\finalproject\finalproject\image.cpp(196): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+e:\github\2019-win-api\finalproject\finalproject\image.cpp(210): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\image.cpp(259): error C2664: 'HANDLE LoadImageW(HINSTANCE,LPCWSTR,UINT,int,int,UINT)': 인수 2을(를) 'const char *'에서 'LPCWSTR'(으)로 변환할 수 없습니다.
+  e:\github\2019-win-api\finalproject\finalproject\image.cpp(259): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+e:\github\2019-win-api\finalproject\finalproject\image.cpp(271): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\image.cpp(339): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\image.cpp(338): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\image.cpp(351): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\image.cpp(491): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\image.cpp(495): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\image.cpp(500): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  imageManager.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  keyAniManager.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  keyManager.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  mainGame.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  mapTool.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\maptool.cpp(93): error C2664: 'HANDLE CreateFileW(LPCWSTR,DWORD,DWORD,LPSECURITY_ATTRIBUTES,DWORD,DWORD,HANDLE)': 인수 1을(를) 'const char [14]'에서 'LPCWSTR'(으)로 변환할 수 없습니다.
+  e:\github\2019-win-api\finalproject\finalproject\maptool.cpp(94): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+e:\github\2019-win-api\finalproject\finalproject\maptool.cpp(105): error C2664: 'HANDLE CreateFileW(LPCWSTR,DWORD,DWORD,LPSECURITY_ATTRIBUTES,DWORD,DWORD,HANDLE)': 인수 1을(를) 'const char [14]'에서 'LPCWSTR'(으)로 변환할 수 없습니다.
+  e:\github\2019-win-api\finalproject\finalproject\maptool.cpp(106): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+e:\github\2019-win-api\finalproject\finalproject\maptool.cpp(107): warning C4311: '형식 캐스트': 'HANDLE'에서 'HRESULT'(으)로 포인터가 잘립니다.
+e:\github\2019-win-api\finalproject\finalproject\maptool.cpp(107): warning C4302: '형식 캐스트': 'HANDLE'에서 'HRESULT'(으)로 잘립니다.
+e:\github\2019-win-api\finalproject\finalproject\maptool.cpp(126): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\maptool.cpp(127): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  objectManger.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  objectNode.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  playerNode.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(124): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(128): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(138): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(140): warning C4244: '-=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(196): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(200): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(263): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(268): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(272): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(316): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(322): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+  progressBar.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\progressbar.cpp(22): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\progressbar.cpp(25): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\progressbar.cpp(33): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\progressbar.cpp(59): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  sceneManager.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  soundManager.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  Stage1.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stage1.cpp(69): error C2664: 'HANDLE CreateFileW(LPCWSTR,DWORD,DWORD,LPSECURITY_ATTRIBUTES,DWORD,DWORD,HANDLE)': 인수 1을(를) 'const char [14]'에서 'LPCWSTR'(으)로 변환할 수 없습니다.
+  e:\github\2019-win-api\finalproject\finalproject\stage1.cpp(70): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+  stdafx.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  switcher.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\switcher.cpp(54): error C2664: 'BOOL TextOutW(HDC,int,int,LPCWSTR,int)': 인수 4을(를) 'char [256]'에서 'LPCWSTR'(으)로 변환할 수 없습니다.
+  e:\github\2019-win-api\finalproject\finalproject\switcher.cpp(55): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+e:\github\2019-win-api\finalproject\finalproject\switcher.cpp(61): error C2664: 'BOOL TextOutW(HDC,int,int,LPCWSTR,int)': 인수 4을(를) 'char [256]'에서 'LPCWSTR'(으)로 변환할 수 없습니다.
+  e:\github\2019-win-api\finalproject\finalproject\switcher.cpp(62): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+e:\github\2019-win-api\finalproject\finalproject\switcher.cpp(53): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+e:\github\2019-win-api\finalproject\finalproject\switcher.cpp(60): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+  tank.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\tank.cpp(95): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\tank.cpp(103): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\tank.cpp(111): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\tank.cpp(119): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\tank.cpp(127): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\tank.cpp(77): warning C4101: 'tileIndex' :참조되지 않은 지역 변수입니다.
+e:\github\2019-win-api\finalproject\finalproject\tank.cpp(78): warning C4101: 'tileX' :참조되지 않은 지역 변수입니다.
+e:\github\2019-win-api\finalproject\finalproject\tank.cpp(78): warning C4101: 'tileY' :참조되지 않은 지역 변수입니다.
+e:\github\2019-win-api\finalproject\finalproject\tank.cpp(137): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\tank.cpp(138): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\tank.cpp(139): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\tank.cpp(140): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  timeManager.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\timemanager.cpp(50): error C2664: 'int wsprintfW(LPWSTR,LPCWSTR,...)': 인수 1을(를) 'char [256]'에서 'LPWSTR'(으)로 변환할 수 없습니다.
+  e:\github\2019-win-api\finalproject\finalproject\timemanager.cpp(50): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+e:\github\2019-win-api\finalproject\finalproject\timemanager.cpp(51): error C2664: 'BOOL TextOutW(HDC,int,int,LPCWSTR,int)': 인수 4을(를) 'char [256]'에서 'LPCWSTR'(으)로 변환할 수 없습니다.
+  e:\github\2019-win-api\finalproject\finalproject\timemanager.cpp(51): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+e:\github\2019-win-api\finalproject\finalproject\timemanager.cpp(54): error C2664: 'BOOL TextOutW(HDC,int,int,LPCWSTR,int)': 인수 4을(를) 'char [256]'에서 'LPCWSTR'(으)로 변환할 수 없습니다.
+  e:\github\2019-win-api\finalproject\finalproject\timemanager.cpp(54): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+e:\github\2019-win-api\finalproject\finalproject\timemanager.cpp(57): error C2664: 'BOOL TextOutW(HDC,int,int,LPCWSTR,int)': 인수 4을(를) 'char [256]'에서 'LPCWSTR'(으)로 변환할 수 없습니다.
+  e:\github\2019-win-api\finalproject\finalproject\timemanager.cpp(57): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+  timer.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\timer.cpp(87): error C2664: 'int wsprintfW(LPWSTR,LPCWSTR,...)': 인수 1을(를) 'char *'에서 'LPWSTR'(으)로 변환할 수 없습니다.
+  e:\github\2019-win-api\finalproject\finalproject\timer.cpp(87): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+  utils.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  winMain.cpp
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(85): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\stdafx.h(86): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\winmain.cpp(120): warning C4244: 'return': 'WPARAM'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
