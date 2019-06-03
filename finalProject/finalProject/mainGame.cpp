@@ -98,6 +98,8 @@ void mainGame::update()				//연산 함수
 		stage1->moveX(-moveSpeed);
 	}
 	else if (p->getX() < 400 && stage1->getEdge0() < 0 - p->getSpeed()) {
+		//좌우속도차가 있음
+		moveSpeed += 1;
 		p->moveX(moveSpeed);
 		E_Manager->moveWorld(moveSpeed);
 		O_Manger->moveWorld(moveSpeed);
