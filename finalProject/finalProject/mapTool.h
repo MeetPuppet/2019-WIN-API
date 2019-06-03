@@ -7,6 +7,7 @@ class mapTool :
 {
 private:
 	int frameIndex;
+	int mode;
 
 	tagTile tiles[TILEX*TILEY];
 

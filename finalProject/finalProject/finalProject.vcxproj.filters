@@ -88,6 +88,15 @@
     <Filter Include="switcher">
       <UniqueIdentifier>{adca1de6-9de3-4e3c-a1e8-31a06878e102}</UniqueIdentifier>
     </Filter>
+    <Filter Include="mainGame\map\objectManager\object\item">
+      <UniqueIdentifier>{349084fc-b7e5-4cea-a7cd-fe8e1b692716}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mainGame\map\stage">
+      <UniqueIdentifier>{fbee3fc6-6f7f-4051-b042-4f6712cf1d3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mainGame\map\stage\node">
+      <UniqueIdentifier>{c6d2254c-ead4-4386-a3cd-3b2aed22699f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="winMain.cpp">
@@ -159,9 +168,6 @@
     <ClCompile Include="mapTool.cpp">
       <Filter>mainGame\map\tool</Filter>
     </ClCompile>
-    <ClCompile Include="Stage1.cpp">
-      <Filter>mainGame\map</Filter>
-    </ClCompile>
     <ClCompile Include="decorator.cpp">
       <Filter>mainGame\map\decorator</Filter>
     </ClCompile>
@@ -173,6 +179,21 @@
     </ClCompile>
     <ClCompile Include="switcher.cpp">
       <Filter>switcher</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>mainGame\map\objectManager\object</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemBox.cpp">
+      <Filter>mainGame\map\objectManager\object</Filter>
+    </ClCompile>
+    <ClCompile Include="SuperMuchroom.cpp">
+      <Filter>mainGame\map\objectManager\object\item</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1.cpp">
+      <Filter>mainGame\map\stage</Filter>
+    </ClCompile>
+    <ClCompile Include="stageNode.cpp">
+      <Filter>mainGame\map\stage\node</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -257,9 +278,6 @@
     <ClInclude Include="stdafx.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Stage1.h">
-      <Filter>mainGame\map</Filter>
-    </ClInclude>
     <ClInclude Include="decorator.h">
       <Filter>mainGame\map\decorator</Filter>
     </ClInclude>
@@ -271,6 +289,21 @@
     </ClInclude>
     <ClInclude Include="switcher.h">
       <Filter>switcher</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>mainGame\map\objectManager\object</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemBox.h">
+      <Filter>mainGame\map\objectManager\object</Filter>
+    </ClInclude>
+    <ClInclude Include="SuperMuchroom.h">
+      <Filter>mainGame\map\objectManager\object\item</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1.h">
+      <Filter>mainGame\map\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="stageNode.h">
+      <Filter>mainGame\map\stage\node</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

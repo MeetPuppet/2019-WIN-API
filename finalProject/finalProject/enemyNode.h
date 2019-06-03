@@ -45,6 +45,9 @@ public:
 	Point getPoint() { return p; }
 	RECT getRect() { return rc; }
 
+	//좌표를 바꾸는게 맞지만 그만알아보고 싶으니 나중에 하자
+	void moveX(int x) { p.x += x; }
+
 	//플레이어 할당이 해제될 경우 동작을 막을 것
 	virtual void AI(POINT* playerPoint = NULL);
 	virtual POINT* getTarget() { return targetPoint; }

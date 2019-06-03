@@ -55,6 +55,11 @@ public:
 	//그냥 분리해서 두면 보기편하니 분리해둠
 
 	int getX() { return x; }
+	float getSpeed() { return speed; }
+	void moveX(int X) 
+	{ 
+		x += X;
+	}
 
 	//플레이어의 상태값에 따라서 업데이트 진행
 	inline void stateUpdate();

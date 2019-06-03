@@ -70,9 +70,9 @@ struct tagTile
 		obj = OBJ_NONE;
 		rc = { 0,0,0,0 };
 		terrainFrameX = 0;
-		terrainFrameX = 0;
+		terrainFrameY = 0;
 		objFrameX = 0;
-		objFrameX = 0;
+		objFrameY = 0;
 	}
 };
 

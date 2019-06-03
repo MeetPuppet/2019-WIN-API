@@ -6,7 +6,7 @@
 
 enemyManger::enemyManger()
 {
-	vGoomba;//든거 없음
+	vEnemy;//든거 없음
 }
 
 
@@ -46,12 +46,12 @@ void enemyManger::makeGoomba(POINT point)
 {
 	Goomba* newGoomba = new Goomba;
 	newGoomba->init(point);
-	vGoomba.emplace_back(newGoomba);
+	vEnemy.emplace_back(newGoomba);
 }
 void enemyManger::goombaUpdate()
 {
-	for (int i = 0; i < vGoomba.size(); ++i) {
-		vGoomba[i]->update();
+	for (int i = 0; i < vEnemy.size(); ++i) {
+		vEnemy[i]->update();
 	}
 }
 void enemyManger::KillGoomba()
@@ -59,16 +59,16 @@ void enemyManger::KillGoomba()
 }
 void enemyManger::goombaRender()
 {
-	for (int i = 0; i < vGoomba.size(); ++i) {
-		vGoomba[i]->render();
+	for (int i = 0; i < vEnemy.size(); ++i) {
+		vEnemy[i]->render();
 	}
 }
 
 void enemyManger::LinkTarget(POINT* targetPoint)
 {
-	for (int i = 0; i < vGoomba.size(); ++i) {
-		if(vGoomba[i]->getTarget() == NULL)
-			vGoomba[i]->LinkToTarget(targetPoint);
+	for (int i = 0; i < vEnemy.size(); ++i) {
+		if(vEnemy[i]->getTarget() == NULL)
+			vEnemy[i]->LinkToTarget(targetPoint);
 	}
 }
 
@@ -82,10 +82,16 @@ bool enemyManger::enemyCollisionCheck(RECT rc)
 bool enemyManger::GoombaCollisionCheck(const RECT& rc)
 {
 	RECT temp;
-	for (int i = 0; i < vGoomba.size(); ++i) {
-		if (IntersectRect(&temp,&vGoomba[i]->getRect(),&rc)) {
+	for (int i = 0; i < vEnemy.size(); ++i) {
+		if (IntersectRect(&temp,&vEnemy[i]->getRect(),&rc)) {
 			return true;
 		}
 	}
 	return false;
+}
+
+void enemyManger::moveWorld(int x) {
+	for (int i = 0; i < vEnemy.size(); ++i) {
+		vEnemy[i]->moveX(x);
+	}
 }
