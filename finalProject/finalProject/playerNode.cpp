@@ -150,8 +150,9 @@ void playerNode::stateUpdate() {
 		//지금 당장은 시작점을 받아서 만들었다.
 		if (jumpStartY < y) {
 			y = jumpStartY;
-			image->setFrameX(0);
-			state = IDLE;
+			image->setFrameX(1);
+			image->setFrameY(oldDirec);
+			state = oldSTATE;
 		}
 		break;
 	case SHOOT:
@@ -189,6 +190,7 @@ void playerNode::keySet()
 		image->setFrameX(1);
 		image->setFrameY(1);//왼쪽으로 프레임Y 설정(이미지 아랫부분)
 		state = MOVE;
+		oldDirec = 1;
 	}
 	else if (KEYMANAGER->isOnceKeyUp(VK_LEFT) && state == MOVE
 		&& image->getFrameY() == 1) {
@@ -199,6 +201,7 @@ void playerNode::keySet()
 		image->setFrameX(1);
 		image->setFrameY(0);//왼쪽으로 프레임Y 설정(이미지 윗부분)
 		state = MOVE;
+		oldDirec = 0;
 	}
 	else if (KEYMANAGER->isOnceKeyUp(VK_RIGHT) && state == MOVE
 		&& image->getFrameY() == 0) {
@@ -216,6 +219,7 @@ void playerNode::keySet()
 	}
 
 	if (KEYMANAGER->isOnceKeyDown(VK_UP) && state != JUMP) {//점프상태가 아니고 z키가 눌리면
+		oldSTATE = state;
 		state = JUMP;
 		image->setFrameX(5);
 		//점프 시작지점을 받아서
@@ -306,6 +310,7 @@ void playerNode::keySet2()
 		image->setFrameX(1);
 		image->setFrameY(1);//왼쪽으로 프레임Y 설정(이미지 아랫부분)
 		state = MOVE;
+		oldDirec = 1;
 	}
 	else if (KEYMANAGER->isOnceKeyUp('A') && state == MOVE
 		&& image->getFrameY() == 1) {
@@ -316,6 +321,7 @@ void playerNode::keySet2()
 		image->setFrameX(1);
 		image->setFrameY(0);//왼쪽으로 프레임Y 설정(이미지 윗부분)
 		state = MOVE;
+		oldDirec = 0;
 	}
 	else if (KEYMANAGER->isOnceKeyUp('D') && state == MOVE
 		&& image->getFrameY() == 0) {
@@ -337,6 +343,7 @@ void playerNode::keySet2()
 	}
 
 	if (KEYMANAGER->isOnceKeyDown('W') && state != JUMP) {//점프상태가 아니고 z키가 눌리면
+		oldSTATE = state;
 		state = JUMP;
 		image->setFrameX(5);
 		//점프 시작지점을 받아서

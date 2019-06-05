@@ -33,6 +33,7 @@ private:
 	int HP = 2;		// 1이 작은 상태, 2가 버섯, 3이 꽃, 0이 되면 사망
 	int getShoot;	// 피격 시 무적시간이 생기는 초
 	int oldx, oldy;
+	int oldDirec;	// 0이면 좌측 1이면 우측
 	PLAYERSTATE oldSTATE;
 	int oldFrameX, oldFrameY;	// 피격 혹은 버섯 등으로 체력이 바뀔 시 이미지를 바꾸기 전에 미리 저장해두는 기존 위치들
 	PLAYERSTATE state;//상태값
