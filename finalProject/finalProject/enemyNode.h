@@ -49,9 +49,9 @@ public:
 	void moveX(int x) { p.x += x; }
 
 	//플레이어 할당이 해제될 경우 동작을 막을 것
-	virtual void AI(POINT* playerPoint = NULL);
-	virtual POINT* getTarget() { return targetPoint; }
-	virtual void LinkToTarget(POINT* playerPoint = NULL){
+	 void AI(POINT* playerPoint = NULL);
+	 POINT* getTarget() { return targetPoint; }
+	 void LinkToTarget(POINT* playerPoint = NULL){
 		targetPoint = playerPoint;
 	}
 };

@@ -4,12 +4,14 @@
 #include "enemyManger.h"
 #include "objectManger.h"
 #include "Stage1.h"
+#include "boss.h"
 
 mainGame::mainGame()
 {
 	E_Manager = NULL;
 	O_Manger = NULL;
 	stage1 = NULL;
+	bowser = NULL;
 }
 
 mainGame::~mainGame()
@@ -43,6 +45,10 @@ HRESULT mainGame::init()			//초기화 함수
 
 		stage1->init();
 	}
+
+	bowser = new boss;
+
+	bowser->init(600, 300);
 	return S_OK;
 }
 
@@ -93,18 +99,25 @@ void mainGame::update()				//연산 함수
 	int moveSpeed = p->getSpeed();
 	if (p->getX() > 800 && stage1->getEdge1()>1200+p->getSpeed()) {
 		p->moveX(-moveSpeed);
+		q->moveX(-moveSpeed);
 		E_Manager->moveWorld(-moveSpeed);
 		O_Manger->moveWorld(-moveSpeed);
 		stage1->moveX(-moveSpeed);
+		bowser->moveX(-moveSpeed);
 	}
 	else if (p->getX() < 400 && stage1->getEdge0() < 0 - p->getSpeed()) {
 		//좌우속도차가 있음
 		moveSpeed += 1;
 		p->moveX(moveSpeed);
+		q->moveX(moveSpeed);
 		E_Manager->moveWorld(moveSpeed);
 		O_Manger->moveWorld(moveSpeed);
 		stage1->moveX(moveSpeed);
+		bowser->moveX(moveSpeed);
 	}
+
+	bowser->update();
+	bowser->jump();
 }
 
 void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
@@ -125,6 +138,8 @@ void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
 	p->render();//객체 출력
 	q->render();
 	
+
+	bowser->render();
 	//==================== 건들지마라 =======================
 	this->getBackBuffer()->render(getHDC(), 0, 0);
 

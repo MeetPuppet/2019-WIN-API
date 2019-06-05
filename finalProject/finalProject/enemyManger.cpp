@@ -24,6 +24,8 @@ HRESULT enemyManger::init()
 		2, 2, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("greyTurtle", "image/enemy/greyTurtle.bmp", 160, 240,
 		2, 2, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("bowser", "image/bowser/bowser.bmp", 640, 320,
+		4, 2, true, RGB(255, 0, 255));	
 
 	return S_OK;
 }

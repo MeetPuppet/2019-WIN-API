@@ -74,7 +74,7 @@ void playerNode::update()
 	//당장 여기 업데이트 순서는 별로 상관없음
 	//상태값으로 업뎃
 	stateUpdate();
-	if (playerNum == 1) {
+	if (playerNum == 1 || playerNum == 3) {
 		//키에 의한 업뎃
 		keySet();
 	}
@@ -121,48 +121,50 @@ void playerNode::stateUpdate() {
 	//이렇게 스위치나 if는 없어도 가능함
 	//그냥 보기 편하게 만들기위해서 스위치를 썼음
 	float elapsedTime;
-	switch (state)
-	{
-	case IDLE://암움직임
-		break;
-	case MOVE:						//시간 간격을 1이하의 float값으로 돌려줌
-		elapsedTime = TIMEMANAGER->getElapsedTime();
-		speed = SPEED * TIMEMANAGER->getElapsedTime();
+	if (HP) {
+		switch (state)
+		{
+		case IDLE://암움직임
+			break;
+		case MOVE:						//시간 간격을 1이하의 float값으로 돌려줌
+			elapsedTime = TIMEMANAGER->getElapsedTime();
+			speed = SPEED * TIMEMANAGER->getElapsedTime();
 
-		//오른쪽 이냐는 뜻
-		if (image->getFrameY() == 0) {
-			x += speed;
-			//좌우 이속이 달라보이는데 분명 맞게 돌아감
-		}
-		else if (image->getFrameY() == 1) {
-			x -= speed;
-		}
-		break;
-	case SIT:
-		break;
-	case JUMP:
-		//점프값 만큼 위로 올라간다.
-		y -= JumpPower;// JUMPSPEED로 초기화됨
-		//시간 반영을 위해 실시간으로 빼주기
-		JumpPower -= JUMPSPEED* 1.8 * TIMEMANAGER->getElapsedTime();
+			//오른쪽 이냐는 뜻
+			if (image->getFrameY() == 0) {
+				x += speed;
+				//좌우 이속이 달라보이는데 분명 맞게 돌아감
+			}
+			else if (image->getFrameY() == 1) {
+				x -= speed;
+			}
+			break;
+		case SIT:
+			break;
+		case JUMP:
+			//점프값 만큼 위로 올라간다.
+			y -= JumpPower;// JUMPSPEED로 초기화됨
+			//시간 반영을 위해 실시간으로 빼주기
+			JumpPower -= JUMPSPEED * 1.8 * TIMEMANAGER->getElapsedTime();
 
-		//이건 충돌할 걸 아무거 해줘도 된다.
-		//지금 당장은 시작점을 받아서 만들었다.
-		if (jumpStartY < y) {
-			y = jumpStartY;
-			image->setFrameX(1);
-			image->setFrameY(oldDirec);
-			state = oldSTATE;
+			//이건 충돌할 걸 아무거 해줘도 된다.
+			//지금 당장은 시작점을 받아서 만들었다.
+			if (jumpStartY < y) {
+				y = jumpStartY;
+				image->setFrameX(1);
+				image->setFrameY(oldDirec);
+				state = oldSTATE;
+			}
+			break;
+		case SHOOT:
+			getShoot -= 1;
+			if (getShoot <= 0) {
+				state = oldSTATE;
+				x = oldx;
+				y = oldy;
+			}
+			break;
 		}
-		break;
-	case SHOOT:
-		getShoot -= 1;
-		if (getShoot <= 0) {
-			state = oldSTATE;
-			x = oldx;
-			y = oldy;
-		}
-		break;
 	}
 }
 //키셋을 포함한 프레임 상하를 관리해주는 함수
@@ -190,7 +192,6 @@ void playerNode::keySet()
 		image->setFrameX(1);
 		image->setFrameY(1);//왼쪽으로 프레임Y 설정(이미지 아랫부분)
 		state = MOVE;
-		oldDirec = 1;
 	}
 	else if (KEYMANAGER->isOnceKeyUp(VK_LEFT) && state == MOVE
 		&& image->getFrameY() == 1) {
@@ -201,7 +202,6 @@ void playerNode::keySet()
 		image->setFrameX(1);
 		image->setFrameY(0);//왼쪽으로 프레임Y 설정(이미지 윗부분)
 		state = MOVE;
-		oldDirec = 0;
 	}
 	else if (KEYMANAGER->isOnceKeyUp(VK_RIGHT) && state == MOVE
 		&& image->getFrameY() == 0) {
@@ -212,10 +212,12 @@ void playerNode::keySet()
 	if (KEYMANAGER->isStayKeyDown(VK_RIGHT) && state == JUMP) {
 		speed = SPEED * TIMEMANAGER->getElapsedTime();
 		x += speed;
+		oldDirec = 0;
 	}
 	if (KEYMANAGER->isStayKeyDown(VK_LEFT) && state == JUMP) {
 		speed = SPEED * TIMEMANAGER->getElapsedTime();
 		x -= speed;
+		oldDirec = 1;
 	}
 
 	if (KEYMANAGER->isOnceKeyDown(VK_UP) && state != JUMP) {//점프상태가 아니고 z키가 눌리면
@@ -310,7 +312,6 @@ void playerNode::keySet2()
 		image->setFrameX(1);
 		image->setFrameY(1);//왼쪽으로 프레임Y 설정(이미지 아랫부분)
 		state = MOVE;
-		oldDirec = 1;
 	}
 	else if (KEYMANAGER->isOnceKeyUp('A') && state == MOVE
 		&& image->getFrameY() == 1) {
@@ -321,7 +322,6 @@ void playerNode::keySet2()
 		image->setFrameX(1);
 		image->setFrameY(0);//왼쪽으로 프레임Y 설정(이미지 윗부분)
 		state = MOVE;
-		oldDirec = 0;
 	}
 	else if (KEYMANAGER->isOnceKeyUp('D') && state == MOVE
 		&& image->getFrameY() == 0) {
@@ -331,6 +331,7 @@ void playerNode::keySet2()
 	if (KEYMANAGER->isStayKeyDown('D') && state == JUMP) {
 		speed = SPEED * TIMEMANAGER->getElapsedTime();
 		x += speed;
+		oldDirec = 0;
 	}
 
 	if (KEYMANAGER->isStayKeyDown('S') && state == JUMP) {
@@ -340,6 +341,7 @@ void playerNode::keySet2()
 	if (KEYMANAGER->isStayKeyDown('A') && state == JUMP) {
 		speed = SPEED * TIMEMANAGER->getElapsedTime();
 		x -= speed;
+		oldDirec = 1;
 	}
 
 	if (KEYMANAGER->isOnceKeyDown('W') && state != JUMP) {//점프상태가 아니고 z키가 눌리면
