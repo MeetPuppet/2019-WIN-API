@@ -156,6 +156,7 @@ void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
 
 	bowser->render();
 	//==================== 건들지마라 =======================
+	TIMEMANAGER->render(getMemDC());
 	this->getBackBuffer()->render(getHDC(), 0, 0);
 
 }

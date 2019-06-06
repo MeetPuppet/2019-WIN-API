@@ -28,17 +28,24 @@ class playerNode :
 private:
 	image* img;
 	
+	RECT rc;
 	Point point;
+
 	float speed;
+	float jumpPower;
+
+	PLAYERSTATE state;
+	PLAYERMOD mode;
 
 	int frameX;
 	int frameY;
+	float frameCount;
 public:
 	playerNode();
 	~playerNode();
 	//게임노드는 3개의 함수를 반드시 작성해야함
 	//HRESULT는 그냥 잘 돌았는지 판단하기 위해서 사용하는것
-	virtual HRESULT init();//클래스 초기화용 할당시 해줘도 좋지만 이해를 돕기위해 init을 쓰기를 권장함
+	virtual HRESULT init(image* IMG);//클래스 초기화용 할당시 해줘도 좋지만 이해를 돕기위해 init을 쓰기를 권장함
 
 	virtual void update();//말 그대로 업데이트를 담당하는 함수
 

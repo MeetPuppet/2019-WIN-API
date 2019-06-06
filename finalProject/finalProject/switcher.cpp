@@ -17,7 +17,6 @@ HRESULT switcher::init()			//초기화 함수
 	mg = RectMakeCenter(WINSIZEX / 2, WINSIZEY / 2 - 200, 300, 100);
 	mt = RectMakeCenter(WINSIZEX / 2, WINSIZEY / 2 + 200, 300, 100);
 
-	a.init("dsa","nofile");
 	return S_OK;
 }
 

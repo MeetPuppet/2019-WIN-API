@@ -195,6 +195,9 @@
     <ClCompile Include="playerNode.cpp">
       <Filter>mainGame\player\node</Filter>
     </ClCompile>
+    <ClCompile Include="Mario.cpp">
+      <Filter>mainGame\player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="image.h">
@@ -304,6 +307,9 @@
     </ClInclude>
     <ClInclude Include="playerNode.h">
       <Filter>mainGame\player\node</Filter>
+    </ClInclude>
+    <ClInclude Include="Mario.h">
+      <Filter>mainGame\player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
