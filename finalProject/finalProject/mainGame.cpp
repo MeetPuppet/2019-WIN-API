@@ -23,10 +23,10 @@ HRESULT mainGame::init()			//초기화 함수
 {
 	gameNode::init(true);
 	
-	p = new playerNode;//객체 할당
-	q = new playerNode;//객체 할당
-	p->init("mario","image/player/mario.bmp",1);//객체 초기화
-	q->init("ruigi", "image/player/Luigi.bmp",2);//객체 초기화
+	//p = new playerNode;//객체 할당
+	//q = new playerNode;//객체 할당
+	//p->init("mario","image/player/mario.bmp",1);//객체 초기화
+	//q->init("ruigi", "image/player/Luigi.bmp",2);//객체 초기화
 
 	if (E_Manager == NULL) {
 		E_Manager = new enemyManger;
@@ -55,8 +55,8 @@ HRESULT mainGame::init()			//초기화 함수
 void mainGame::release()			//메모리 해제 함수
 {
 	gameNode::release();
-	delete p;//할당 해제
-	delete q;
+	//delete p;//할당 해제
+	//delete q;
 
 	if (E_Manager) {
 		delete E_Manager;
@@ -73,8 +73,6 @@ void mainGame::update()				//연산 함수
 {
 	gameNode::update();
 
-	p->update();//객체 업데이트
-	q->update();
 	//RECT를 넣어주면 충돌했는지 안했는지 bool값으로 반환 해주는 함수
 	//if (E_Manager->enemyCollisionCheck(RECT)) {}
 
@@ -93,28 +91,46 @@ void mainGame::update()				//연산 함수
 	}
 	if (stage1) {
 		stage1->update();
-		stage1->setMainPosition({ p->getX(), 0 });
+		//stage1->setMainPosition({ p->getX(), 0 });
 	}
 
-	int moveSpeed = p->getSpeed();
-	if (p->getX() > 800 && stage1->getEdge1()>1200+p->getSpeed()) {
-		p->moveX(-moveSpeed);
-		q->moveX(-moveSpeed);
-		E_Manager->moveWorld(-moveSpeed);
-		O_Manger->moveWorld(-moveSpeed);
-		stage1->moveX(-moveSpeed);
-		bowser->moveX(-moveSpeed);
-	}
-	else if (p->getX() < 400 && stage1->getEdge0() < 0 - p->getSpeed()) {
-		//좌우속도차가 있음
-		moveSpeed += 1;
-		p->moveX(moveSpeed);
-		q->moveX(moveSpeed);
-		E_Manager->moveWorld(moveSpeed);
-		O_Manger->moveWorld(moveSpeed);
-		stage1->moveX(moveSpeed);
-		bowser->moveX(moveSpeed);
-	}
+	//int moveSpeed = p->getSpeed();
+	//if (p->getX() > 800 && stage1->getEdge1()>1200+p->getSpeed()) {
+	//	p->moveX(-moveSpeed);
+	//	q->moveX(-moveSpeed);
+	//	E_Manager->moveWorld(-moveSpeed);
+	//	O_Manger->moveWorld(-moveSpeed);
+	//	stage1->moveX(-moveSpeed);
+	//	bowser->moveX(-moveSpeed);
+	//}
+	//else if (p->getX() < 400 && stage1->getEdge0() < 0 - p->getSpeed()) {
+	//	//좌우속도차가 있음
+	//	moveSpeed += 1;
+	//	p->moveX(moveSpeed);
+	//	q->moveX(moveSpeed);
+	//	E_Manager->moveWorld(moveSpeed);
+	//	O_Manger->moveWorld(moveSpeed);
+	//	stage1->moveX(moveSpeed);
+	//	bowser->moveX(moveSpeed);
+	//}
+	//
+	//if (q->getX() > 800 && stage1->getEdge1() > 1200 + q->getSpeed()) {
+	//	p->moveX(-moveSpeed);
+	//	q->moveX(-moveSpeed);
+	//	E_Manager->moveWorld(-moveSpeed);
+	//	O_Manger->moveWorld(-moveSpeed);
+	//	stage1->moveX(-moveSpeed);
+	//	bowser->moveX(-moveSpeed);
+	//}
+	//else if (q->getX() < 400 && stage1->getEdge0() < 0 - q->getSpeed()) {
+	//	
+	//	p->moveX(moveSpeed);
+	//	q->moveX(moveSpeed);
+	//	E_Manager->moveWorld(moveSpeed);
+	//	O_Manger->moveWorld(moveSpeed);
+	//	stage1->moveX(moveSpeed);
+	//	bowser->moveX(moveSpeed);
+	//}
 
 	bowser->update();
 	bowser->jump();
@@ -135,8 +151,7 @@ void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
 	if (E_Manager) {
 		E_Manager->render();
 	}
-	p->render();//객체 출력
-	q->render();
+
 	
 
 	bowser->render();

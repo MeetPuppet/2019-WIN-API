@@ -1,11 +1,13 @@
 #pragma once
 #include "gameNode.h"
+#include "playerNode.h"
 
 
 class switcher :
 	public gameNode
 {
 private:
+	playerNode a;
 	RECT mg;
 	RECT mt;
 public:

@@ -167,7 +167,6 @@
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="SuperMuchroom.cpp" />
     <ClCompile Include="switcher.cpp" />
-    <ClCompile Include="tank.cpp" />
     <ClCompile Include="timeManager.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="utils.cpp" />
@@ -205,7 +204,6 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="SuperMuchroom.h" />
     <ClInclude Include="switcher.h" />
-    <ClInclude Include="tank.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="tileNode.h" />
     <ClInclude Include="timeManager.h" />

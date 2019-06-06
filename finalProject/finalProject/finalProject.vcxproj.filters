@@ -43,15 +43,6 @@
     <Filter Include="mainGame">
       <UniqueIdentifier>{5eeac829-f058-4a84-a41f-5b70f4826370}</UniqueIdentifier>
     </Filter>
-    <Filter Include="mainGame\example">
-      <UniqueIdentifier>{a5baa67d-0125-46df-a51d-89362e53775f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="mainGame\example\tank">
-      <UniqueIdentifier>{2fa1db0d-c56b-4a28-a558-636ab3b4d702}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="mainGame\example\playerMake">
-      <UniqueIdentifier>{2fabb2db-b74e-412d-9230-9d9bfcf05cbe}</UniqueIdentifier>
-    </Filter>
     <Filter Include="mainGame\enemyManager">
       <UniqueIdentifier>{40f1b7f5-d6a1-43f2-8e2c-c19fe43c9440}</UniqueIdentifier>
     </Filter>
@@ -99,6 +90,12 @@
     </Filter>
     <Filter Include="mainGame\enemyManager\boss">
       <UniqueIdentifier>{d27ec8c6-8ef6-4f9a-bbd9-c1dd2337efcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mainGame\player">
+      <UniqueIdentifier>{2fabb2db-b74e-412d-9230-9d9bfcf05cbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mainGame\player\node">
+      <UniqueIdentifier>{58213c62-14de-40c0-b080-627e80d10721}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -153,12 +150,6 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="tank.cpp">
-      <Filter>mainGame\example\tank</Filter>
-    </ClCompile>
-    <ClCompile Include="playerNode.cpp">
-      <Filter>mainGame\example\playerMake</Filter>
-    </ClCompile>
     <ClCompile Include="enemyNode.cpp">
       <Filter>mainGame\enemyManager\node</Filter>
     </ClCompile>
@@ -200,6 +191,9 @@
     </ClCompile>
     <ClCompile Include="boss.cpp">
       <Filter>mainGame\enemyManager\boss</Filter>
+    </ClCompile>
+    <ClCompile Include="playerNode.cpp">
+      <Filter>mainGame\player\node</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -260,12 +254,6 @@
     <ClInclude Include="singletonBase.h">
       <Filter>2DframeWork\singletoneBase</Filter>
     </ClInclude>
-    <ClInclude Include="tank.h">
-      <Filter>mainGame\example\tank</Filter>
-    </ClInclude>
-    <ClInclude Include="playerNode.h">
-      <Filter>mainGame\example\playerMake</Filter>
-    </ClInclude>
     <ClInclude Include="enemyNode.h">
       <Filter>mainGame\enemyManager\node</Filter>
     </ClInclude>
@@ -313,6 +301,9 @@
     </ClInclude>
     <ClInclude Include="boss.h">
       <Filter>mainGame\enemyManager\boss</Filter>
+    </ClInclude>
+    <ClInclude Include="playerNode.h">
+      <Filter>mainGame\player\node</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
