@@ -142,6 +142,7 @@
     <ClCompile Include="action.cpp" />
     <ClCompile Include="animation.cpp" />
     <ClCompile Include="Block.cpp" />
+    <ClCompile Include="boss.cpp" />
     <ClCompile Include="collision.cpp" />
     <ClCompile Include="decorator.cpp" />
     <ClCompile Include="enemyManger.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="action.h" />
     <ClInclude Include="animation.h" />
     <ClInclude Include="Block.h" />
+    <ClInclude Include="boss.h" />
     <ClInclude Include="collision.h" />
     <ClInclude Include="commonMacroFunction.h" />
     <ClInclude Include="decorator.h" />

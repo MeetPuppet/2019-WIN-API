@@ -97,6 +97,9 @@
     <Filter Include="mainGame\map\stage\node">
       <UniqueIdentifier>{c6d2254c-ead4-4386-a3cd-3b2aed22699f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="mainGame\enemyManager\boss">
+      <UniqueIdentifier>{d27ec8c6-8ef6-4f9a-bbd9-c1dd2337efcb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="winMain.cpp">
@@ -194,6 +197,9 @@
     </ClCompile>
     <ClCompile Include="stageNode.cpp">
       <Filter>mainGame\map\stage\node</Filter>
+    </ClCompile>
+    <ClCompile Include="boss.cpp">
+      <Filter>mainGame\enemyManager\boss</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -304,6 +310,9 @@
     </ClInclude>
     <ClInclude Include="stageNode.h">
       <Filter>mainGame\map\stage\node</Filter>
+    </ClInclude>
+    <ClInclude Include="boss.h">
+      <Filter>mainGame\enemyManager\boss</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
