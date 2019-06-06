@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "mainGame.h"
 
+#include "Mario.h"
 #include "enemyManger.h"
 #include "objectManger.h"
 #include "Stage1.h"
@@ -8,6 +9,7 @@
 
 mainGame::mainGame()
 {
+	mario = NULL;
 	E_Manager = NULL;
 	O_Manger = NULL;
 	stage1 = NULL;
@@ -23,10 +25,10 @@ HRESULT mainGame::init()			//초기화 함수
 {
 	gameNode::init(true);
 	
-	//p = new playerNode;//객체 할당
-	//q = new playerNode;//객체 할당
-	//p->init("mario","image/player/mario.bmp",1);//객체 초기화
-	//q->init("ruigi", "image/player/Luigi.bmp",2);//객체 초기화
+	if (mario == NULL) {
+		mario = new Mario;
+		mario->init(Point(WINSIZEX / 2, WINSIZEY / 2));
+	}
 
 	if (E_Manager == NULL) {
 		E_Manager = new enemyManger;
@@ -35,6 +37,9 @@ HRESULT mainGame::init()			//초기화 함수
 	if (O_Manger == NULL) {
 		O_Manger = new objectManger;
 		O_Manger->init();
+		if (mario) {
+			mario->LinkToOM(O_Manger);
+		}
 	}
 	if (stage1 == NULL) {
 		stage1 = new Stage1;
@@ -44,6 +49,10 @@ HRESULT mainGame::init()			//초기화 함수
 			stage1->LinkToOBJ(O_Manger);
 
 		stage1->init();
+
+		if (mario) {
+			mario->LinkToStage(stage1);
+		}
 	}
 
 	bowser = new boss;
@@ -58,14 +67,21 @@ void mainGame::release()			//메모리 해제 함수
 	//delete p;//할당 해제
 	//delete q;
 
+	if (mario) {
+		delete mario;
+		mario = NULL;
+	}
 	if (E_Manager) {
 		delete E_Manager;
+		E_Manager = NULL;
 	}
 	if (O_Manger) {
 		delete O_Manger;
+		O_Manger = NULL;
 	}
 	if (stage1) {
 		delete stage1;
+		stage1 = NULL;
 	}
 }
 
@@ -83,6 +99,9 @@ void mainGame::update()				//연산 함수
 	}
 
 
+	if (mario) {
+		mario->update();
+	}
 	if (E_Manager) {
 		E_Manager->update();
 	}
@@ -94,25 +113,22 @@ void mainGame::update()				//연산 함수
 		//stage1->setMainPosition({ p->getX(), 0 });
 	}
 
-	//int moveSpeed = p->getSpeed();
-	//if (p->getX() > 800 && stage1->getEdge1()>1200+p->getSpeed()) {
-	//	p->moveX(-moveSpeed);
-	//	q->moveX(-moveSpeed);
-	//	E_Manager->moveWorld(-moveSpeed);
-	//	O_Manger->moveWorld(-moveSpeed);
-	//	stage1->moveX(-moveSpeed);
-	//	bowser->moveX(-moveSpeed);
-	//}
-	//else if (p->getX() < 400 && stage1->getEdge0() < 0 - p->getSpeed()) {
-	//	//좌우속도차가 있음
-	//	moveSpeed += 1;
-	//	p->moveX(moveSpeed);
-	//	q->moveX(moveSpeed);
-	//	E_Manager->moveWorld(moveSpeed);
-	//	O_Manger->moveWorld(moveSpeed);
-	//	stage1->moveX(moveSpeed);
-	//	bowser->moveX(moveSpeed);
-	//}
+	int moveSpeed = mario->getSpeed();
+	if (mario->getX() > 800 && stage1->getEdge1()>1200+ mario->getSpeed()) {
+		mario->moveX(-mario->getSpeed());
+		E_Manager->moveWorld(-moveSpeed);
+		O_Manger->moveWorld(-moveSpeed);
+		stage1->moveX(-moveSpeed);
+		bowser->moveX(-moveSpeed);
+	}
+	else if (mario->getX() < 400 && stage1->getEdge0() < 0 - mario->getSpeed()) {
+		//좌우속도차가 있음
+		mario->moveX(mario->getSpeed());
+		E_Manager->moveWorld(moveSpeed);
+		O_Manger->moveWorld(moveSpeed);
+		stage1->moveX(moveSpeed);
+		bowser->moveX(moveSpeed);
+	}
 	//
 	//if (q->getX() > 800 && stage1->getEdge1() > 1200 + q->getSpeed()) {
 	//	p->moveX(-moveSpeed);
@@ -151,6 +167,9 @@ void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
 		E_Manager->render();
 	}
 
+	if (mario) {
+		mario->render();
+	}
 	
 
 	bowser->render();

@@ -30,11 +30,14 @@ HRESULT mapTool::init()
 		}
 	}
 	frameIndex = 0;
+
+	mario.init(Point(WINSIZEX/2,WINSIZEY/2));
 	return S_OK;
 }
 void mapTool::update() 
 {
 	gameNode::update();
+	mario.update();
 	if (KEYMANAGER->isOnceKeyDown(VK_NUMPAD0)) {
 		if (mode == 0) {
 			mode = 1;
@@ -126,6 +129,7 @@ void mapTool::render()
 				tiles[i].rc.left, tiles[i].rc.top,
 				tiles[i].objFrameX, tiles[i].objFrameY);
 	}
+	mario.render();
 
 	TIMEMANAGER->render(getMemDC());
 	//==================== 건들지마라 =======================

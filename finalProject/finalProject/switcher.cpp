@@ -16,11 +16,6 @@ HRESULT switcher::init()			//초기화 함수
 	gameNode::init(true);
 	mg = RectMakeCenter(WINSIZEX / 2, WINSIZEY / 2 - 200, 300, 100);
 	mt = RectMakeCenter(WINSIZEX / 2, WINSIZEY / 2 + 200, 300, 100);
-
-//<<<<<<< HEAD
-	//a.init("dsa","nofile");
-//=======
-//>>>>>>> cc9efb39d31e70d729c227ddf82759a1983d0b97
 	return S_OK;
 }
 

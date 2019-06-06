@@ -34,6 +34,18 @@ public:
 			tiles[i].rc.right += x;
 		}
 	}
+	bool collisionTile(RECT r, float& y) {
+		RECT temp = { 0,0,0,0 };
+		RECT ReCt;
+		for (int i = 0; i < TILEX*TILEY; ++i) {
+			ReCt = tiles[i].rc;
+			if(IntersectRect(&temp, &r, &ReCt) && tiles[i].terrainFrameX > 0) {
+				y = ReCt.top - (r.bottom - r.top) / 2;
+				return true;
+			}
+		}
+		return false;
+	}
 	void setMainPosition(POINT point) { }
 	void LinkToOBJ(objectManger* om = NULL) 
 	{
