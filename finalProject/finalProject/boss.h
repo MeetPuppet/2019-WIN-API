@@ -27,6 +27,7 @@ private:
 
 	int frameX;
 	int frameY;
+	int jumpnum;
 
 	POINT* targetPoint;
 	//AI용 함수위치
@@ -41,7 +42,6 @@ public:
 	void update();
 	void render();
 	void FrameSeter();
-	void jump();
 	B_STATE getState();
 
 	//플레이어 할당이 해제될 경우 동작을 막을 것

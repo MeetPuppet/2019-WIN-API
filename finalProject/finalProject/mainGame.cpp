@@ -133,7 +133,6 @@ void mainGame::update()				//연산 함수
 	//}
 
 	bowser->update();
-	bowser->jump();
 }
 
 void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)

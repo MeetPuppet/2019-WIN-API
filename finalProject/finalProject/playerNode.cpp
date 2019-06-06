@@ -14,15 +14,7 @@
 
 playerNode::playerNode()
 {//¹«½¼ÀÏÀÌ ¹ú¾îÁúÁö ¸ð¸£´Ï ¼³Á¤ÇØµÒ
-	image = NULL;
-	x = y = 0;
-	rc = { 0,0,0,0 };
-	speed = 0;
-	JumpPower = 0;
-	state = IDLE;
-	time = 0;
 
-	jumpStartY = 0;
 }
 
 
@@ -39,7 +31,6 @@ HRESULT playerNode::init()
 
 void playerNode::update() 
 {
-	rc = RectMakeCenter(x, y, image->getFrameWidth(), image->getFrameHeight());
 
 }
 

@@ -14,9 +14,11 @@ boss::boss()
 	speed = 0;
 	gravity = 0;
 
+	JUMP = TRUE;
+
 	frameX = 0;
 	frameY = 0;
-
+	jumpnum = 0;
 	targetPoint = NULL;
 }
 
@@ -44,7 +46,20 @@ void boss::update()
 	p.x += 1;
 	FrameSeter();
 	
-	JUMP = TRUE;
+	if (JUMP == TRUE) {
+		p.y -= 5;
+		jumpnum++;
+	}
+	if (JUMP == FALSE) {
+		p.y += 5;
+		jumpnum--;
+	}
+	if (jumpnum == 40) {
+		JUMP = FALSE;
+	}
+	if (jumpnum == 0) {
+		JUMP = TRUE;
+	}
 }
 void boss::render()
 {
@@ -138,18 +153,6 @@ void boss::FrameSeter()
 	//}
 }
 
-void boss::jump()
-{
-	if ( JUMP == TRUE)
-	{
-		p.y -= 5;
-		JUMP = FALSE;
-	}
-	if (JUMP == FALSE)
-	{
-		p.y += 5;
-	}
-}
 void boss::AI(POINT* playerPoint)
 {
 
