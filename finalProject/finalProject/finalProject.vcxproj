@@ -156,6 +156,7 @@
     <ClCompile Include="keyManager.cpp" />
     <ClCompile Include="mainGame.cpp" />
     <ClCompile Include="mapTool.cpp" />
+    <ClCompile Include="Mario.cpp" />
     <ClCompile Include="objectManger.cpp" />
     <ClCompile Include="objectNode.cpp" />
     <ClCompile Include="playerNode.cpp" />
@@ -191,6 +192,7 @@
     <ClInclude Include="keyManager.h" />
     <ClInclude Include="mainGame.h" />
     <ClInclude Include="mapTool.h" />
+    <ClInclude Include="Mario.h" />
     <ClInclude Include="objectManger.h" />
     <ClInclude Include="objectNode.h" />
     <ClInclude Include="playerNode.h" />

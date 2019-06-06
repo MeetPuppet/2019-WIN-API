@@ -39,7 +39,7 @@ void Goomba::FrameSeter()
 	case ER_PATROL:
 	case ER_CHASE:
 		if (img->getMaxFrameX() > FrameCheck) {
-			FrameCheck += ENEMY_FRAME_SPEEDER * TIMEMANAGER->getElapsedTime();
+			FrameCheck += 1 * TIMEMANAGER->getElapsedTime();
 			if (FrameCheck >= 2) {
 				frameX = 1;
 			}
