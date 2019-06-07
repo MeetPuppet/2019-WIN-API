@@ -26,8 +26,8 @@ HRESULT stageNode::init(const char* map)
 		for (int j = 0; j < TILEX; ++j) {
 			tiles[(i*TILEX) + j].rc = { j*TILESIZE,i*TILESIZE
 									,j*TILESIZE + TILESIZE
-									,i*TILESIZE + TILESIZE };
-
+									,i*TILESIZE + TILESIZE 
+			};
 		}
 	}
 	return S_OK;

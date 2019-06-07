@@ -6,7 +6,7 @@ class Mario :
 public:
 	Mario();
 	~Mario(); 
-	HRESULT init(image* IMG);
+	HRESULT init(Point p);
 	void update();
 	void render();
 	void keySet() override;

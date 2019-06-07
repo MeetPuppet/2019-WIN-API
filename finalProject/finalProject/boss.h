@@ -53,7 +53,7 @@ public:
 		targetPoint = playerPoint;
 	}
 
-	void moveX(int X)
+	void moveX(float X)
 	{
 		p.x += X;
 	}

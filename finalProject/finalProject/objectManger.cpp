@@ -21,14 +21,14 @@ HRESULT objectManger::init()
 }
 void objectManger::update()
 {
-	for (int i = 0; i < vObject.size(); ++i) {
-		vObject[i]->update();
+	for (int i = 0; i < vTile.size(); ++i) {
+		vTile[i]->update();
 	}
 }
 void objectManger::render()
 {
-	for (int i = 0; i < vObject.size(); ++i) {
-		vObject[i]->render();
+	for (int i = 0; i < vTile.size(); ++i) {
+		vTile[i]->render();
 	}
 }
 
@@ -40,7 +40,7 @@ void objectManger::setItemBox(RECT rc, int itemNum)
 		rc.right - rc.left,
 		rc.bottom - rc.top, itemNum);
 
-	vObject.emplace_back(box);
+	vTile.emplace_back(box);
 }
 void objectManger::setBlock(RECT rc, int mode, int coins)
 {
@@ -50,10 +50,20 @@ void objectManger::setBlock(RECT rc, int mode, int coins)
 		rc.right - rc.left,
 		rc.bottom - rc.top, mode, coins);
 
-	vObject.emplace_back(box);
+	vTile.emplace_back(box);
 }
 void objectManger::moveWorld(int x) {
-	for (int i = 0; i < vObject.size(); ++i) {
-		vObject[i]->moveX(x);
+	for (int i = 0; i < vTile.size(); ++i) {
+		vTile[i]->moveX(x);
+	}
+}
+bool objectManger::collisionTile(RECT r, float& y) {
+	RECT temp;
+	for (int i = 0; i < vTile.size(); ++i) {
+		if (IntersectRect(&temp, &r, &vTile[i]->getRect())) {
+			y = vTile[i]->getRect().top - (r.bottom - r.top)/2;
+			return true;
+		}
+		return false;
 	}
 }

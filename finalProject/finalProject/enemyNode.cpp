@@ -69,9 +69,9 @@ void enemyNode::render()
 	img->frameRender(getMemDC(), rc.left, rc.top, frameX, frameY);
 
 	//스프라이트 애니메이션 체크용
-	char str[256];
-	sprintf_s(str, "enemy POINT : %.0f, %.0f,%.2f", p.x,p.y, speed);
-	TextOut(getMemDC(), 0, 60, str, strlen(str));
+	//char str[256];
+	//sprintf_s(str, "enemy POINT : %.0f, %.0f,%.2f", p.x,p.y, speed);
+	//TextOut(getMemDC(), 0, 60, str, strlen(str));
 }
 void enemyNode::FrameSeter()
 {

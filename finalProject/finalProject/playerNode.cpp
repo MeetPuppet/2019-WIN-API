@@ -1,5 +1,6 @@
 #include "stdafx.h"//매니저가 여기에 다 몰려있으니 필요함
 #include "playerNode.h"
+#include "objectManger.h"
 //순서가 매우 중요함
 //그리고 속성에서 버전맞추어줄때
 //문자집합도 멀티바이트로 맞추어 줘야 고칠게 없음
@@ -8,12 +9,8 @@
 #define WIDTH 560  //이미지 가로길이
 #define HEIGHT 320 //이미지 세로길이
 
-#define SPEED 300
-#define JUMPSPEED 6
-#define FRAMETIME 0.2
 
 playerNode::playerNode()//무슨일이 벌어질지 모르니 설정해둠
-
 {
 	img = NULL;
 
@@ -21,14 +18,17 @@ playerNode::playerNode()//무슨일이 벌어질지 모르니 설정해둠
 	point = Point(0.f, 0.f);
 
 	speed = 0.f;
-	jumpPower = 0.f;
+	jumpPower = 0.2f;
 
-	state = PR_IDLE;
-	mode = SMALL;
+	state = PS_IDLE;
+	mode = PM_SMALL;
 
 	frameX = 0;
 	frameY = 0;
 	frameCount = 0.2f;
+
+	om = NULL;
+	stage = NULL;
 }
 
 
@@ -37,10 +37,22 @@ playerNode::~playerNode()
 
 }
 
-HRESULT playerNode::init(image* IMG)
+HRESULT playerNode::init(image* IMG, Point p)
 {			
 	img = IMG;
 	rc = RectMakeCenter(point.x, point.y, img->getFrameWidth(), img->getFrameHeight());
+	foot = RectMakeCenter(point.x, rc.bottom, img->getFrameWidth()+10, 20);
+
+	point = p;
+
+	state = PS_IDLE;
+	mode = PM_BIG;
+
+	speed = 0.f;
+	jumpPower = 0.f;
+	frameX = 0;
+	frameY = 0;
+	frameCount = 0.2f;
 
 	return S_OK;
 }
@@ -48,33 +60,14 @@ HRESULT playerNode::init(image* IMG)
 void playerNode::update() 
 {
 	rc = RectMakeCenter(point.x, point.y, img->getFrameWidth(), img->getFrameHeight());
+	time = TIMEMANAGER->getElapsedTime();
+
+	keySet();
 }
 
 void playerNode::render() 
 {
-	
-}
-void playerNode::stateUpdate() 
-{
-	switch (state)
-	{
-	case PR_IDLE:
-		break;
-	case PL_IDLE:
-		break;
-	case PR_MOVE:
-		break;
-	case PL_MOVE:
-		break;
-	case PR_JUMP:
-		break;
-	case PL_JUMP:
-		break;
-	case PR_SIT:
-		break;
-	case PL_SIT:
-		break;
-	}
+	img->frameRender(getMemDC(), rc.left, rc.top, frameX, frameY);
 }
 
 void playerNode::keySet()
@@ -82,21 +75,15 @@ void playerNode::keySet()
 	//이건 플레이어 별로 만들 것
 	switch (state)
 	{
-	case PR_IDLE:
+	case PS_IDLE:
 		break;
-	case PL_IDLE:
+	case PS_MOVE:
 		break;
-	case PR_MOVE:
+	case PS_BREAK:
 		break;
-	case PL_MOVE:
+	case PS_JUMP:
 		break;
-	case PR_JUMP:
-		break;
-	case PL_JUMP:
-		break;
-	case PR_SIT:
-		break;
-	case PL_SIT:
+	case PS_SIT:
 		break;
 	}
 }
