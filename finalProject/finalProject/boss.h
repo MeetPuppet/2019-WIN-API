@@ -27,7 +27,7 @@ private:
 
 	int frameX;
 	int frameY;
-	int jumpnum;
+	float jumpnum;
 	int frameNum;
 
 	POINT* targetPoint;

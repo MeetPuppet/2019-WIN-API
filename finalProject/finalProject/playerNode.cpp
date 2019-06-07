@@ -88,51 +88,51 @@ void playerNode::keySet()
 	}
 }
 
-void playerNode::stateFrameUpdate()
-{
-	//X 파트
-	switch (state)
-	{
-	case PR_IDLE:
-	case PL_IDLE:
-		frameX = 0;
-		break;
-	case PR_MOVE:
-	case PL_MOVE:
-		if (img->getMaxFrameX() > frameCount) {
-			frameCount += TIMEMANAGER->getElapsedTime();
-			if (frameCount >= 4) {
-				frameX = int(1 + frameCount);
-			}
-			else
-				frameX = int(frameCount);
-		}
-		else {
-			frameCount = 1;
-			frameX = int(frameCount);
-		}
-		break;
-	case PR_JUMP:
-	case PL_JUMP:
-		break;
-	case PR_SIT:
-	case PL_SIT:
-		break;
-	}
-	//Y 파트
-	switch (state)
-	{
-	case PR_IDLE:
-	case PR_MOVE:
-	case PR_JUMP:
-	case PR_SIT:
-		frameY = 0;
-		break;
-	case PL_IDLE:
-	case PL_MOVE:
-	case PL_JUMP:
-	case PL_SIT:
-		frameY = 1;
-		break;
-	}
-}
+//void playerNode::stateFrameUpdate()
+//{
+//	//X 파트
+//	switch (state)
+//	{
+//	case PR_IDLE:
+//	case PL_IDLE:
+//		frameX = 0;
+//		break;
+//	case PR_MOVE:
+//	case PL_MOVE:
+//		if (img->getMaxFrameX() > frameCount) {
+//			frameCount += TIMEMANAGER->getElapsedTime();
+//			if (frameCount >= 4) {
+//				frameX = int(1 + frameCount);
+//			}
+//			else
+//				frameX = int(frameCount);
+//		}
+//		else {
+//			frameCount = 1;
+//			frameX = int(frameCount);
+//		}
+//		break;
+//	case PR_JUMP:
+//	case PL_JUMP:
+//		break;
+//	case PR_SIT:
+//	case PL_SIT:
+//		break;
+//	}
+//	//Y 파트
+//	switch (state)
+//	{
+//	case PR_IDLE:
+//	case PR_MOVE:
+//	case PR_JUMP:
+//	case PR_SIT:
+//		frameY = 0;
+//		break;
+//	case PL_IDLE:
+//	case PL_MOVE:
+//	case PL_JUMP:
+//	case PL_SIT:
+//		frameY = 1;
+//		break;
+//	}
+//}

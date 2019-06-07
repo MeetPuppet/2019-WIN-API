@@ -1,8 +1,10 @@
 #include "stdafx.h"
 #include "boss.h"
+#include "objectManger.h"
+#include "Stage1.h"
 
 #define SPEED 70
-
+#define JUMPSPEED 6
 boss::boss()
 {
 	Img = NULL;
@@ -18,10 +20,10 @@ boss::boss()
 
 	frameX = 0;
 	frameY = 0;
-	jumpnum = 0;
+	jumpnum = 2 * JUMPSPEED;
 	frameNum = 0;
 	targetPoint = NULL;
-}
+}	
 
 
 boss::~boss()
@@ -51,20 +53,26 @@ void boss::update()
 		p.x += 3;
 	FrameSeter();
 	
-	if (JUMP == TRUE) {
-		p.y -= 5 * cos((3.1415926535 / 180) * jumpnum);
-		jumpnum += 3;
+	//if (JUMP == TRUE) {
+	//	p.y -= 5 * cos((3.1415926535 / 180) * jumpnum);
+	//	jumpnum += 3;
+	//}
+	//if (JUMP == FALSE) {
+	//	p.y += 5 * sin((3.1415926535 / 180) * jumpnum);
+	//	jumpnum -= 3;
+	//}
+	//if (jumpnum == 90) {
+	//	JUMP = FALSE;
+	//}
+	//if (jumpnum == 0) {
+	//	JUMP = TRUE;
+	//}
+	jumpnum -= JUMPSPEED * 2 * 0.02;
+	p.y -= jumpnum;
+	if (jumpnum < 0 && p.y > WINSIZEY * 3 / 4) {
+		jumpnum = JUMPSPEED * 2;
 	}
-	if (JUMP == FALSE) {
-		p.y += 5 * sin((3.1415926535 / 180) * jumpnum);
-		jumpnum -= 3;
-	}
-	if (jumpnum == 90) {
-		JUMP = FALSE;
-	}
-	if (jumpnum == 0) {
-		JUMP = TRUE;
-	}
+
 	if (p.x < WINSIZEX / 4) {
 		if (state == BL_PATROL) {
 			state = BR_PATROL;
