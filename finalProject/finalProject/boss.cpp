@@ -19,6 +19,7 @@ boss::boss()
 	frameX = 0;
 	frameY = 0;
 	jumpnum = 0;
+	frameNum = 0;
 	targetPoint = NULL;
 }
 
@@ -43,22 +44,48 @@ void boss::release()
 void boss::update()
 {
 	rc = RectMakeCenter(p.x, p.y, Img->getFrameWidth(), Img->getFrameHeight());
-	p.x += 1;
+	if (state == BL_BRESS || state == BL_CHASE || state == BL_PATROL) {
+		p.x -= 3;
+	}
+	else
+		p.x += 3;
 	FrameSeter();
 	
 	if (JUMP == TRUE) {
-		p.y -= 5;
-		jumpnum++;
+		p.y -= 5 * cos((3.1415926535 / 180) * jumpnum);
+		jumpnum += 3;
 	}
 	if (JUMP == FALSE) {
-		p.y += 5;
-		jumpnum--;
+		p.y += 5 * sin((3.1415926535 / 180) * jumpnum);
+		jumpnum -= 3;
 	}
-	if (jumpnum == 40) {
+	if (jumpnum == 90) {
 		JUMP = FALSE;
 	}
 	if (jumpnum == 0) {
 		JUMP = TRUE;
+	}
+	if (p.x < WINSIZEX / 4) {
+		if (state == BL_PATROL) {
+			state = BR_PATROL;
+		}
+		if (state == BL_CHASE) {
+			state = BR_CHASE;
+		}
+		if (state == BL_BRESS) {
+			state = BR_BRESS;
+		}
+	}
+	if (p.x > 3 * WINSIZEX / 4) {
+		if (state == BR_PATROL) {
+			state = BL_PATROL;
+		}
+		if (state == BR_CHASE) {
+			state = BL_CHASE;
+		}
+		if (state == BR_BRESS) {
+			state = BL_BRESS;
+		}
 	}
 }
 void boss::render()

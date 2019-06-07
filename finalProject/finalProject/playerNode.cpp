@@ -12,15 +12,12 @@
 #define JUMPSPEED 6
 #define FRAMETIME 0.2
 
-playerNode::playerNode()
-//<<<<<<< HEAD
-{//¹«½¼ÀÏÀÌ ¹ú¾îÁúÁö ¸ð¸£´Ï ¼³Á¤ÇØµÒ
+playerNode::playerNode()//¹«½¼ÀÏÀÌ ¹ú¾îÁúÁö ¸ð¸£´Ï ¼³Á¤ÇØµÒ
 
-//=======
 {
 	img = NULL;
 
-	rc = {0,0,0,0};
+	rc = { 0,0,0,0 };
 	point = Point(0.f, 0.f);
 
 	speed = 0.f;
@@ -32,12 +29,12 @@ playerNode::playerNode()
 	frameX = 0;
 	frameY = 0;
 	frameCount = 0.2f;
-//>>>>>>> cc9efb39d31e70d729c227ddf82759a1983d0b97
 }
 
 
 playerNode::~playerNode()
 {
+
 }
 
 HRESULT playerNode::init(image* IMG)
@@ -50,11 +47,7 @@ HRESULT playerNode::init(image* IMG)
 
 void playerNode::update() 
 {
-//<<<<<<< HEAD
-//=======
 	rc = RectMakeCenter(point.x, point.y, img->getFrameWidth(), img->getFrameHeight());
-//>>>>>>> cc9efb39d31e70d729c227ddf82759a1983d0b97
-
 }
 
 void playerNode::render() 
@@ -139,7 +132,6 @@ void playerNode::stateFrameUpdate()
 	case PL_SIT:
 		break;
 	}
-
 	//Y ÆÄÆ®
 	switch (state)
 	{

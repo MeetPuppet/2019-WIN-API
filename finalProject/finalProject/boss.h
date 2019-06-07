@@ -28,6 +28,7 @@ private:
 	int frameX;
 	int frameY;
 	int jumpnum;
+	int frameNum;
 
 	POINT* targetPoint;
 	//AI용 함수위치
