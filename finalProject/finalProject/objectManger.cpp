@@ -64,6 +64,9 @@ void objectManger::moveWorld(int x) {
 	for (int i = 0; i < vTile.size(); ++i) {
 		vTile[i]->moveX(x);
 	}
+	for (int i = 0; i < vCoin.size(); ++i) {
+		vCoin[i]->moveX(x);
+	}
 }
 bool objectManger::collisionTile(RECT r, float& y) {
 	RECT temp;
