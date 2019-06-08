@@ -27,8 +27,10 @@ private:
 
 	int frameX;
 	int frameY;
+	int oldpx, oldpy;
 	float jumpnum;
 	int frameNum;
+	bool movenum;
 
 	POINT* targetPoint;
 	//AI용 함수위치

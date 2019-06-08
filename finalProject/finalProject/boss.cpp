@@ -23,6 +23,7 @@ boss::boss()
 	jumpnum = 2 * JUMPSPEED;
 	frameNum = 0;
 	targetPoint = NULL;
+	movenum = FALSE;
 }	
 
 
@@ -36,6 +37,8 @@ HRESULT boss::init(int x,int y)
 	Img = IMAGEMANAGER->findImage("bowser");
 	p.x = x;
 	p.y = y;
+	oldpx = x;
+	oldpy = y;
 	rc = RectMakeCenter(p.x, p.y, Img->getFrameWidth(), Img->getFrameHeight());
 
 	return S_OK;
@@ -46,11 +49,13 @@ void boss::release()
 void boss::update()
 {
 	rc = RectMakeCenter(p.x, p.y, Img->getFrameWidth(), Img->getFrameHeight());
-	if (state == BL_BRESS || state == BL_CHASE || state == BL_PATROL) {
+	//if (state == BL_BRESS || state == BL_CHASE || state == BL_PATROL) {
+	if (movenum == TRUE) {
 		p.x -= 3;
 	}
-	else
+	else if (movenum == FALSE) {
 		p.x += 3;
+	}
 	FrameSeter();
 	
 	//if (JUMP == TRUE) {
@@ -73,27 +78,29 @@ void boss::update()
 		jumpnum = JUMPSPEED * 2;
 	}
 
-	if (p.x < WINSIZEX / 4) {
-		if (state == BL_PATROL) {
-			state = BR_PATROL;
-		}
-		if (state == BL_CHASE) {
-			state = BR_CHASE;
-		}
-		if (state == BL_BRESS) {
-			state = BR_BRESS;
-		}
+	if (p.x < oldpx - 400) {
+		movenum = FALSE;
+		//if (state == BL_PATROL) {
+		//	state = BR_PATROL;
+		//}
+		//if (state == BL_CHASE) {
+		//	state = BR_CHASE;
+		//}
+		//if (state == BL_BRESS) {
+		//	state = BR_BRESS;
+		//}
 	}
-	if (p.x > 3 * WINSIZEX / 4) {
-		if (state == BR_PATROL) {
-			state = BL_PATROL;
-		}
-		if (state == BR_CHASE) {
-			state = BL_CHASE;
-		}
-		if (state == BR_BRESS) {
-			state = BL_BRESS;
-		}
+	if (p.x > oldpx + 400) {
+		movenum = TRUE;
+		//if (state == BR_PATROL) {
+		//	state = BL_PATROL;
+		//}
+		//if (state == BR_CHASE) {
+		//	state = BL_CHASE;
+		//}
+		//if (state == BR_BRESS) {
+		//	state = BL_BRESS;
+		//}
 	}
 }
 void boss::render()

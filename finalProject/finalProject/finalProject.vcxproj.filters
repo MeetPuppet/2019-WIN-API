@@ -150,9 +150,6 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="enemyNode.cpp">
-      <Filter>mainGame\enemyManager\node</Filter>
-    </ClCompile>
     <ClCompile Include="Goomba.cpp">
       <Filter>mainGame\enemyManager\enemys</Filter>
     </ClCompile>
@@ -200,6 +197,12 @@
     </ClCompile>
     <ClCompile Include="Coin.cpp">
       <Filter>mainGame\map\objectManager\object</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyNode.cpp">
+      <Filter>mainGame\enemyManager\enemys</Filter>
+    </ClCompile>
+    <ClCompile Include="firanhaFlower.cpp">
+      <Filter>mainGame\enemyManager\enemys</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -316,6 +319,9 @@
     </ClInclude>
     <ClInclude Include="Coin.h">
       <Filter>mainGame\map\objectManager\object</Filter>
+    </ClInclude>
+    <ClInclude Include="firanhaFlower.h">
+      <Filter>mainGame\enemyManager\enemys</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

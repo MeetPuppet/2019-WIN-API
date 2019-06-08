@@ -48,7 +48,5 @@ void Coin::render()
 }
 void Coin::getCoin()
 {
-	// p.x > x && p.x < x + sizeX ~~~~
-		// score+=value;
 	return;
 }
