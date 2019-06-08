@@ -40,7 +40,7 @@ public:
 		for (int i = 0; i < TILEX*TILEY; ++i) {
 			ReCt = tiles[i].rc;
 			if(IntersectRect(&temp, &r, &ReCt) && tiles[i].terrainFrameX > 0) {
-				y = ReCt.top - (r.bottom - r.top) / 2;
+				y = ReCt.top - 80;
 				return true;
 			}
 		}
