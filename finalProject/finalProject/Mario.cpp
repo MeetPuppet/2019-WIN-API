@@ -111,7 +111,7 @@ void Mario::keySet()
 		}
 		frameCount -= time;
 		if (frameCount < 0) {
-			IFF = ((SPEE2) - IFS);
+			IFF = ((1000) - IFS);
 			IFF = IFF / (SPEED * 10);
 			frameCount += IFF;
 			frameX += 1;
