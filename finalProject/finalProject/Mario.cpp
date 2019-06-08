@@ -28,7 +28,7 @@ HRESULT Mario::init(Point p)
 	return S_OK;
 }
 void Mario::update()		   
-{
+{    
 	playerNode::update();
 }
 void Mario::render()		   

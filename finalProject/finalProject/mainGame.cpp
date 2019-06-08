@@ -8,7 +8,7 @@
 #include "boss.h"
 #include "Coin.h"
 #include "firanhaFlower.h"
-#include "fireBall.h"
+#include "fireShot.h"
 mainGame::mainGame()
 {
 	mario = NULL;
@@ -47,7 +47,7 @@ HRESULT mainGame::init()			//초기화 함수
 	}
 	coin = new Coin;
 	Firan = new firanhaFlower;
-	Fire = new fireBall;
+	Fire = new fireShot;
 	if (stage1 == NULL) {
 		stage1 = new Stage1;
 

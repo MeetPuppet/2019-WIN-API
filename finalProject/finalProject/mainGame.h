@@ -8,7 +8,7 @@ class Stage1;
 class Mario;
 class Coin;
 class firanhaFlower;
-class fireBall;
+class fireShot;
 class mainGame : public gameNode//2D 프레임워크 대부분은 노드에서 먼저 돌아감
 {
 private:
@@ -20,7 +20,7 @@ private:
 	boss* bowser;
 	Coin* coin;
 	firanhaFlower* Firan;
-	fireBall* Fire;
+	fireShot* Fire;
 public:
 	virtual HRESULT init();			
 	virtual void release();			
