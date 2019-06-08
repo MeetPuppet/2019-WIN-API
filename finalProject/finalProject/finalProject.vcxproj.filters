@@ -204,6 +204,9 @@
     <ClCompile Include="firanhaFlower.cpp">
       <Filter>mainGame\enemyManager\enemys</Filter>
     </ClCompile>
+    <ClCompile Include="fireBall.cpp">
+      <Filter>mainGame\map\objectManager\object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="image.h">
@@ -322,6 +325,9 @@
     </ClInclude>
     <ClInclude Include="firanhaFlower.h">
       <Filter>mainGame\enemyManager\enemys</Filter>
+    </ClInclude>
+    <ClInclude Include="fireBall.h">
+      <Filter>mainGame\map\objectManager\object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

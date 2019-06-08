@@ -8,6 +8,7 @@
 #include "boss.h"
 #include "Coin.h"
 #include "firanhaFlower.h"
+#include "fireBall.h"
 mainGame::mainGame()
 {
 	mario = NULL;
@@ -46,6 +47,7 @@ HRESULT mainGame::init()			//초기화 함수
 	}
 	coin = new Coin;
 	Firan = new firanhaFlower;
+	Fire = new fireBall;
 	if (stage1 == NULL) {
 		stage1 = new Stage1;
 
@@ -64,6 +66,7 @@ HRESULT mainGame::init()			//초기화 함수
 
 	Firan->init(450, 450);
 	coin->init(600,300,80,70);
+	Fire->init(600, 600, 40, 40, 1);
 	bowser->init(600, 600);
 	return S_OK;
 }
@@ -85,7 +88,7 @@ void mainGame::release()			//메모리 해제 함수
 	if (O_Manger) {
 		delete O_Manger;
 		O_Manger = NULL;
-	}
+	} 
 	if (stage1) {
 		delete stage1;
 		stage1 = NULL;
@@ -107,6 +110,7 @@ void mainGame::update()				//연산 함수
 
 	coin->update();
 	Firan->update();
+	Fire->update();
 	if (mario) {
 		mario->update();
 	}
@@ -181,6 +185,7 @@ void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
 	
 	coin->render();
 	Firan->render();
+	Fire->render();
 	bowser->render();
 	//==================== 건들지마라 =======================
 	TIMEMANAGER->render(getMemDC());

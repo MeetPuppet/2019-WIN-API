@@ -149,6 +149,7 @@
     <ClCompile Include="enemyManger.cpp" />
     <ClCompile Include="enemyNode.cpp" />
     <ClCompile Include="firanhaFlower.cpp" />
+    <ClCompile Include="fireBall.cpp" />
     <ClCompile Include="gameNode.cpp" />
     <ClCompile Include="Goomba.cpp" />
     <ClCompile Include="image.cpp" />
@@ -187,6 +188,7 @@
     <ClInclude Include="enemyManger.h" />
     <ClInclude Include="enemyNode.h" />
     <ClInclude Include="firanhaFlower.h" />
+    <ClInclude Include="fireBall.h" />
     <ClInclude Include="gameNode.h" />
     <ClInclude Include="Goomba.h" />
     <ClInclude Include="image.h" />

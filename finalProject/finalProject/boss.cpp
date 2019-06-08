@@ -131,22 +131,11 @@ void boss::FrameSeter()
 		break;
 	}
 	
-	//frameX
 	switch (state)
 	{
-	case BL_PATROL:
-		break;
-	case BR_PATROL:
-		break;
-	case BL_CHASE:
-		break;
-	case BR_CHASE:
-		break;
 	case BL_BRESS:
 		break;
 	case BR_BRESS:
-		break;
-	case B_DEAD:
 		break;
 	}
 
