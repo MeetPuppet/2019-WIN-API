@@ -10,6 +10,7 @@ class objectManger :
 private:
 	//타일 전용
 	vector<objectNode*> vTile;
+	vector<objectNode*> vCoin;
 public:
 	objectManger();
 	~objectManger();
@@ -25,5 +26,8 @@ public:
 	void moveWorld(int x);
 	
 	//특수한 경우가 아니면 set@@, break@@ 으로 만들기
+	void setCoin(RECT rc);
+	void collisionCoin(RECT r);
+
 };
 

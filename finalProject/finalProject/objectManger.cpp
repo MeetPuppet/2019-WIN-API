@@ -2,7 +2,7 @@
 #include "objectManger.h"
 #include "ItemBox.h"
 #include "Block.h"
-
+#include "Coin.h"
 
 objectManger::objectManger()
 {
@@ -25,11 +25,17 @@ void objectManger::update()
 	for (int i = 0; i < vTile.size(); ++i) {
 		vTile[i]->update();
 	}
+	for (int i = 0; i < vCoin.size(); ++i) {
+		vCoin[i]->update();
+	}
 }
 void objectManger::render()
 {
 	for (int i = 0; i < vTile.size(); ++i) {
 		vTile[i]->render();
+	}
+	for (int i = 0; i < vCoin.size(); ++i) {
+		vCoin[i]->render();
 	}
 }
 
@@ -66,5 +72,27 @@ bool objectManger::collisionTile(RECT r, float& y) {
 			return true;
 		}
 		return false;
+	}
+}
+
+void objectManger::setCoin(RECT rc)
+{
+	Coin* coin = new Coin;
+	coin->init((rc.right - rc.left) / 2 + rc.left,
+		(rc.bottom - rc.top) / 2 + rc.top,
+		rc.right - rc.left,
+		rc.bottom - rc.top);
+
+	vCoin.emplace_back(coin);
+}
+void objectManger::collisionCoin(RECT r)
+{
+	RECT temp;
+	for (int i = 0; i < vCoin.size(); ++i) {
+		if (IntersectRect(&temp, &r, &vCoin[i]->getRect())) {
+			//UI에서 점수가 올라가야 한다.
+			//현재 코인을 지워야 한다.
+			vCoin.erase(vCoin.begin() + i);
+		}
 	}
 }

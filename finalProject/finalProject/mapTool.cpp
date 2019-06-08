@@ -19,6 +19,7 @@ HRESULT mapTool::init()
 {
 	gameNode::init(true);
 	IMAGEMANAGER->addFrameImage("Tiles", "image/tile/Tiles.bmp", 480, 160, 6, 2, true,RGB(255,0,255));
+	IMAGEMANAGER->addFrameImage("Coin", "image/object/coin.bmp", 240, 70, 3, 1, true, RGB(255, 0, 255));
 	//IMAGEMANAGER->addFrameImage("itemBox", "image/tile/itemBox.bmp", 320, 80, 4, 1, true, RGB(255, 0, 255));
 	//load();
 
@@ -64,6 +65,9 @@ void mapTool::update()
 	}
 	else if (KEYMANAGER->isOnceKeyDown('5')) {
 		frameIndex = 4;
+	}
+	else if (KEYMANAGER->isOnceKeyDown('9')) {
+		frameIndex = 9;
 	}
 	//2~5까지는 오브젝트로
 	else if (KEYMANAGER->isOnceKeyDown('S')) {
@@ -122,9 +126,14 @@ void mapTool::render()
 	//실제 스테이지에서 부를때는 obj랑 deco 매니저를 돌려서 만들 것
 	for (int i = 0; i < MAX; ++i) {
 
-		if (tiles[i].objFrameX == 0)
+		if (tiles[i].objFrameX == 9) {
+			IMAGEMANAGER->frameRender("Coin", getMemDC(),
+				tiles[i].rc.left, tiles[i].rc.top,
+				0, 0);
+		}
+		else if (tiles[i].objFrameX == 0)
 			continue;
-		if (tiles[i].rc.right > 0 && tiles[i].rc.left < 1200)
+		else if (tiles[i].rc.right > 0 && tiles[i].rc.left < 1200)
 			IMAGEMANAGER->frameRender("Tiles", getMemDC(),
 				tiles[i].rc.left, tiles[i].rc.top,
 				tiles[i].objFrameX, tiles[i].objFrameY);

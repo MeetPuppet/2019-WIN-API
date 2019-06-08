@@ -102,5 +102,8 @@ void stageNode::load(const char* map)
 		else if (tiles[i].objFrameX == 5) {
 			oManager->setBlock(tiles[i].rc, 1, 0);
 		}
+		else if (tiles[i].objFrameX == 9) {
+			oManager->setCoin(tiles[i].rc);
+		}
 	}
 }

@@ -63,6 +63,7 @@ void playerNode::update()
 	time = TIMEMANAGER->getElapsedTime();
 
 	keySet();
+	om->collisionCoin(rc);
 }
 
 void playerNode::render() 
