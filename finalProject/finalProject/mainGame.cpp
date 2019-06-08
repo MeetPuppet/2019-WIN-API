@@ -6,6 +6,7 @@
 #include "objectManger.h"
 #include "Stage1.h"
 #include "boss.h"
+#include "Coin.h"
 
 mainGame::mainGame()
 {
@@ -14,6 +15,7 @@ mainGame::mainGame()
 	O_Manger = NULL;
 	stage1 = NULL;
 	bowser = NULL;
+	coin = NULL;
 }
 
 mainGame::~mainGame()
@@ -41,6 +43,7 @@ HRESULT mainGame::init()			//초기화 함수
 			mario->LinkToOM(O_Manger);
 		}
 	}
+	coin = new Coin;
 	if (stage1 == NULL) {
 		stage1 = new Stage1;
 
@@ -57,7 +60,8 @@ HRESULT mainGame::init()			//초기화 함수
 
 	bowser = new boss;
 
-	bowser->init(600, 300);
+	coin->init(600,300,80,70);
+	bowser->init(600, 600);
 	return S_OK;
 }
 
@@ -98,7 +102,7 @@ void mainGame::update()				//연산 함수
 		E_Manager->makeGoomba(_ptMouse);
 	}
 
-
+	coin->update();
 	if (mario) {
 		mario->update();
 	}
@@ -171,7 +175,7 @@ void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
 		mario->render();
 	}
 	
-
+	coin->render();
 	bowser->render();
 	//==================== 건들지마라 =======================
 	TIMEMANAGER->render(getMemDC());

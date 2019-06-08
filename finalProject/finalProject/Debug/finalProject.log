@@ -1,14 +1,6 @@
-﻿  boss.cpp
+﻿  Coin.cpp
 d:\2019-win-api\finalproject\finalproject\stdafx.h(80): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 d:\2019-win-api\finalproject\finalproject\stdafx.h(88): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 d:\2019-win-api\finalproject\finalproject\stdafx.h(89): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\stagenode.h(43): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\boss.cpp(15): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
-d:\2019-win-api\finalproject\finalproject\boss.cpp(37): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\boss.cpp(38): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\boss.cpp(39): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\boss.cpp(48): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\boss.cpp(70): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
-d:\2019-win-api\finalproject\finalproject\boss.cpp(147): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
-d:\2019-win-api\finalproject\finalproject\boss.cpp(158): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+d:\2019-win-api\finalproject\finalproject\coin.cpp(30): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
   finalProject.vcxproj -> D:\2019-WIN-API\finalProject\Debug\finalProject.exe

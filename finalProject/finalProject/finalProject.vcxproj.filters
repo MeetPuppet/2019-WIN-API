@@ -198,6 +198,9 @@
     <ClCompile Include="Mario.cpp">
       <Filter>mainGame\player</Filter>
     </ClCompile>
+    <ClCompile Include="Coin.cpp">
+      <Filter>mainGame\map\objectManager\object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="image.h">
@@ -310,6 +313,9 @@
     </ClInclude>
     <ClInclude Include="Mario.h">
       <Filter>mainGame\player</Filter>
+    </ClInclude>
+    <ClInclude Include="Coin.h">
+      <Filter>mainGame\map\objectManager\object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
