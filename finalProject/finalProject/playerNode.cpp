@@ -19,6 +19,8 @@ playerNode::playerNode()//¹«½¼ÀÏÀÌ ¹ú¾îÁúÁö ¸ð¸£´Ï ¼³Á¤ÇØµÒ
 
 	speed = 0.f;
 	jumpPower = 0.2f;
+	IFS = 0;
+	IFF = 0;
 
 	state = PS_IDLE;
 	mode = PM_SMALL;
@@ -45,11 +47,11 @@ HRESULT playerNode::init(image* IMG, Point p)
 
 	point = p;
 
-	state = PS_IDLE;
+	state = PS_JUMP;
 	mode = PM_BIG;
 
 	speed = 0.f;
-	jumpPower = 0.f;
+	jumpPower = 0.0f;
 	frameX = 0;
 	frameY = 0;
 	frameCount = 0.2f;
@@ -60,8 +62,9 @@ HRESULT playerNode::init(image* IMG, Point p)
 void playerNode::update() 
 {
 	rc = RectMakeCenter(point.x, point.y, img->getFrameWidth(), img->getFrameHeight());
+	foot = RectMakeCenter(point.x, rc.bottom, img->getFrameWidth() + 10, 20);
 	time = TIMEMANAGER->getElapsedTime();
-
+	if (time < 0 || time > 10) time = 0.16f;
 	keySet();
 	om->collisionCoin(rc);
 }

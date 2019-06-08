@@ -28,6 +28,9 @@ protected:
 	RECT foot;
 	Point point;
 
+	int IFS;
+	float IFF;
+
 	float time;
 	float speed;
 	float jumpPower;

@@ -5,6 +5,7 @@
 #include "Stage1.h"
 
 #define SPEED 400
+#define SPEE2 800
 #define JUMPSPEED 6
 #define FRAMETIME 0.1
 
@@ -34,13 +35,17 @@ void Mario::render()
 {
 	playerNode::render();
 
+	Rectangle(getMemDC(), foot.left, foot.top, foot.right, foot.bottom);
+
 	char str[256];
-	sprintf_s(str, "x, y, speed : %f %f %f",point.x,point.y, speed);
+	sprintf_s(str, "x, y, speed : %f %f %f",point.x,point.y, IFF);
 	TextOut(getMemDC(), 0, 60, str, strlen(str));
 }
 //덥어써진 키셋
 void Mario::keySet()		   
 {
+	int maxSpeed=0;
+	float nulll = 0;;
 	switch (state)
 	{
 	case PS_IDLE:
@@ -64,20 +69,39 @@ void Mario::keySet()
 		}
 		break;
 	case PS_MOVE:
-		speed = SPEED * time;
+		if (KEYMANAGER->isStayKeyDown('X')) {
+			if (IFS < SPEE2)
+				IFS += SPEE2 * time;
+		}
+		else {
+			if (IFS > SPEED+10) {
+				IFS -= SPEED * time;
+			}
+			else if (IFS < SPEED)
+				IFS += SPEED * time;
+		}
+		speed = IFS * time;
+		if (KEYMANAGER->isOnceKeyUp(VK_RIGHT) || KEYMANAGER->isOnceKeyUp(VK_LEFT)) {
+			IFS = 0;
+			IFF = ((SPEE2)-IFS);
+			IFF = IFF / (SPEED * 10);
+			frameCount = IFF;
+			frameX = 0;
+			state = PS_IDLE;
+		}
 		if (KEYMANAGER->isStayKeyDown(VK_UP)) {
 			frameX = 5;
 			jumpPower = JUMPSPEED * 2;
 			state = PS_JUMP;
 		}
 		if (KEYMANAGER->isStayKeyDown(VK_RIGHT)) {
-			if (rc.right < 1200) {
+			if (rc.right < 1200 && !stage->collisionTile(rc, nulll)) {
 				point.x = point.x + speed;
 				frameY = 0;
 			}
 		}
 		else if (KEYMANAGER->isStayKeyDown(VK_LEFT)) {
-			if (rc.left > 0) {
+			if (rc.left > 0 && !stage->collisionTile(rc, nulll)) {
 				point.x = point.x - speed;
 				frameY = 1;
 			}
@@ -85,13 +109,11 @@ void Mario::keySet()
 		else if (KEYMANAGER->isStayKeyDown(VK_DOWN) && mode != PM_SMALL) {
 			state = PS_SIT;
 		}
-		else {
-			frameX = 0;
-			state = PS_IDLE;
-		}
 		frameCount -= time;
 		if (frameCount < 0) {
-			frameCount += FRAMETIME;
+			IFF = ((SPEE2) - IFS);
+			IFF = IFF / (SPEED * 10);
+			frameCount += IFF;
 			frameX += 1;
 			if(frameX >= 4){
 				frameX = 1;
@@ -99,7 +121,25 @@ void Mario::keySet()
 		}
 		break;
 	case PS_JUMP:
-		speed = SPEED * time;
+		if (KEYMANAGER->isStayKeyDown('X')) {
+			if (IFS < SPEE2)
+				IFS += SPEE2 * time;
+		}
+		else {
+			if (IFS > SPEED + 10) {
+				IFS -= SPEED * time;
+			}
+			else if (IFS < SPEED)
+				IFS += SPEED * time;
+		}
+		speed = IFS * time;
+		frameX = 5;
+		if (KEYMANAGER->isOnceKeyUp(VK_RIGHT) || KEYMANAGER->isOnceKeyUp(VK_LEFT)) {
+			IFS = 0;
+			IFF = ((SPEE2)-IFS);
+			IFF = IFF / (SPEED * 10);
+			frameCount = IFF;
+		}
 		if (KEYMANAGER->isStayKeyDown(VK_RIGHT)) {
 			point.x = point.x + speed;
 			frameY = 0;
@@ -112,11 +152,10 @@ void Mario::keySet()
 		point.y = point.y - jumpPower;
 
 		//바닥에 닿으면 IDLE로
-		if (om->collisionTile(rc, point.y) && jumpPower < 0) {
-			frameX = 0;
-			state = PS_IDLE;
+		if (jumpPower < 0 && om->collisionTile(foot, point.y) ) {
+			//여기서는 ox만 받아서 오브젝트 충돌
 		}
-		if (stage->collisionTile(rc, point.y) && jumpPower < 0) {
+		if (jumpPower < 0 && stage->collisionTile(foot, point.y)) {
 			frameX = 0;
 			state = PS_IDLE;
 		}
