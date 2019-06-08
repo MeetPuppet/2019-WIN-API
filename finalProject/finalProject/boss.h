@@ -58,6 +58,7 @@ public:
 	void moveX(float X)
 	{
 		p.x += X;
+		oldpx += X;
 	}
 };
 
