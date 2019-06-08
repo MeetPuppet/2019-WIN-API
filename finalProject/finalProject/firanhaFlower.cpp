@@ -2,7 +2,8 @@
 #include "firanhaFlower.h"
 
 
-
+int changenum;
+int stopnum;
 firanhaFlower::firanhaFlower()
 {
 }
@@ -12,11 +13,19 @@ firanhaFlower::~firanhaFlower()
 {
 }
 
-HRESULT firanhaFlower::init(POINT point)
+HRESULT firanhaFlower::init(int x, int y)
 {
-	enemyNode::init("firanhaFlower", point);
+	Point p;
+	p.x = x;
+	p.y = y;
+	enemyNode::init("firanhaFlower", p);
 
-	move = TRUE;
+	move = 1;
+	state = EL_PATROL;
+	frameX = 0;
+	changenum = 0;
+	stopnum = 0;
+	stop = FALSE;
 	return S_OK;
 }
 void firanhaFlower::release()
@@ -24,17 +33,42 @@ void firanhaFlower::release()
 }
 void firanhaFlower::update()
 {
-	if (move) {
-		p.y -= 5;
+	if (stop == FALSE) {
+		if (move == 1) {
+			p.y -= 3;
+			changenum++;
+		}
+		else if (move == 0) {
+			p.y += 3;
+			changenum++;
+		}
+		else if (move == 2) {
+			changenum++;
+			stopnum++;
+		}
+
+		if (changenum % 5 == 0) {
+			if (frameX == 0) {
+				frameX = 1;
+			}
+			else
+				frameX = 0;
+		}
+		if (p.y < 300) {
+			move = 2;
+		}
+		if (p.y > 600) {
+			move = 1;
+		}
+		if (stopnum == 30 && move == 2) {
+			move = 0;
+			stopnum = 0;
+		}
 	}
-	else
-		p.y += 5;
-	if (p.y < 300) {
-		move = FALSE;
-	}
-	if (p.y > 600) {
-		move = TRUE;
-	}
+
+	// if mariox > p.x && mariox < p.x + 160 
+		// state = CHASE
+	rc = RectMakeCenter(p.x, p.y, img->getFrameWidth(), img->getFrameHeight());
 }
 void firanhaFlower::render()
 {
@@ -61,7 +95,9 @@ void firanhaFlower::FrameSeter()
 		}
 		break;
 	case EL_CHASE:
-	case ER_CHASE:
+	case ER_CHASE:		// 플레이어를 감지하면 CHASE로 전환되고 움직임을 멈춤
+						// if (pipe.y < p.y )
+		stop = TRUE;	// 단 파이프 바깥으로 몸이 나왔다면 멈추지 않아야 함
 		break;
 	case DEAD:
 		frameX = 2;

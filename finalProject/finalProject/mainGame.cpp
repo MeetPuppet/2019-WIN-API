@@ -7,7 +7,7 @@
 #include "Stage1.h"
 #include "boss.h"
 #include "Coin.h"
-
+#include "firanhaFlower.h"
 mainGame::mainGame()
 {
 	mario = NULL;
@@ -16,6 +16,7 @@ mainGame::mainGame()
 	stage1 = NULL;
 	bowser = NULL;
 	coin = NULL;
+	Firan = NULL;
 }
 
 mainGame::~mainGame()
@@ -44,6 +45,7 @@ HRESULT mainGame::init()			//초기화 함수
 		}
 	}
 	coin = new Coin;
+	Firan = new firanhaFlower;
 	if (stage1 == NULL) {
 		stage1 = new Stage1;
 
@@ -60,6 +62,7 @@ HRESULT mainGame::init()			//초기화 함수
 
 	bowser = new boss;
 
+	Firan->init(450, 450);
 	coin->init(600,300,80,70);
 	bowser->init(600, 600);
 	return S_OK;
@@ -103,6 +106,7 @@ void mainGame::update()				//연산 함수
 	}
 
 	coin->update();
+	Firan->update();
 	if (mario) {
 		mario->update();
 	}
@@ -176,6 +180,7 @@ void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
 	}
 	
 	coin->render();
+	Firan->render();
 	bowser->render();
 	//==================== 건들지마라 =======================
 	TIMEMANAGER->render(getMemDC());

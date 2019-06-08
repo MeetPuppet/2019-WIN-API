@@ -4,13 +4,14 @@ class firanhaFlower :
 	public enemyNode
 {
 private:
-	bool move;
+	int move;
+	bool stop;
 public:
 	firanhaFlower();
 	~firanhaFlower();
 
 	// 중점 기준 배치
-	HRESULT init(POINT point);
+	HRESULT init(int x, int y);
 	void release();
 	void update();
 	void render();

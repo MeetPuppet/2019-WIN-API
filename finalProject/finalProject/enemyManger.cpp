@@ -2,7 +2,7 @@
 #include "enemyManger.h"
 
 #include "Goomba.h"
-
+#include "firanhaFlower.h"
 
 enemyManger::enemyManger()
 {
@@ -26,6 +26,8 @@ HRESULT enemyManger::init()
 		2, 2, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("bowser", "image/bowser/bowser.bmp", 640, 320,
 		4, 2, true, RGB(255, 0, 255));	
+	IMAGEMANAGER->addFrameImage("firanhaFlower", "image/enemy/firanhaFlower.bmp", 160, 120,
+		2, 1, true, RGB(255, 0, 255));
 
 	return S_OK;
 }
