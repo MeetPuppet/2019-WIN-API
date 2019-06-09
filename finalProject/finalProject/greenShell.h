@@ -3,6 +3,8 @@
 class greenShell :
 	public objectNode
 {
+private:
+	int timenum;
 public:
 	greenShell();
 	~greenShell();

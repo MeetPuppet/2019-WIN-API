@@ -1,9 +1,9 @@
 #pragma once
 #include "gameNode.h"
-#include "enemyManger.h"
 #include <vector>
 
 class objectNode;
+class enemyManger;
 
 class objectManger :
 	public gameNode
@@ -13,6 +13,7 @@ private:
 	vector<objectNode*> vTile;
 	vector<objectNode*> vCoin;
 	vector<objectNode*> vShell;
+	enemyManger* emP;
 public:
 	objectManger();
 	~objectManger();
@@ -23,6 +24,10 @@ public:
 	void setItemBox(RECT rc, int itemNum);
 	void setBlock(RECT rc, int mode, int coins);
 	void setgreenShell(int vx, int vy);
+	void setgreyShell(int vx, int vy);
+	void LinkToenemyManger(enemyManger* em);
+	void changeToGreenTurtle();
+	void changeToGreyTurtle();
 
 	vector<objectNode*> getvTile() { return vTile; }
 	bool collisionTile(RECT r, float& y);

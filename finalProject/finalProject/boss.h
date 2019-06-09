@@ -28,6 +28,7 @@ private:
 	int frameX;
 	int frameY;
 	int oldpx, oldpy;
+	int groundx1, groundx2;
 	float jumpnum;
 	int frameNum;
 	bool movenum;
@@ -40,7 +41,7 @@ public:
 	~boss();
 
 
-	HRESULT init(int x,int y);
+	HRESULT init(int x, int y, int g1, int g2);
 	void release();
 	void update();
 	void render();

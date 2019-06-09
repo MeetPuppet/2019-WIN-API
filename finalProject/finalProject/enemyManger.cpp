@@ -4,6 +4,7 @@
 #include "Goomba.h"
 #include "firanhaFlower.h"
 #include "greenTurtle.h"
+#include "greyTurtle.h"
 #include "objectManger.h"
 enemyManger::enemyManger()
 {
@@ -41,6 +42,7 @@ void enemyManger::release()
 void enemyManger::update()
 {
 	goombaUpdate();
+	turtleUpdate();
 }
 
 void enemyManger::render()
@@ -59,6 +61,12 @@ void enemyManger::makeGreenTurtle(POINT point)
 	greenTurtle* newGreenTurtle = new greenTurtle;
 	newGreenTurtle->init(point);
 	vTurtle.emplace_back(newGreenTurtle);
+}
+void enemyManger::makeGreyTurtle(POINT point)
+{
+	greyTurtle* newGreyTurtle = new greyTurtle;
+	newGreyTurtle->init(point);
+	vTurtle.emplace_back(newGreyTurtle);
 }
 void enemyManger::goombaUpdate()
 {
@@ -83,21 +91,30 @@ void enemyManger::KillGoomba()
 void enemyManger::KillGreenTurtle()
 {
 	for (int i = 0; i < vTurtle.size(); ++i) {
+		int vx = vTurtle[i]->getPoint().x;
+		int vy = vTurtle[i]->getPoint().y;
+		omP->setgreenShell(vx, vy);
+		delete vTurtle[i];
 		vTurtle.erase(vTurtle.begin() + i);
 	}
-	//for (int i = 0; i < vTurtle.size(); ++i) {
-	//	greenShell* newGreenShell = new greenShell;
-	//	newGreenShell->init(vTurtle[i]->getPoint().x, vTurtle[i]->getPoint().y, 80, 75);
-	//	
-	//}
-	int vx = vTurtle[0]->getPoint().x;
-	int vy = vTurtle[0]->getPoint().y;
-	omP->setgreenShell(vx, vy);
+}
+void enemyManger::KillGreyTurtle()
+{
+	for (int i = 0; i < vTurtle.size(); ++i) {
+		int vx = vTurtle[i]->getPoint().x;
+		int vy = vTurtle[i]->getPoint().y;
+		omP->setgreyShell(vx, vy);
+		delete vTurtle[i];
+		vTurtle.erase(vTurtle.begin() + i);
+	}
 }
 void enemyManger::goombaRender()
-{
+{	
 	for (int i = 0; i < vEnemy.size(); ++i) {
 		vEnemy[i]->render();
+	}
+	for (int i = 0; i < vTurtle.size(); ++i) {
+		vTurtle[i]->render();
 	}
 }
 void enemyManger::LinkTarget(POINT* targetPoint)

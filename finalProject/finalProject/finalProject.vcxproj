@@ -154,6 +154,8 @@
     <ClCompile Include="Goomba.cpp" />
     <ClCompile Include="greenShell.cpp" />
     <ClCompile Include="greenTurtle.cpp" />
+    <ClCompile Include="greyShell.cpp" />
+    <ClCompile Include="greyTurtle.cpp" />
     <ClCompile Include="image.cpp" />
     <ClCompile Include="imageManager.cpp" />
     <ClCompile Include="ItemBox.cpp" />
@@ -195,6 +197,8 @@
     <ClInclude Include="Goomba.h" />
     <ClInclude Include="greenShell.h" />
     <ClInclude Include="greenTurtle.h" />
+    <ClInclude Include="greyShell.h" />
+    <ClInclude Include="greyTurtle.h" />
     <ClInclude Include="image.h" />
     <ClInclude Include="imageManager.h" />
     <ClInclude Include="ItemBox.h" />

@@ -213,6 +213,12 @@
     <ClCompile Include="greenShell.cpp">
       <Filter>mainGame\map\objectManager\object</Filter>
     </ClCompile>
+    <ClCompile Include="greyTurtle.cpp">
+      <Filter>mainGame\enemyManager\enemys</Filter>
+    </ClCompile>
+    <ClCompile Include="greyShell.cpp">
+      <Filter>mainGame\map\objectManager\object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="image.h">
@@ -339,6 +345,12 @@
       <Filter>mainGame\enemyManager\enemys</Filter>
     </ClInclude>
     <ClInclude Include="greenShell.h">
+      <Filter>mainGame\map\objectManager\object</Filter>
+    </ClInclude>
+    <ClInclude Include="greyTurtle.h">
+      <Filter>mainGame\enemyManager\enemys</Filter>
+    </ClInclude>
+    <ClInclude Include="greyShell.h">
       <Filter>mainGame\map\objectManager\object</Filter>
     </ClInclude>
   </ItemGroup>
