@@ -48,6 +48,9 @@ HRESULT mainGame::init()			//초기화 함수
 	if (E_Manager) {
 		E_Manager->LinkToobjectManger(O_Manger);
 	}
+	if (O_Manger) {
+		O_Manger->LinkToenemyManger(E_Manager);
+	}
 	coin = new Coin; 
 	Firan = new firanhaFlower;
 	Fire = new fireShot;
@@ -70,7 +73,7 @@ HRESULT mainGame::init()			//초기화 함수
 	Firan->init(450, 450);
 	coin->init(600,300,80,70);
 	Fire->init(600, 600, 40, 40, 1);
-	bowser->init(600, 600);
+	bowser->init(600, 600, 400, 400);
 	return S_OK;
 }
 

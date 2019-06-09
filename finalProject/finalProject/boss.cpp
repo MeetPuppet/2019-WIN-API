@@ -32,13 +32,15 @@ boss::~boss()
 
 }
 
-HRESULT boss::init(int x,int y)
+HRESULT boss::init(int x,int y,int g1,int g2)
 {
 	Img = IMAGEMANAGER->findImage("bowser");
 	p.x = x;
 	p.y = y;
 	oldpx = x;
 	oldpy = y;
+	groundx1 = g1;
+	groundx2 = g2;
 	rc = RectMakeCenter(p.x, p.y, Img->getFrameWidth(), Img->getFrameHeight());
 
 	return S_OK;
@@ -78,7 +80,7 @@ void boss::update()
 		jumpnum = JUMPSPEED * 2;
 	}
 
-	if (p.x < oldpx - 400) {
+	if (p.x < oldpx - groundx1) {
 		movenum = FALSE;
 		//if (state == BL_PATROL) {
 		//	state = BR_PATROL;
@@ -90,7 +92,7 @@ void boss::update()
 		//	state = BR_BRESS;
 		//}
 	}
-	if (p.x > oldpx + 400) {
+	if (p.x > oldpx + groundx2) {
 		movenum = TRUE;
 		//if (state == BR_PATROL) {
 		//	state = BL_PATROL;

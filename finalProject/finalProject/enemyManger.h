@@ -29,9 +29,11 @@ public:
 
 	void makeGoomba(POINT point);
 	void makeGreenTurtle(POINT point);
+	void makeGreyTurtle(POINT point);
 	//죽이기는 나중에 조건을 달것
 	void KillGoomba();
 	void KillGreenTurtle();
+	void KillGreyTurtle();
 
 	void LinkTarget(POINT* targetPoint = NULL);
 
