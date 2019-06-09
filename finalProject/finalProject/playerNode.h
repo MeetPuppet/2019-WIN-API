@@ -28,6 +28,8 @@ protected:
 	RECT foot;
 	Point point;
 
+	RECT checkPos[2];
+
 	int IFS;
 	float IFF;
 

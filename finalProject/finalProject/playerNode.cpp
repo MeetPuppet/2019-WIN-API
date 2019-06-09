@@ -31,6 +31,9 @@ playerNode::playerNode()//무슨일이 벌어질지 모르니 설정해둠
 	frameY = 0;
 	frameCount = 0.2f;
 
+	for (int i = 0; i < 2; ++i) {
+		checkPos[i] = {0,0,0,0};
+	}
 	om = NULL;
 	stage = NULL;
 }
@@ -74,6 +77,10 @@ void playerNode::update()
 void playerNode::render() 
 {
 	img->frameRender(getMemDC(), rc.left, rc.top, frameX, frameY);
+
+	for (int i = 0; i < 2; ++i) {
+		Rectangle(getMemDC(), checkPos[i].left, checkPos[i].top, checkPos[i].right, checkPos[i].bottom);
+	}
 }
 
 void playerNode::keySet()
@@ -178,8 +185,8 @@ void playerNode::gravityChecker(bool isFall)
 
 	//탱크때는 방향을 받았지만 얘들은 중력체크니 위아래만 체크한다.
 	if (isFall) {//하단
-		tileIndex[0] = (tileX + tileY * TILEX) + 1;
-		//			   (  9   +   15  *  150 ) + 1'
+		tileIndex[0] = (tileX + tileY * TILEX) + TILEX;
+		//			   (  9   +   15  *  150 ) + 150
 		//				      9 + 2250 + 1 = 2341
 		tileIndex[1] = (tileX + 1 + tileY * TILEX) + TILEX;
 		//			   (  9   + 1 +  15   *   150 ) + 150'
@@ -193,27 +200,27 @@ void playerNode::gravityChecker(bool isFall)
 		//			   (  9   + 1 ) +  15   *   150 
 		//				         10 + 2250 = 2260
 	}
-
 	//이 두개의 인덱스를 가지고 수작을 부린다.
-	RECT TileRect;
 
-	RECT temp;
+	RECT TileRect;
+	for (int i = 0; i < 2; ++i) {
+		checkPos[i] = stage->getTile()[tileIndex[i]].rc;
+	}
+	RECT temp = {0,0,0,0};
 	for (int i = 0; i < 2; ++i) {
 		//해당 속성의 값이 언무브가 맞고
 		TileRect = stage->getTile()[tileIndex[i]].rc;
-		if (((stage->getTileAttribute()[tileIndex[i]] & ATTR_UNMOVE) == ATTR_UNMOVE)&&
+		if (((stage->getTileAttribute()[tileIndex[i]] & ATTR_UNMOVE) == ATTR_UNMOVE)) 
 			//해당 타일과 충돌할때
-			IntersectRect(&temp, &TileRect, &CollisionRC)) {
+			if(IntersectRect(&temp, &TileRect, &CollisionRC)) {
 			
 			if (isFall) {//하단
+				frameX = 0;
+				state = PS_IDLE;
 				rc.bottom = stage->getTile()[tileIndex[i]].rc.top;
 				rc.top = rc.bottom - (TILESIZE - 10);
 
 				point.y = rc.bottom - img->getFrameHeight()/2;
-				if (state == PS_JUMP) {
-					frameX = 0;
-					state == PS_IDLE;
-				}
 			}
 			else {//상단
 				rc.top = stage->getTile()[tileIndex[i]].rc.bottom;
@@ -227,6 +234,7 @@ void playerNode::gravityChecker(bool isFall)
 			return;
 		}
 	}
+
 }
 
 //좌우이동
