@@ -41,6 +41,7 @@ void enemyManger::release()
 void enemyManger::update()
 {
 	goombaUpdate();
+	turtleUpdate();
 }
 
 void enemyManger::render()
@@ -83,6 +84,9 @@ void enemyManger::KillGoomba()
 void enemyManger::KillGreenTurtle()
 {
 	for (int i = 0; i < vTurtle.size(); ++i) {
+		int vx = vTurtle[i]->getPoint().x;
+		int vy = vTurtle[i]->getPoint().y;
+		omP->setgreenShell(vx, vy);
 		vTurtle.erase(vTurtle.begin() + i);
 	}
 	//for (int i = 0; i < vTurtle.size(); ++i) {
@@ -90,14 +94,14 @@ void enemyManger::KillGreenTurtle()
 	//	newGreenShell->init(vTurtle[i]->getPoint().x, vTurtle[i]->getPoint().y, 80, 75);
 	//	
 	//}
-	int vx = vTurtle[0]->getPoint().x;
-	int vy = vTurtle[0]->getPoint().y;
-	omP->setgreenShell(vx, vy);
 }
 void enemyManger::goombaRender()
-{
+{	
 	for (int i = 0; i < vEnemy.size(); ++i) {
 		vEnemy[i]->render();
+	}
+	for (int i = 0; i < vTurtle.size(); ++i) {
+		vTurtle[i]->render();
 	}
 }
 void enemyManger::LinkTarget(POINT* targetPoint)

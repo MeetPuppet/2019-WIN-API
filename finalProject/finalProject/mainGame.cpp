@@ -45,7 +45,10 @@ HRESULT mainGame::init()			//초기화 함수
 			mario->LinkToOM(O_Manger);
 		}
 	}
-	coin = new Coin;
+	if (E_Manager) {
+		E_Manager->LinkToobjectManger(O_Manger);
+	}
+	coin = new Coin; 
 	Firan = new firanhaFlower;
 	Fire = new fireShot;
 	if (stage1 == NULL) {

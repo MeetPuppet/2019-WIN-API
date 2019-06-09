@@ -32,6 +32,9 @@ void objectManger::update()
 	for (int i = 0; i < vCoin.size(); ++i) {
 		vCoin[i]->update();
 	}
+	for (int i = 0; i < vShell.size(); ++i) {
+		vShell[i]->update();
+	}
 }
 void objectManger::render()
 {
@@ -40,6 +43,9 @@ void objectManger::render()
 	}
 	for (int i = 0; i < vCoin.size(); ++i) {
 		vCoin[i]->render();
+	}
+	for (int i = 0; i < vShell.size(); ++i) {
+		vShell[i]->render();
 	}
 }
 
