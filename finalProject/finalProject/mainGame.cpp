@@ -103,78 +103,76 @@ void mainGame::release()			//메모리 해제 함수
 
 void mainGame::update()				//연산 함수
 {
-	if (KEYMANAGER->isToggleKey(VK_F3)) {
-		gameNode::update();
+	gameNode::update();
 
-		//RECT를 넣어주면 충돌했는지 안했는지 bool값으로 반환 해주는 함수
-		//if (E_Manager->enemyCollisionCheck(RECT)) {}
+	//RECT를 넣어주면 충돌했는지 안했는지 bool값으로 반환 해주는 함수
+	//if (E_Manager->enemyCollisionCheck(RECT)) {}
 
 
-		//오른쪽 마우스키 누른자리에 적 생성
-		if (KEYMANAGER->isOnceKeyDown(VK_RBUTTON)) {
-			E_Manager->makeGoomba(_ptMouse);
-		}
-		if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON)) {
-			E_Manager->makeGreenTurtle(_ptMouse);
-		}
-		if (KEYMANAGER->isOnceKeyDown(VK_SPACE)) {
-			E_Manager->KillGreenTurtle();
-		}
-
-		coin->update();
-		Firan->update();
-		Fire->update();
-		if (mario) {
-			mario->update();
-		}
-		if (E_Manager) {
-			E_Manager->update();
-		}
-		if (O_Manger) {
-			O_Manger->update();
-		}
-		if (stage1) {
-			stage1->update();
-			//stage1->setMainPosition({ p->getX(), 0 });
-		}
-
-		int moveSpeed = mario->getSpeed();
-		if (mario->getX() > 800 && stage1->getEdge1() > 1200 + mario->getSpeed()) {
-			mario->moveX(-mario->getSpeed());
-			E_Manager->moveWorld(-moveSpeed);
-			O_Manger->moveWorld(-moveSpeed);
-			stage1->moveX(-moveSpeed);
-			bowser->moveX(-moveSpeed);
-		}
-		else if (mario->getX() < 400 && stage1->getEdge0() < 0 - mario->getSpeed()) {
-			//좌우속도차가 있음
-			mario->moveX(mario->getSpeed());
-			E_Manager->moveWorld(moveSpeed);
-			O_Manger->moveWorld(moveSpeed);
-			stage1->moveX(moveSpeed);
-			bowser->moveX(moveSpeed);
-		}
-		//
-		//if (q->getX() > 800 && stage1->getEdge1() > 1200 + q->getSpeed()) {
-		//	p->moveX(-moveSpeed);
-		//	q->moveX(-moveSpeed);
-		//	E_Manager->moveWorld(-moveSpeed);
-		//	O_Manger->moveWorld(-moveSpeed);
-		//	stage1->moveX(-moveSpeed);
-		//	bowser->moveX(-moveSpeed);
-		//}
-		//else if (q->getX() < 400 && stage1->getEdge0() < 0 - q->getSpeed()) {
-		//	
-		//	p->moveX(moveSpeed);
-		//	q->moveX(moveSpeed);
-		//	E_Manager->moveWorld(moveSpeed);
-		//	O_Manger->moveWorld(moveSpeed);
-		//	stage1->moveX(moveSpeed);
-		//	bowser->moveX(moveSpeed);
-		//}
-
-		bowser->update();
+	//오른쪽 마우스키 누른자리에 적 생성
+	if (KEYMANAGER->isOnceKeyDown(VK_RBUTTON)) {
+		E_Manager->makeGoomba(_ptMouse);
 	}
+	if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON)) {
+		E_Manager->makeGreenTurtle(_ptMouse);
+	}
+	if (KEYMANAGER->isOnceKeyDown(VK_SPACE)) {
+		E_Manager->KillGreenTurtle();
+	}
+
+	coin->update();
+	Firan->update();
+	Fire->update();
+	if (mario) {
+		mario->update();
+	}
+	if (E_Manager) {
+		E_Manager->update();
+	}
+	if (O_Manger) {
+		O_Manger->update();
+	}
+	if (stage1) {
+		stage1->update();
+		//stage1->setMainPosition({ p->getX(), 0 });
+	}
+
+	int moveSpeed = mario->getSpeed();
+	if (mario->getX() > 800 && stage1->getEdge1() > 1200 + mario->getSpeed()) {
+		mario->moveX(-mario->getSpeed());
+		E_Manager->moveWorld(-moveSpeed);
+		O_Manger->moveWorld(-moveSpeed);
+		stage1->moveX(-moveSpeed);
+		bowser->moveX(-moveSpeed);
+	}
+	else if (mario->getX() < 400 && stage1->getEdge0() < 0 - mario->getSpeed()) {
+		//좌우속도차가 있음
+		mario->moveX(mario->getSpeed());
+		E_Manager->moveWorld(moveSpeed);
+		O_Manger->moveWorld(moveSpeed);
+		stage1->moveX(moveSpeed);
+		bowser->moveX(moveSpeed);
+	}
+	//
+	//if (q->getX() > 800 && stage1->getEdge1() > 1200 + q->getSpeed()) {
+	//	p->moveX(-moveSpeed);
+	//	q->moveX(-moveSpeed);
+	//	E_Manager->moveWorld(-moveSpeed);
+	//	O_Manger->moveWorld(-moveSpeed);
+	//	stage1->moveX(-moveSpeed);
+	//	bowser->moveX(-moveSpeed);
+	//}
+	//else if (q->getX() < 400 && stage1->getEdge0() < 0 - q->getSpeed()) {
+	//	
+	//	p->moveX(moveSpeed);
+	//	q->moveX(moveSpeed);
+	//	E_Manager->moveWorld(moveSpeed);
+	//	O_Manger->moveWorld(moveSpeed);
+	//	stage1->moveX(moveSpeed);
+	//	bowser->moveX(moveSpeed);
+	//}
+
+	bowser->update();
 }
 
 void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
