@@ -1,17 +1,20 @@
 #pragma once
 #include <vector>
 #include "gameNode.h"
-#include "objectManger.h"
 
 class enemyNode;
+class objectManger;
 
 class enemyManger :
 	public gameNode
 {
 private:
 	vector<enemyNode*> vEnemy;
+	vector<enemyNode*> vTurtle;
 	void goombaUpdate();
+	void turtleUpdate();
 	void goombaRender();
+	objectManger* omP;
 	bool GoombaCollisionCheck(const RECT& rc);
 public:
 	enemyManger();
@@ -22,6 +25,7 @@ public:
 	void update();
 	void render();
 	bool enemyCollisionCheck(RECT rc);
+	void LinkToobjectManger(objectManger* om);
 
 	void makeGoomba(POINT point);
 	void makeGreenTurtle(POINT point);

@@ -3,6 +3,7 @@
 #include "ItemBox.h"
 #include "Block.h"
 #include "Coin.h"
+#include "greenShell.h"
 
 objectManger::objectManger()
 {
@@ -62,12 +63,21 @@ void objectManger::setBlock(RECT rc, int mode, int coins)
 
 	vTile.emplace_back(box);
 }
+void objectManger::setgreenShell(int vx, int vy)
+{
+	greenShell* Shell = new greenShell;
+	Shell->init(vx, vy, 80, 75);
+	vShell.emplace_back(Shell);
+}
 void objectManger::moveWorld(int x) {
 	for (int i = 0; i < vTile.size(); ++i) {
 		vTile[i]->moveX(x);
 	}
 	for (int i = 0; i < vCoin.size(); ++i) {
 		vCoin[i]->moveX(x);
+	}
+	for (int i = 0; i < vShell.size(); ++i) {
+		vShell[i]->moveX(x);
 	}
 }
 bool objectManger::collisionTile(RECT r, float& y) {
