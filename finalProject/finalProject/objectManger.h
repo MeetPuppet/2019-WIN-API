@@ -1,5 +1,6 @@
 #pragma once
 #include "gameNode.h"
+#include "enemyManger.h"
 #include <vector>
 
 class objectNode;

@@ -153,9 +153,6 @@
     <ClCompile Include="Goomba.cpp">
       <Filter>mainGame\enemyManager\enemys</Filter>
     </ClCompile>
-    <ClCompile Include="enemyManger.cpp">
-      <Filter>mainGame\enemyManager</Filter>
-    </ClCompile>
     <ClCompile Include="mapTool.cpp">
       <Filter>mainGame\map\tool</Filter>
     </ClCompile>
@@ -205,6 +202,15 @@
       <Filter>mainGame\enemyManager\enemys</Filter>
     </ClCompile>
     <ClCompile Include="fireShot.cpp">
+      <Filter>mainGame\map\objectManager\object</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyManger.cpp">
+      <Filter>mainGame\enemyManager\enemys</Filter>
+    </ClCompile>
+    <ClCompile Include="greenTurtle.cpp">
+      <Filter>mainGame\enemyManager\enemys</Filter>
+    </ClCompile>
+    <ClCompile Include="greenShell.cpp">
       <Filter>mainGame\map\objectManager\object</Filter>
     </ClCompile>
   </ItemGroup>
@@ -327,6 +333,12 @@
       <Filter>mainGame\enemyManager\enemys</Filter>
     </ClInclude>
     <ClInclude Include="fireShot.h">
+      <Filter>mainGame\map\objectManager\object</Filter>
+    </ClInclude>
+    <ClInclude Include="greenTurtle.h">
+      <Filter>mainGame\enemyManager\enemys</Filter>
+    </ClInclude>
+    <ClInclude Include="greenShell.h">
       <Filter>mainGame\map\objectManager\object</Filter>
     </ClInclude>
   </ItemGroup>

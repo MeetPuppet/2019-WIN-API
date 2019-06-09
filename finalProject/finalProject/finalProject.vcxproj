@@ -23,7 +23,7 @@
     <ProjectGuid>{F4D7A264-22BC-4A83-B456-519CEBC7120F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>finalProject</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -152,6 +152,8 @@
     <ClCompile Include="fireShot.cpp" />
     <ClCompile Include="gameNode.cpp" />
     <ClCompile Include="Goomba.cpp" />
+    <ClCompile Include="greenShell.cpp" />
+    <ClCompile Include="greenTurtle.cpp" />
     <ClCompile Include="image.cpp" />
     <ClCompile Include="imageManager.cpp" />
     <ClCompile Include="ItemBox.cpp" />
@@ -191,6 +193,8 @@
     <ClInclude Include="fireShot.h" />
     <ClInclude Include="gameNode.h" />
     <ClInclude Include="Goomba.h" />
+    <ClInclude Include="greenShell.h" />
+    <ClInclude Include="greenTurtle.h" />
     <ClInclude Include="image.h" />
     <ClInclude Include="imageManager.h" />
     <ClInclude Include="ItemBox.h" />
