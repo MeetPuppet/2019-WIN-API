@@ -37,9 +37,9 @@ void Mario::render()
 
 	Rectangle(getMemDC(), foot.left, foot.top, foot.right, foot.bottom);
 
-	char str[256];
-	sprintf_s(str, "x, y, speed : %d %d %f",rc.left,rc.top, point.y);
-	TextOut(getMemDC(), 0, 60, str, strlen(str));
+	//char str[256];
+	//sprintf_s(str, "x, y, speed : %d %d %f",rc.left,rc.top, point.y);
+	//TextOut(getMemDC(), 0, 60, str, strlen(str));
 }
 //덥어써진 키셋
 void Mario::keySet()		   
