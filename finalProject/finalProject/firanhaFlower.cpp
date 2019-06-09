@@ -55,7 +55,7 @@ void firanhaFlower::update()
 				frameX = 0;
 		}
 		if (p.y < 300) {
-			move = 2;
+ 			move = 2;
 		}
 		if (p.y > 600) {
 			move = 1;

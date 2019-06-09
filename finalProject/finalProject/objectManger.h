@@ -12,6 +12,7 @@ private:
 	//타일 전용
 	vector<objectNode*> vTile;
 	vector<objectNode*> vCoin;
+	vector<objectNode*> vShell;
 public:
 	objectManger();
 	~objectManger();
@@ -21,6 +22,7 @@ public:
 
 	void setItemBox(RECT rc, int itemNum);
 	void setBlock(RECT rc, int mode, int coins);
+	void setgreenShell(int vx, int vy);
 
 	vector<objectNode*> getvTile() { return vTile; }
 	bool collisionTile(RECT r, float& y);

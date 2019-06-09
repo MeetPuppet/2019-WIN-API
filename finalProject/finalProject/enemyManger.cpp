@@ -4,7 +4,7 @@
 #include "Goomba.h"
 #include "firanhaFlower.h"
 #include "greenTurtle.h"
-#include "greenShell.h"
+#include "objectManger.h"
 enemyManger::enemyManger()
 {
 	vEnemy;//든거 없음
@@ -29,6 +29,7 @@ HRESULT enemyManger::init()
 		4, 2, true, RGB(255, 0, 255));	
 	IMAGEMANAGER->addFrameImage("firanhaFlower", "image/enemy/firanhaFlower.bmp", 160, 120,
 		2, 1, true, RGB(255, 0, 255));
+	omP = NULL;
 
 	return S_OK;
 }
@@ -57,7 +58,7 @@ void enemyManger::makeGreenTurtle(POINT point)
 {
 	greenTurtle* newGreenTurtle = new greenTurtle;
 	newGreenTurtle->init(point);
-	vEnemy.emplace_back(newGreenTurtle);
+	vTurtle.emplace_back(newGreenTurtle);
 }
 void enemyManger::goombaUpdate()
 {
@@ -65,21 +66,34 @@ void enemyManger::goombaUpdate()
 		vEnemy[i]->update();
 	}
 }
+void enemyManger::turtleUpdate()
+{
+	for (int i = 0; i < vTurtle.size(); ++i) {
+		vTurtle[i]->update();
+	}
+}
+
+void enemyManger::LinkToobjectManger(objectManger* om)
+{
+	omP = om;
+}
 void enemyManger::KillGoomba()
 {
 }
 void enemyManger::KillGreenTurtle()
 {
-	for (int i = 0; i < vEnemy.size(); ++i) {
-		vEnemy[i]->~enemyNode();
+	for (int i = 0; i < vTurtle.size(); ++i) {
+		vTurtle.erase(vTurtle.begin() + i);
 	}
-	for (int i = 0; i < vEnemy.size(); ++i) {
-		greenShell* newGreenShell = new greenShell;
-		newGreenShell->init(vEnemy[i]->getPoint().x, vEnemy[i]->getPoint().y, 80, 75);
-
-	}
+	//for (int i = 0; i < vTurtle.size(); ++i) {
+	//	greenShell* newGreenShell = new greenShell;
+	//	newGreenShell->init(vTurtle[i]->getPoint().x, vTurtle[i]->getPoint().y, 80, 75);
+	//	
+	//}
+	int vx = vTurtle[0]->getPoint().x;
+	int vy = vTurtle[0]->getPoint().y;
+	omP->setgreenShell(vx, vy);
 }
-
 void enemyManger::goombaRender()
 {
 	for (int i = 0; i < vEnemy.size(); ++i) {
