@@ -29,7 +29,7 @@ HRESULT Mario::init(Point p)
 }
 void Mario::update()		   
 {    
-	//playerNode::update();
+	playerNode::update();
 }
 void Mario::render()		   
 {
