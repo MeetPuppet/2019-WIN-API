@@ -72,6 +72,6 @@ public:
 
 	virtual void keySet();
 	void gravityChecker(bool isFall);
-	void moveChecker(bool isRight);
+	bool moveChecker(bool isRight);
 };
 

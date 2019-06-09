@@ -30,7 +30,8 @@ HRESULT Mario::init(Point p)
 void Mario::update()		   
 {    
 	playerNode::update();
-	gravityChecker(true);
+	if (KEYMANAGER->isToggleKey(VK_F3)) {
+	}
 }
 void Mario::render()		   
 {
@@ -38,21 +39,26 @@ void Mario::render()
 
 	Rectangle(getMemDC(), foot.left, foot.top, foot.right, foot.bottom);
 
-	char str[256];
-	sprintf_s(str, "rc, y : %d %d %f", rc.left, rc.top, point.y);
-	TextOut(getMemDC(), 0, 60, str, strlen(str));
-	for (int i = 0; i < 2; ++i) {
-		sprintf_s(str, "rc : %d %d %d %d", checkPos[i].left, checkPos[i].top, checkPos[i].right, checkPos[i].bottom);
-		TextOut(getMemDC(), 0, 80+(i*20), str, strlen(str)); 
+	if (KEYMANAGER->isToggleKey(VK_F3)) {
+		for (int i = 0; i < 2; ++i) {
+			Rectangle(getMemDC(), checkPos[i].left, checkPos[i].top, checkPos[i].right, checkPos[i].bottom);
+		}
+		char str[256];
+		sprintf_s(str, "rc, y : %d %d %f", rc.left, rc.top, point.y);
+		TextOut(getMemDC(), 0, 60, str, strlen(str));
+		for (int i = 0; i < 2; ++i) {
+			sprintf_s(str, "%d", i);
+			TextOut(getMemDC(), checkPos[i].left+10, checkPos[i].top+10, str, strlen(str));
+			sprintf_s(str, "rc : %d %d %d %d", checkPos[i].left, checkPos[i].top, checkPos[i].right, checkPos[i].bottom);
+			TextOut(getMemDC(), 0, 80 + (i * 20), str, strlen(str));
 			sprintf_s(str, "tileIndex : %d", tileIndex[i]);
-		TextOut(getMemDC(), 200, 80 + (i * 20), str, strlen(str));
+			TextOut(getMemDC(), 200, 80 + (i * 20), str, strlen(str));
+		}
 	}
 }
 //덥어써진 키셋
 void Mario::keySet()		   
 {
-	int maxSpeed=0;
-	float nulll = 0;;
 	switch (state)
 	{
 	case PS_IDLE:
@@ -76,19 +82,20 @@ void Mario::keySet()
 		}
 		break;
 	case PS_MOVE:
+		//gravityChecker(true);
 		if (KEYMANAGER->isStayKeyDown('X')) {
 			if (IFS < SPEE2)
 				IFS += SPEE2 * time;
 		}
 		else {
-			if (IFS > SPEED+10) {
+			if (IFS > SPEED) {
 				IFS -= SPEED * time;
 			}
 			else if (IFS < SPEED)
 				IFS += SPEED * time;
 		}
-		speed = IFS * time;
-		if (KEYMANAGER->isOnceKeyUp(VK_RIGHT) || KEYMANAGER->isOnceKeyUp(VK_LEFT)) {
+		speed = IFS * time; 
+		if (!KEYMANAGER->isStayKeyDown(VK_RIGHT) && !KEYMANAGER->isStayKeyDown(VK_LEFT)) {
 			IFS = 0;
 			IFF = ((SPEE2)-IFS);
 			IFF = IFF / (SPEED * 10);
@@ -96,25 +103,26 @@ void Mario::keySet()
 			frameX = 0;
 			state = PS_IDLE;
 		}
+		if (KEYMANAGER->isStayKeyDown(VK_DOWN)) {
+			if (mode != PM_SMALL)
+				state = PS_SIT;
+		}
 		if (KEYMANAGER->isStayKeyDown(VK_UP)) {
 			frameX = 5;
 			jumpPower = JUMPSPEED * 2;
 			state = PS_JUMP;
 		}
-		if (KEYMANAGER->isStayKeyDown(VK_RIGHT)) {
-			if (rc.right < 1200 && !stage->collisionTile(rc, nulll)) {
+		if (KEYMANAGER->isStayKeyDown(VK_RIGHT) && moveChecker(true)) {
+			if (rc.right < 1200) {
 				point.x = point.x + speed;
 				frameY = 0;
 			}
 		}
-		else if (KEYMANAGER->isStayKeyDown(VK_LEFT)) {
-			if (rc.left > 0 && !stage->collisionTile(rc, nulll)) {
+		else if (KEYMANAGER->isStayKeyDown(VK_LEFT) && moveChecker(false)) {
+			if (rc.left > 0 ) {
 				point.x = point.x - speed;
 				frameY = 1;
 			}
-		}
-		else if (KEYMANAGER->isStayKeyDown(VK_DOWN) && mode != PM_SMALL) {
-			state = PS_SIT;
 		}
 		frameCount -= time;
 		if (frameCount < 0) {
@@ -141,19 +149,19 @@ void Mario::keySet()
 		}
 		speed = IFS * time;
 		frameX = 5;
-		if (KEYMANAGER->isOnceKeyUp(VK_RIGHT) || KEYMANAGER->isOnceKeyUp(VK_LEFT)) {
-			IFS = 0;
-			IFF = ((SPEE2)-IFS);
-			IFF = IFF / (SPEED * 10);
-			frameCount = IFF;
-		}
-		if (KEYMANAGER->isStayKeyDown(VK_RIGHT)) {
+		if (KEYMANAGER->isStayKeyDown(VK_RIGHT) && moveChecker(true)) {
 			point.x = point.x + speed;
 			frameY = 0;
 		}
-		else if (KEYMANAGER->isStayKeyDown(VK_LEFT)) {
+		else if (KEYMANAGER->isStayKeyDown(VK_LEFT) && moveChecker(false)) {
 			point.x = point.x - speed;
 			frameY = 1;
+		}
+		if (jumpPower > 0) {
+			gravityChecker(false);
+		}
+		else {
+			gravityChecker(true);
 		}
 		jumpPower = jumpPower - JUMPSPEED *2*time;
 		point.y = point.y - jumpPower;
@@ -166,16 +174,26 @@ void Mario::keySet()
 		//	frameX = 0;
 		//	state = PS_IDLE;
 		//}
-		if (jumpPower > 0) {
-			gravityChecker(false);
-		}
-		else {
-			gravityChecker(true);
-		}
 		break;
 	case PS_SIT:
 		//클때만 먹히게
-		frameX = 6;
+		frameX = 6; 
+		if (IFS > 0) {
+			IFS -= SPEED * time;
+			speed = IFS * time;
+			if (frameY == 0 && moveChecker(true)) {
+				point.x = point.x + speed;
+			}
+			else if(frameY == 1 && moveChecker(false)) {
+				point.x = point.x - speed;
+			}
+		}
+		else {
+			IFS = 0;
+			IFF = ((SPEE2)-IFS);
+			IFF = IFF / (SPEED * 10);
+			frameCount = IFF;
+		}
 		if (KEYMANAGER->isOnceKeyUp(VK_DOWN)) {
 			frameX = 0;
 			state = PS_IDLE;
@@ -183,6 +201,14 @@ void Mario::keySet()
 		break;
 	}
 
+	if (KEYMANAGER->isOnceKeyDown('Q')) {
+		if (mode == PM_SMALL) {
+			mode = PM_BIG;
+		}
+		else {
+			mode = PM_SMALL;
+		}
+	}
 	switch (mode)
 	{
 	case PM_SMALL:

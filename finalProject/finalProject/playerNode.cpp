@@ -78,9 +78,6 @@ void playerNode::render()
 {
 	img->frameRender(getMemDC(), rc.left, rc.top, frameX, frameY);
 
-	for (int i = 0; i < 2; ++i) {
-		Rectangle(getMemDC(), checkPos[i].left, checkPos[i].top, checkPos[i].right, checkPos[i].bottom);
-	}
 }
 
 void playerNode::keySet()
@@ -153,6 +150,9 @@ void playerNode::keySet()
 //상하이동
 void playerNode::gravityChecker(bool isFall)
 {
+	//터짐 방지용
+	if (point.x < 0 || point.x > 1200 ||
+		point.y < 0 || point.y > 800) return;
 	//타일 검출용
 	RECT CollisionRC;
 
@@ -162,13 +162,12 @@ void playerNode::gravityChecker(bool isFall)
 
 	//일단 플레이어 자체를 넘겨주자
 	CollisionRC = rc;
-
 	time;//이 실시간을 받아오는 값은 이미 준비 해뒀다.
 	IFS;//이놈은 실 스피드다.
 
 	//전에 쓰던건 여기서 이미지 처리함
 
-	//맵에서 이동된 만큼 위치 이동
+	//맵환경 변화 반영
 	CollisionRC.left -= stage->getEdge0();
 	CollisionRC.right -= stage->getEdge0();
 
@@ -194,14 +193,17 @@ void playerNode::gravityChecker(bool isFall)
 		tileIndex[1] = (tileX + 1 + tileY * TILEX) + TILEX;
 		//			   (  9   + 1 +  15   *   150 ) + 150'
 		//				        2260 + 150 = 2410
+
+		if (mode == PM_BIG) {
+			tileIndex[0] += TILEX;
+			tileIndex[1] += TILEX;
+		}
 	}
 	else {//상단
-		tileIndex[0] = tileX + tileY * TILEY;
-		//			   (  9   +   15  *  150 ) + 1'
-		//				      9 + 2250 + 1 = 2341
-		tileIndex[1] = (tileX + 1) + tileY * TILEY;
-		//			   (  9   + 1 ) +  15   *   150 
-		//				         10 + 2250 = 2260
+		//tileIndex[0] = (tileX + tileY * TILEX) - TILEX;
+		//tileIndex[1] = (tileX + 1 + tileY * TILEX) - TILEX;
+		tileIndex[0] = tileX + tileY * TILEX;
+		tileIndex[1] = (tileX + 1) + tileY * TILEX;
 	}
 	//이 두개의 인덱스를 가지고 수작을 부린다.
 
@@ -209,41 +211,133 @@ void playerNode::gravityChecker(bool isFall)
 	for (int i = 0; i < 2; ++i) {
 		checkPos[i] = stage->getTile()[tileIndex[i]].rc;
 	}
-	RECT temp = {0,0,0,0};
+	RECT temp = { 0,0,0,0 };
 	for (int i = 0; i < 2; ++i) {
-		//해당 속성의 값이 언무브가 맞고
 		TileRect = stage->getTile()[tileIndex[i]].rc;
 		TileRect.left -= stage->getEdge0();
 		TileRect.right -= stage->getEdge0();
-		if (((stage->getTileAttribute()[tileIndex[i]] & ATTR_UNMOVE) == ATTR_UNMOVE)) 
+		//해당 속성의 값이 언무브가 맞고
+		if (((stage->getTileAttribute()[tileIndex[i]] & ATTR_UNMOVE) == ATTR_UNMOVE) &&
 			//해당 타일과 충돌할때
-			if(IntersectRect(&temp, &TileRect, &CollisionRC)) {
-			
+			IntersectRect(&temp, &TileRect, &CollisionRC)) {
+
 			if (isFall) {//하단
-				frameX = 0;
-				state = PS_IDLE;
+				frameX = 1;
+				state = PS_MOVE;
 				rc.bottom = stage->getTile()[tileIndex[i]].rc.top;
 				rc.top = rc.bottom - (TILESIZE - 10);
 
-				point.y = rc.bottom - img->getFrameHeight()/2;
+				point.y = rc.bottom - img->getFrameHeight() / 2;
 			}
 			else {//상단
+				jumpPower = -jumpPower;
 				rc.top = stage->getTile()[tileIndex[i]].rc.bottom;
 				rc.bottom = rc.top - (TILESIZE - 10);
 
 				point.y = rc.top + img->getFrameHeight() / 2;
-				if (jumpPower > 0) {
-					jumpPower = 0;
-				}
 			}
 			return;
 		}
 	}
 
+	//어떻게하면 공중부약을 없앨 수 있을까
+	////해당 속성의 값이 언무브가 맞고
+	//if (((stage->getTileAttribute()[tileIndex[0]] & ATTR_UNMOVE) == ATTR_UNMOVE) &&
+	//	//해당 타일과 충돌할때
+	//	!IntersectRect(&temp, &TileRect, &CollisionRC)) {
+	//
+	//	if (isFall) {//하단
+	//		frameX = 5;
+	//		state = PS_JUMP;
+	//	}
+	//	return;
+	//}
+
 }
 
 //좌우이동
-void playerNode::moveChecker(bool isRight)
+bool playerNode::moveChecker(bool isRight)
 {
+	//터짐 방지용
+	if (point.x < 0 || point.x > 1200 ||
+		point.y < 0 || point.y > 800) return true;
+	//타일 검출용
+	RECT CollisionRC;
+	int tileX, tileY;
 
+	CollisionRC = rc;
+
+	CollisionRC.left -= stage->getEdge0();
+	CollisionRC.right -= stage->getEdge0();
+
+	//좀 깍아주면 편하다니 그렇다하자
+	if (isRight) {//우측
+		CollisionRC.left += 5;
+		CollisionRC.right += 5;
+	}
+	else {//좌측
+		CollisionRC.left -= 5;
+		CollisionRC.right -= 5;
+	}
+	CollisionRC.top += 5;
+	CollisionRC.bottom -= 5;
+
+	//예로 10*16에 위치한다면
+	//시작점은 720 ,1200,800,1280으로 left top이다
+	tileX = CollisionRC.left / TILESIZE;
+	//고로 X는 9
+	tileY = CollisionRC.top / TILESIZE;
+	//Y는 15가 된다.c
+
+
+	//탱크때는 방향을 받았지만 얘들은 중력체크니 위아래만 체크한다.
+	if (isRight) {//우측
+		tileIndex[0] = (tileX + tileY * TILEX) + 1;
+		tileIndex[1] = (tileX + (tileY + 1) * TILEX) + 1;
+		if (mode == PM_BIG && state != PS_SIT) {
+			tileIndex[1] = (tileX + tileY * TILEX) + 1;
+			tileIndex[0] = (tileX + (tileY + 1) * TILEX) + 1;
+		}
+	}
+	else {//좌측
+		tileIndex[0] = tileX + (tileY * TILEX);
+		tileIndex[1] = tileX + (tileY + 1) * TILEX;
+		if (mode == PM_BIG && state != PS_SIT) {
+			tileIndex[1] = tileX + (tileY * TILEX);
+			tileIndex[0] = tileX + (tileY + 1) * TILEX;
+		}
+	}
+	//이 두개의 인덱스를 가지고 수작을 부린다.
+
+	RECT TileRect;
+	RECT temp = { 0,0,0,0 };
+	//for (int i = 0; i < 2; ++i)
+	for (int i = 0; i < 2; ++i) {
+		TileRect = stage->getTile()[tileIndex[i]].rc;
+		TileRect.left -= stage->getEdge0();
+		TileRect.right -= stage->getEdge0();
+		//해당 속성의 값이 언무브가 아니고
+		checkPos[i] = stage->getTile()[tileIndex[i]].rc;
+
+		if (mode == PM_BIG && state != PS_SIT) {
+			if ((stage->getTileAttribute()[tileIndex[i]] & ATTR_UNMOVE) &&
+				//해당 타일과 충돌할때
+				IntersectRect(&temp, &TileRect, &CollisionRC)) {
+				return false;
+			}
+			if (i == 1) {
+				return true;
+			}
+		}
+		else {
+			if ((stage->getTileAttribute()[tileIndex[i]] ^ ATTR_UNMOVE) &&
+				//해당 타일과 충돌할때
+				IntersectRect(&temp, &TileRect, &CollisionRC)) {
+				return true;
+			}
+			if (i == 1) {
+				return false;
+			}
+		}
+	}
 }
