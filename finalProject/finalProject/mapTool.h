@@ -2,7 +2,6 @@
 #include "gameNode.h"
 #include "tileNode.h"
 
-#include "Mario.h"
 
 class mapTool :
 	public gameNode
@@ -11,7 +10,6 @@ private:
 	int frameIndex;
 	int mode;
 
-	Mario mario;
 
 	tagTile tiles[TILEX*TILEY];
 

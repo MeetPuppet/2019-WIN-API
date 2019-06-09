@@ -32,13 +32,11 @@ HRESULT mapTool::init()
 	}
 	frameIndex = 0;
 
-	mario.init(Point(WINSIZEX/2,WINSIZEY/2));
 	return S_OK;
 }
 void mapTool::update() 
 {
 	gameNode::update();
-	mario.update();
 	if (KEYMANAGER->isOnceKeyDown(VK_NUMPAD0)) {
 		if (mode == 0) {
 			mode = 1;
@@ -92,15 +90,30 @@ void mapTool::update()
 		for (int i = 0; i < MAX; ++i) {
 			if (PtInRect(&tiles[i].rc, _ptMouse)) {
 				if (frameIndex == 1 || frameIndex == 5) {
+					if (frameIndex == 1) {
+						tiles[i].terrain = TR_GROUND;
+					}
+					else if (frameIndex == 5) {
+						tiles[i].terrain = TR_LOCK;
+					}
 					tiles[i].terrainFrameX = frameIndex;
 					tiles[i].terrainFrameY = mode;
 				}
 				else if (frameIndex == 0) {
+					tiles[i].terrain = TR_NONE;
+					tiles[i].obj = OBJ_NONE;
 					tiles[i].terrainFrameX = frameIndex;
 					tiles[i].objFrameX = frameIndex;
 					tiles[i].objFrameY = mode;
 				}
 				else {
+					if (frameIndex == 3 || frameIndex == 5) {
+						tiles[i].obj = OBJ_ITEMBOX;
+					}
+					else if (frameIndex == 4) {
+						tiles[i].obj = OBJ_BLOCK;
+					}
+					tiles[i].terrain = TR_NONE;
 					tiles[i].terrainFrameX = 0;
 					tiles[i].objFrameX = frameIndex;
 					tiles[i].objFrameY = mode;
@@ -138,7 +151,6 @@ void mapTool::render()
 				tiles[i].rc.left, tiles[i].rc.top,
 				tiles[i].objFrameX, tiles[i].objFrameY);
 	}
-	mario.render();
 
 	TIMEMANAGER->render(getMemDC());
 	//==================== 건들지마라 =======================

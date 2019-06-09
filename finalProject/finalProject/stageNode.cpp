@@ -77,6 +77,20 @@ void stageNode::load(const char* map)
 
 	CloseHandle(file);
 
+	memset(attribute, 0, sizeof(DWORD) * TILEX * TILEY);
+	memset(pos, 0, sizeof(int) * 2);
+
+	//어트리뷰트 생성용
+	for (int i = 0; i < TILEX * TILEY; i++)
+	{
+		if (tiles[i].terrain == TR_GROUND) attribute[i] |= ATTR_UNMOVE;
+		if (tiles[i].obj == OBJ_ITEMBOX) attribute[i] |= ATTR_UNMOVE;
+
+		//이거부터는 나중에 지울수도 있는거
+		if (tiles[i].obj == OBJ_BLOCK) attribute[i] |= ATTR_UNMOVE;
+		// 오브젝트 == NONE  아니면 다 넣어주세요 홓홓홓
+	}
+
 	//이 앞부터는 오브젝트 생성용
 	//반드시 매니저와 연결해둘 것
 	if (oManager == NULL) 
@@ -102,6 +116,7 @@ void stageNode::load(const char* map)
 		else if (tiles[i].objFrameX == 5) {
 			oManager->setBlock(tiles[i].rc, 1, 0);
 		}
+		//코인
 		else if (tiles[i].objFrameX == 9) {
 			oManager->setCoin(tiles[i].rc);
 		}

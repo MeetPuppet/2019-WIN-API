@@ -12,6 +12,7 @@ private:
 
 	tagTile tiles[TILEX*TILEY];
 	DWORD attribute[TILEX*TILEY];
+	int pos[2];
 
 	objectManger* oManager;
 public:
@@ -46,6 +47,14 @@ public:
 		}
 		return false;
 	}
+
+	tagTile* getTile() { return tiles; }
+	DWORD* getTileAttribute() { return attribute; }
+	int getPosFirst() { return pos[0]; }
+	int getPosSecond() { return pos[1]; }
+
+
+
 	void setMainPosition(POINT point) { }
 	void LinkToOBJ(objectManger* om = NULL) 
 	{

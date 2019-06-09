@@ -38,7 +38,7 @@ void Mario::render()
 	Rectangle(getMemDC(), foot.left, foot.top, foot.right, foot.bottom);
 
 	char str[256];
-	sprintf_s(str, "x, y, speed : %f %f %f",point.x,point.y, IFF);
+	sprintf_s(str, "x, y, speed : %d %d %f",rc.left,rc.top, point.y);
 	TextOut(getMemDC(), 0, 60, str, strlen(str));
 }
 //덥어써진 키셋
@@ -152,12 +152,18 @@ void Mario::keySet()
 		point.y = point.y - jumpPower;
 
 		//바닥에 닿으면 IDLE로
-		if (jumpPower < 0 && om->collisionTile(foot, point.y) ) {
-			//여기서는 ox만 받아서 오브젝트 충돌
+		//if (jumpPower < 0 && om->collisionTile(foot, point.y) ) {
+		//	//여기서는 ox만 받아서 오브젝트 충돌
+		//}
+		//if (jumpPower < 0 && stage->collisionTile(foot, point.y)) {
+		//	frameX = 0;
+		//	state = PS_IDLE;
+		//}
+		if (jumpPower > 0) {
+			gravityChecker(false);
 		}
-		if (jumpPower < 0 && stage->collisionTile(foot, point.y)) {
-			frameX = 0;
-			state = PS_IDLE;
+		else {
+			gravityChecker(true);
 		}
 		break;
 	case PS_SIT:

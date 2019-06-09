@@ -68,5 +68,7 @@ public:
 	void LinkToStage(Stage1* s) { stage = s; }
 
 	virtual void keySet();
+	void gravityChecker(bool isFall);
+	void moveChecker(bool isRight);
 };
 

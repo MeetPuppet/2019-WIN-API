@@ -7,7 +7,7 @@
 #define BIGSTAGE 10
 #define ONESCENE 1
 
-//타일 갯수(X 1200/80개(15개), Y 800/80개)
+//타일 갯수(X 12000/80개(150개), Y 800/80(10개))
 #define TILEX (WINSIZEX*BIGSTAGE)/TILESIZE
 #define TILEY WINSIZEY/TILESIZE
 
