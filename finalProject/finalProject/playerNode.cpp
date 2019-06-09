@@ -157,7 +157,6 @@ void playerNode::gravityChecker(bool isFall)
 	RECT CollisionRC;
 
 	//타일 위치 측정용
-	int tileIndex[2] = { 0 };
 	//나중에 알아보자
 	int tileX, tileY;
 
@@ -168,6 +167,10 @@ void playerNode::gravityChecker(bool isFall)
 	IFS;//이놈은 실 스피드다.
 
 	//전에 쓰던건 여기서 이미지 처리함
+
+	//맵에서 이동된 만큼 위치 이동
+	CollisionRC.left -= stage->getEdge0();
+	CollisionRC.right -= stage->getEdge0();
 
 	//좀 깍아주면 편하다니 그렇다하자
 	CollisionRC.left += 5;
@@ -210,6 +213,8 @@ void playerNode::gravityChecker(bool isFall)
 	for (int i = 0; i < 2; ++i) {
 		//해당 속성의 값이 언무브가 맞고
 		TileRect = stage->getTile()[tileIndex[i]].rc;
+		TileRect.left -= stage->getEdge0();
+		TileRect.right -= stage->getEdge0();
 		if (((stage->getTileAttribute()[tileIndex[i]] & ATTR_UNMOVE) == ATTR_UNMOVE)) 
 			//해당 타일과 충돌할때
 			if(IntersectRect(&temp, &TileRect, &CollisionRC)) {

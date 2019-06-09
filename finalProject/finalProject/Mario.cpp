@@ -30,6 +30,7 @@ HRESULT Mario::init(Point p)
 void Mario::update()		   
 {    
 	playerNode::update();
+	gravityChecker(true);
 }
 void Mario::render()		   
 {
@@ -37,9 +38,15 @@ void Mario::render()
 
 	Rectangle(getMemDC(), foot.left, foot.top, foot.right, foot.bottom);
 
-	//char str[256];
-	//sprintf_s(str, "x, y, speed : %d %d %f",rc.left,rc.top, point.y);
-	//TextOut(getMemDC(), 0, 60, str, strlen(str));
+	char str[256];
+	sprintf_s(str, "rc, y : %d %d %f", rc.left, rc.top, point.y);
+	TextOut(getMemDC(), 0, 60, str, strlen(str));
+	for (int i = 0; i < 2; ++i) {
+		sprintf_s(str, "rc : %d %d %d %d", checkPos[i].left, checkPos[i].top, checkPos[i].right, checkPos[i].bottom);
+		TextOut(getMemDC(), 0, 80+(i*20), str, strlen(str)); 
+			sprintf_s(str, "tileIndex : %d", tileIndex[i]);
+		TextOut(getMemDC(), 200, 80 + (i * 20), str, strlen(str));
+	}
 }
 //덥어써진 키셋
 void Mario::keySet()		   

@@ -29,6 +29,7 @@ protected:
 	Point point;
 
 	RECT checkPos[2];
+	int tileIndex[2] = { 0 };
 
 	int IFS;
 	float IFF;
