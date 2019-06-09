@@ -107,6 +107,12 @@ void mainGame::update()				//연산 함수
 	if (KEYMANAGER->isOnceKeyDown(VK_RBUTTON)) {
 		E_Manager->makeGoomba(_ptMouse);
 	}
+	if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON)) {
+		E_Manager->makeGreenTurtle(_ptMouse);
+	}
+	if (KEYMANAGER->isOnceKeyDown(VK_SPACE)) {
+		E_Manager->KillGreenTurtle();
+	}
 
 	coin->update();
 	Firan->update();

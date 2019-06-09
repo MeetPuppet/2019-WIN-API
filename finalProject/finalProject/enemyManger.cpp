@@ -3,7 +3,8 @@
 
 #include "Goomba.h"
 #include "firanhaFlower.h"
-
+#include "greenTurtle.h"
+#include "greenShell.h"
 enemyManger::enemyManger()
 {
 	vEnemy;//든거 없음
@@ -52,6 +53,12 @@ void enemyManger::makeGoomba(POINT point)
 	newGoomba->init(point);
 	vEnemy.emplace_back(newGoomba);
 }
+void enemyManger::makeGreenTurtle(POINT point)
+{
+	greenTurtle* newGreenTurtle = new greenTurtle;
+	newGreenTurtle->init(point);
+	vEnemy.emplace_back(newGreenTurtle);
+}
 void enemyManger::goombaUpdate()
 {
 	for (int i = 0; i < vEnemy.size(); ++i) {
@@ -61,13 +68,24 @@ void enemyManger::goombaUpdate()
 void enemyManger::KillGoomba()
 {
 }
+void enemyManger::KillGreenTurtle()
+{
+	for (int i = 0; i < vEnemy.size(); ++i) {
+		vEnemy[i]->~enemyNode();
+	}
+	for (int i = 0; i < vEnemy.size(); ++i) {
+		greenShell* newGreenShell = new greenShell;
+		newGreenShell->init(vEnemy[i]->getPoint().x, vEnemy[i]->getPoint().y, 80, 75);
+
+	}
+}
+
 void enemyManger::goombaRender()
 {
 	for (int i = 0; i < vEnemy.size(); ++i) {
 		vEnemy[i]->render();
 	}
 }
-
 void enemyManger::LinkTarget(POINT* targetPoint)
 {
 	for (int i = 0; i < vEnemy.size(); ++i) {

@@ -19,6 +19,8 @@ HRESULT objectManger::init()
 	IMAGEMANAGER->addFrameImage("Block", "image/object/block.bmp", 240, 160, 3, 2, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("Coin", "image/object/coin.bmp", 240, 70, 3, 1, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("fireShot", "image/bowser/fireShot.bmp", 96, 18, 2, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("greenShell", "image/object/greenShell.bmp", 160, 75, 2, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("greyShell", "image/object/greyShell.bmp", 160, 75, 2, 1, true, RGB(255, 0, 255));
 	return S_OK;
 }
 void objectManger::update()
