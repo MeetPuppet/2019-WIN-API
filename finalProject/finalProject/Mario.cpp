@@ -29,32 +29,37 @@ HRESULT Mario::init(Point p)
 }
 void Mario::update()		   
 {    
-	playerNode::update();
-	if (KEYMANAGER->isToggleKey(VK_F3)) {
+	if (state == PS_DEAD) {
+		//죽을때 돌릴 부분
+	}
+	else {
+		playerNode::update();
 	}
 }
 void Mario::render()		   
 {
-	playerNode::render();
-
-	Rectangle(getMemDC(), foot.left, foot.top, foot.right, foot.bottom);
-
 	if (KEYMANAGER->isToggleKey(VK_F3)) {
+		Rectangle(getMemDC(), foot.left, foot.top, foot.right, foot.bottom);
 		for (int i = 0; i < 2; ++i) {
 			Rectangle(getMemDC(), checkPos[i].left, checkPos[i].top, checkPos[i].right, checkPos[i].bottom);
 		}
+		Rectangle(getMemDC(), CollisionRC.left, CollisionRC.top, CollisionRC.right, CollisionRC.bottom);
 		char str[256];
 		sprintf_s(str, "rc, y : %d %d %f", rc.left, rc.top, point.y);
 		TextOut(getMemDC(), 0, 60, str, strlen(str));
 		for (int i = 0; i < 2; ++i) {
 			sprintf_s(str, "%d", i);
-			TextOut(getMemDC(), checkPos[i].left+10, checkPos[i].top+10, str, strlen(str));
+			TextOut(getMemDC(), checkPos[i].left + 10, checkPos[i].top + 10, str, strlen(str));
 			sprintf_s(str, "rc : %d %d %d %d", checkPos[i].left, checkPos[i].top, checkPos[i].right, checkPos[i].bottom);
 			TextOut(getMemDC(), 0, 80 + (i * 20), str, strlen(str));
 			sprintf_s(str, "tileIndex : %d", tileIndex[i]);
 			TextOut(getMemDC(), 200, 80 + (i * 20), str, strlen(str));
 		}
 	}
+	playerNode::render();
+
+
+	
 }
 //덥어써진 키셋
 void Mario::keySet()		   

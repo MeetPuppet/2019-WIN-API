@@ -11,6 +11,8 @@ enum E_STATE {
 	DEAD
 };
 
+class stageNode;
+
 class enemyNode :
 	public gameNode
 {
@@ -19,6 +21,7 @@ protected:
 	E_STATE state;
 	Point p;//중점위치
 	RECT rc;//충돌용 사각형
+	stageNode* stage;
 
 	float FrameCheck;
 	float speed;
@@ -26,7 +29,9 @@ protected:
 
 	int frameX;
 	int frameY;
-
+	RECT checkPos[2];
+	int tileIndex[2];
+	float time;
 	POINT* targetPoint;
 	//AI용 함수위치
 	inline bool playerSearch(POINT* playerPoint);
@@ -40,6 +45,7 @@ public:
 	virtual void update();
 	virtual void render();
 	virtual void FrameSeter();
+	void moveChecker(bool isRight);
 
 	//충돌 확인용
 	Point getPoint() { return p; }
@@ -54,4 +60,5 @@ public:
 	 void LinkToTarget(POINT* playerPoint = NULL){
 		targetPoint = playerPoint;
 	}
+	 void LinkToStage(stageNode* s) { stage = s; }
 };

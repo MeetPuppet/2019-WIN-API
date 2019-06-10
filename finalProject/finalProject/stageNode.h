@@ -3,6 +3,7 @@
 #include "tileNode.h"
 
 class objectManger;
+class enemyManger;
 
 class stageNode :
 	public gameNode
@@ -15,6 +16,7 @@ private:
 	int pos[2];
 
 	objectManger* oManager;
+	enemyManger* eManager;
 public:
 	stageNode();
 	~stageNode();
@@ -56,9 +58,13 @@ public:
 
 
 	void setMainPosition(POINT point) { }
-	void LinkToOBJ(objectManger* om = NULL) 
+	void LinkToOBJ(objectManger* om = NULL)
 	{
 		oManager = om;
+	}
+	void LinkToEnemy(enemyManger* em = NULL)
+	{
+		eManager = em;
 	}
 
 };

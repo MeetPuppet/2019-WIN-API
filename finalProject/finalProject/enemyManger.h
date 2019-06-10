@@ -4,6 +4,7 @@
 
 class enemyNode;
 class objectManger;
+class stageNode;
 
 class enemyManger :
 	public gameNode
@@ -15,6 +16,7 @@ private:
 	void turtleUpdate();
 	void goombaRender();
 	objectManger* omP;
+	stageNode* stage;
 	bool GoombaCollisionCheck(const RECT& rc);
 public:
 	enemyManger();
@@ -26,7 +28,8 @@ public:
 	void render();
 	bool enemyCollisionCheck(RECT rc);
 	void LinkToobjectManger(objectManger* om);
-
+	void LinkToStage(stageNode* s) { stage = s; }
+	
 	void makeGoomba(POINT point);
 	void makeGreenTurtle(POINT point);
 	void makeGreyTurtle(POINT point);

@@ -71,6 +71,7 @@ void playerNode::update()
 	time = TIMEMANAGER->getElapsedTime();
 	if (time < 0 || time > 10) time = 0.16f;
 	keySet();
+	footCheck();
 	om->collisionCoin(rc);
 }
 
@@ -262,7 +263,7 @@ bool playerNode::moveChecker(bool isRight)
 	if (point.x < 0 || point.x > 1200 ||
 		point.y < 0 || point.y > 800) return true;
 	//타일 검출용
-	RECT CollisionRC;
+	CollisionRC;
 	int tileX, tileY;
 
 	CollisionRC = rc;
@@ -270,14 +271,16 @@ bool playerNode::moveChecker(bool isRight)
 	CollisionRC.left -= stage->getEdge0();
 	CollisionRC.right -= stage->getEdge0();
 
-	//좀 깍아주면 편하다니 그렇다하자
+	//그저 위치 찾아내는 부분이라 큰 의미는 없음
+	//근데 아래서 다시 탐색 해볼라면 재설정 필요함
+	//나도 모르겠다
 	if (isRight) {//우측
-		CollisionRC.left += 5;
-		CollisionRC.right += 5;
+		CollisionRC.left += 10;
+		CollisionRC.right += 10;
 	}
 	else {//좌측
-		CollisionRC.left -= 5;
-		CollisionRC.right -= 5;
+		CollisionRC.left -= 10;
+		CollisionRC.right -= 10;
 	}
 	CollisionRC.top += 5;
 	CollisionRC.bottom -= 5;
@@ -290,7 +293,6 @@ bool playerNode::moveChecker(bool isRight)
 	//Y는 15가 된다.c
 
 
-	//탱크때는 방향을 받았지만 얘들은 중력체크니 위아래만 체크한다.
 	if (isRight) {//우측
 		tileIndex[0] = (tileX + tileY * TILEX) + 1;
 		tileIndex[1] = (tileX + (tileY + 1) * TILEX) + 1;
@@ -309,25 +311,36 @@ bool playerNode::moveChecker(bool isRight)
 	}
 	//이 두개의 인덱스를 가지고 수작을 부린다.
 
+	CollisionRC = rc;
+	if (isRight) {//우측
+		CollisionRC.left += 10;
+		CollisionRC.right += 10;
+	}
+	else {//좌측
+		CollisionRC.left -= 10;
+		CollisionRC.right -= 10;
+	}
+	CollisionRC.top += 10;
+	CollisionRC.bottom -= 10;
 	RECT TileRect;
 	RECT temp = { 0,0,0,0 };
 	//for (int i = 0; i < 2; ++i)
 	for (int i = 0; i < 2; ++i) {
 		TileRect = stage->getTile()[tileIndex[i]].rc;
-		TileRect.left -= stage->getEdge0();
-		TileRect.right -= stage->getEdge0();
+		//TileRect.left -= stage->getEdge0();
+		//TileRect.right -= stage->getEdge0();
 		//해당 속성의 값이 언무브가 아니고
 		checkPos[i] = stage->getTile()[tileIndex[i]].rc;
 
+		if ((stage->getTileAttribute()[tileIndex[i]] & ATTR_UNMOVE) &&
+			//해당 타일과 충돌할때
+			IntersectRect(&temp, &TileRect, &CollisionRC)) {
+			return false;
+		}
+		if (i == 1) {
+			return true;
+		}
 		if (mode == PM_BIG && state != PS_SIT) {
-			if ((stage->getTileAttribute()[tileIndex[i]] & ATTR_UNMOVE) &&
-				//해당 타일과 충돌할때
-				IntersectRect(&temp, &TileRect, &CollisionRC)) {
-				return false;
-			}
-			if (i == 1) {
-				return true;
-			}
 		}
 		else {
 			if ((stage->getTileAttribute()[tileIndex[i]] ^ ATTR_UNMOVE) &&
@@ -340,4 +353,91 @@ bool playerNode::moveChecker(bool isRight)
 			}
 		}
 	}
+}
+void playerNode::footCheck()
+{//터짐 방지용
+	if (point.x < 0 || point.x > 1200 ||
+		point.y < 0 || point.y > 800) return;
+	//타일 검출용
+	RECT CollisionRC;
+
+	//타일 위치 측정용
+	//나중에 알아보자
+	int tileX, tileY;
+
+	//일단 플레이어 자체를 넘겨주자
+	CollisionRC = rc;
+	time;//이 실시간을 받아오는 값은 이미 준비 해뒀다.
+	IFS;//이놈은 실 스피드다.
+
+	//전에 쓰던건 여기서 이미지 처리함
+
+	//맵환경 변화 반영
+	CollisionRC.left -= stage->getEdge0();
+	CollisionRC.right -= stage->getEdge0();
+
+	//좀 깍아주면 편하다니 그렇다하자
+	CollisionRC.left += 5;
+	CollisionRC.top += 5;
+	CollisionRC.right -= 5;
+	CollisionRC.bottom -= 5;
+
+	//예로 10*16에 위치한다면
+	//시작점은 720 ,1200,800,1280으로 left top이다
+	tileX = CollisionRC.left / TILESIZE;
+	//고로 X는 9
+	tileY = CollisionRC.top / TILESIZE;
+	//Y는 15가 된다.c
+
+
+	
+	tileIndex[0] = (tileX + tileY * TILEX) + TILEX;
+	tileIndex[1] = (tileX + 1 + tileY * TILEX) + TILEX;
+	if (mode == PM_BIG) {
+		tileIndex[0] += TILEX;
+		tileIndex[1] += TILEX;
+	}
+
+	RECT TileRect;
+	RECT temp = { 0,0,0,0 };
+	for (int i = 0; i < 2; ++i) {
+		TileRect = stage->getTile()[tileIndex[i]].rc;
+		//해당 속성의 값이 언무브가 맞고
+		if (((stage->getTileAttribute()[tileIndex[i]] & ATTR_UNMOVE) == ATTR_UNMOVE) &&
+			//해당 타일과 충돌할때
+			IntersectRect(&temp, &TileRect, &foot)) {
+			//그럼 아무것도 안함
+			if (state == PS_JUMP && jumpPower < 0) {
+				state = PS_MOVE;
+				frameX = 1;
+			}
+			return;
+		}
+	}
+	if (state != PS_JUMP) {
+		jumpPower = 0;
+		state = PS_JUMP;
+		frameX = 5;
+	}
+}
+
+void playerNode::powerUp()
+{
+	if (mode == PM_SMALL) {
+		mode = PM_BIG;
+	}
+}
+void playerNode::jumpUp()
+{
+	jumpPower = 1;
+}
+void playerNode::finishem()
+{
+	if (mode == PM_BIG) {
+		mode = PM_SMALL;
+		return;
+	}
+
+	frameX = 6;
+	state = PS_DEAD;
 }

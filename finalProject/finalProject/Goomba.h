@@ -8,7 +8,7 @@ public:
 	~Goomba();
 
 	// 중점 기준 배치
-	HRESULT init(POINT point);
+	HRESULT init(Point point);
 	void release();
 	void update();
 	void render();

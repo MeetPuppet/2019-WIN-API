@@ -5,19 +5,12 @@
 #include "enemyManger.h"
 #include "objectManger.h"
 #include "Stage1.h"
-#include "boss.h"
-#include "Coin.h"
-#include "firanhaFlower.h"
-#include "fireShot.h"
 mainGame::mainGame()
 {
 	mario = NULL;
 	E_Manager = NULL;
-	O_Manger = NULL;
+	O_Manager = NULL;
 	stage1 = NULL;
-	bowser = NULL;
-	coin = NULL;
-	Firan = NULL;
 }
 
 mainGame::~mainGame()
@@ -38,28 +31,31 @@ HRESULT mainGame::init()			//초기화 함수
 		E_Manager = new enemyManger;
 		E_Manager->init();
 	}
-	if (O_Manger == NULL) {
-		O_Manger = new objectManger;
-		O_Manger->init();
+	if (O_Manager == NULL) {
+		O_Manager = new objectManger;
+		O_Manager->init();
 		if (mario) {
-			mario->LinkToOM(O_Manger);
+			mario->LinkToOM(O_Manager);
 		}
 	}
 	if (E_Manager) {
-		E_Manager->LinkToobjectManger(O_Manger);
+		E_Manager->LinkToobjectManger(O_Manager);
 	}
-	if (O_Manger) {
-		O_Manger->LinkToenemyManger(E_Manager);
+	if (O_Manager) {
+		O_Manager->LinkToenemyManger(E_Manager);
 	}
-	coin = new Coin; 
-	Firan = new firanhaFlower;
-	Fire = new fireShot;
 	if (stage1 == NULL) {
 		stage1 = new Stage1;
 
 		//생성용 참고
-		if (O_Manger)//init보다 먼저 돌릴것
-			stage1->LinkToOBJ(O_Manger);
+		if (O_Manager) {//init보다 먼저 돌릴것
+			stage1->LinkToOBJ(O_Manager);
+			O_Manager->LinkToStage(stage1);
+		}
+		if (E_Manager){
+			stage1->LinkToEnemy(E_Manager);
+			E_Manager->LinkToStage(stage1);
+		}
 
 		stage1->init();
 
@@ -68,12 +64,7 @@ HRESULT mainGame::init()			//초기화 함수
 		}
 	}
 
-	bowser = new boss;
 
-	Firan->init(450, 450);
-	coin->init(600,300,80,70);
-	Fire->init(600, 600, 40, 40, 1);
-	bowser->init(600, 600, 400, 400);
 	return S_OK;
 }
 
@@ -91,9 +82,9 @@ void mainGame::release()			//메모리 해제 함수
 		delete E_Manager;
 		E_Manager = NULL;
 	}
-	if (O_Manger) {
-		delete O_Manger;
-		O_Manger = NULL;
+	if (O_Manager) {
+		delete O_Manager;
+		O_Manager = NULL;
 	} 
 	if (stage1) {
 		delete stage1;
@@ -110,28 +101,25 @@ void mainGame::update()				//연산 함수
 
 
 	//오른쪽 마우스키 누른자리에 적 생성
-	if (KEYMANAGER->isOnceKeyDown(VK_RBUTTON)) {
-		E_Manager->makeGoomba(_ptMouse);
-	}
-	if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON)) {
-		E_Manager->makeGreenTurtle(_ptMouse);
-	}
-	if (KEYMANAGER->isOnceKeyDown(VK_SPACE)) {
-		E_Manager->KillGreenTurtle();
-	}
-	O_Manger->changeToGreenTurtle();
+	//if (KEYMANAGER->isOnceKeyDown(VK_RBUTTON)) {
+	//	E_Manager->makeGoomba(_ptMouse);
+	//}
+	//if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON)) {
+	//	E_Manager->makeGreenTurtle(_ptMouse);
+	//}
+	//if (KEYMANAGER->isOnceKeyDown(VK_SPACE)) {
+	//	E_Manager->KillGreenTurtle();
+	//}
+	O_Manager->changeToGreenTurtle();
 
-	coin->update();
-	Firan->update();
-	Fire->update();
 	if (mario) {
 		mario->update();
 	}
 	if (E_Manager) {
 		E_Manager->update();
 	}
-	if (O_Manger) {
-		O_Manger->update();
+	if (O_Manager) {
+		O_Manager->update();
 	}
 	if (stage1) {
 		stage1->update();
@@ -142,17 +130,15 @@ void mainGame::update()				//연산 함수
 	if (mario->getX() > 800 && stage1->getEdge1() > 1200 + mario->getSpeed()) {
 		mario->moveX(-mario->getSpeed());
 		E_Manager->moveWorld(-moveSpeed);
-		O_Manger->moveWorld(-moveSpeed);
+		O_Manager->moveWorld(-moveSpeed);
 		stage1->moveX(-moveSpeed);
-		bowser->moveX(-moveSpeed);
 	}
 	else if (mario->getX() < 400 && stage1->getEdge0() < 0 - mario->getSpeed()) {
 		//좌우속도차가 있음
 		mario->moveX(mario->getSpeed());
 		E_Manager->moveWorld(moveSpeed);
-		O_Manger->moveWorld(moveSpeed);
+		O_Manager->moveWorld(moveSpeed);
 		stage1->moveX(moveSpeed);
-		bowser->moveX(moveSpeed);
 	}
 	//
 	//if (q->getX() > 800 && stage1->getEdge1() > 1200 + q->getSpeed()) {
@@ -173,7 +159,6 @@ void mainGame::update()				//연산 함수
 	//	bowser->moveX(moveSpeed);
 	//}
 
-	bowser->update();
 }
 
 void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
@@ -185,8 +170,8 @@ void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
 	if (stage1) {
 		stage1->render();
 	}
-	if (O_Manger) {
-		O_Manger->render();
+	if (O_Manager) {
+		O_Manager->render();
 	}
 	if (E_Manager) {
 		E_Manager->render();
@@ -196,10 +181,6 @@ void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
 		mario->render();
 	}
 	
-	coin->render();
-	Firan->render();
-	Fire->render();
-	bowser->render();
 	//==================== 건들지마라 =======================
 	TIMEMANAGER->render(getMemDC());
 	this->getBackBuffer()->render(getHDC(), 0, 0);

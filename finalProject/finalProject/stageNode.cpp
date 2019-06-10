@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "stageNode.h"
 #include "objectManger.h"
+#include "enemyManger.h"
 
 
 #define MAX TILEX*TILEY
@@ -128,6 +129,23 @@ void stageNode::load(const char* map)
 		//内牢
 		else if (tiles[i].objFrameX == 9) {
 			oManager->setCoin(tiles[i].rc);
+		}
+		//崩官
+		else if (tiles[i].objFrameX == 10) {
+			tiles[i].objFrameX = 0;
+			eManager->makeGoomba({ tiles[i].rc.left + (tiles[i].rc.right - tiles[i].rc.left) / 2,
+				tiles[i].rc.top + (tiles[i].rc.bottom - tiles[i].rc.top) / 2 });
+		}
+		//部合部合
+		else if (tiles[i].objFrameX == 11) {
+			tiles[i].objFrameX = 0;
+			eManager->makeGreenTurtle({ tiles[i].rc.left + (tiles[i].rc.right - tiles[i].rc.left) / 2,
+				tiles[i].rc.top + (tiles[i].rc.bottom - tiles[i].rc.top) / 2 });
+		}
+		//捻颇
+		else if (tiles[i].objFrameX == 12) {
+			tiles[i].objFrameX = 0;
+
 		}
 	}
 }

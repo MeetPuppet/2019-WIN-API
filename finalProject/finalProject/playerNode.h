@@ -6,7 +6,8 @@ enum PLAYERSTATE {
 	PS_MOVE,
 	PS_BREAK,
 	PS_JUMP,
-	PS_SIT
+	PS_SIT,
+	PS_DEAD
 };
 
 enum PLAYERMOD {
@@ -16,7 +17,7 @@ enum PLAYERMOD {
 };
 
 class objectManger;
-class Stage1;
+class stageNode;
 
 class playerNode :
 	public gameNode
@@ -27,6 +28,7 @@ protected:
 	RECT rc;
 	RECT foot;
 	Point point;
+	RECT CollisionRC;
 
 	RECT checkPos[2];
 	int tileIndex[2] = { 0 };
@@ -46,7 +48,7 @@ protected:
 	float frameCount;
 
 	objectManger* om;
-	Stage1* stage;
+	stageNode* stage;
 public:
 	playerNode();
 	~playerNode();
@@ -68,10 +70,15 @@ public:
 		point.x += X;
 	}
 	void LinkToOM(objectManger* OM) { om = OM; }
-	void LinkToStage(Stage1* s) { stage = s; }
+	void LinkToStage(stageNode* s) { stage = s; }
 
 	virtual void keySet();
 	void gravityChecker(bool isFall);
 	bool moveChecker(bool isRight);
+	void footCheck();
+
+	void powerUp();
+	void jumpUp();
+	void finishem();
 };
 

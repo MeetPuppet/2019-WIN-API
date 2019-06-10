@@ -195,9 +195,6 @@
     <ClCompile Include="Coin.cpp">
       <Filter>mainGame\map\objectManager\object</Filter>
     </ClCompile>
-    <ClCompile Include="enemyNode.cpp">
-      <Filter>mainGame\enemyManager\enemys</Filter>
-    </ClCompile>
     <ClCompile Include="firanhaFlower.cpp">
       <Filter>mainGame\enemyManager\enemys</Filter>
     </ClCompile>
@@ -218,6 +215,9 @@
     </ClCompile>
     <ClCompile Include="enemyManger.cpp">
       <Filter>mainGame\enemyManager</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyNode.cpp">
+      <Filter>mainGame\enemyManager\node</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

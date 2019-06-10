@@ -12,7 +12,7 @@ Goomba::~Goomba()
 {
 }
 
-HRESULT Goomba::init(POINT point)
+HRESULT Goomba::init(Point point)
 {
 	enemyNode::init("Goomba", point);
 
@@ -39,7 +39,7 @@ void Goomba::FrameSeter()
 	case ER_PATROL:
 	case ER_CHASE:
 		if (img->getMaxFrameX() > FrameCheck) {
-			FrameCheck += 1 * TIMEMANAGER->getElapsedTime();
+			FrameCheck += 1 * time;
 			if (FrameCheck >= 2) {
 				frameX = 1;
 			}

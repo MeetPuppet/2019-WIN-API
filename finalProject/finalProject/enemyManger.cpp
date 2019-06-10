@@ -2,13 +2,14 @@
 #include "enemyManger.h"
 
 #include "Goomba.h"
-#include "firanhaFlower.h"
+//#include "firanhaFlower.h"
 #include "greenTurtle.h"
-#include "greyTurtle.h"
+//#include "greyTurtle.h"
 #include "objectManger.h"
 enemyManger::enemyManger()
 {
 	vEnemy;//든거 없음
+	omP = NULL;
 }
 
 
@@ -30,7 +31,6 @@ HRESULT enemyManger::init()
 		4, 2, true, RGB(255, 0, 255));	
 	IMAGEMANAGER->addFrameImage("firanhaFlower", "image/enemy/firanhaFlower.bmp", 160, 120,
 		2, 1, true, RGB(255, 0, 255));
-	omP = NULL;
 
 	return S_OK;
 }
@@ -54,19 +54,21 @@ void enemyManger::makeGoomba(POINT point)
 {
 	Goomba* newGoomba = new Goomba;
 	newGoomba->init(point);
+	newGoomba->LinkToStage(stage);
 	vEnemy.emplace_back(newGoomba);
 }
 void enemyManger::makeGreenTurtle(POINT point)
 {
 	greenTurtle* newGreenTurtle = new greenTurtle;
 	newGreenTurtle->init(point);
+	newGreenTurtle->LinkToStage(stage);
 	vTurtle.emplace_back(newGreenTurtle);
 }
 void enemyManger::makeGreyTurtle(POINT point)
 {
-	greyTurtle* newGreyTurtle = new greyTurtle;
-	newGreyTurtle->init(point);
-	vTurtle.emplace_back(newGreyTurtle);
+	//greyTurtle* newGreyTurtle = new greyTurtle;
+	//newGreyTurtle->init(point);
+	//vTurtle.emplace_back(newGreyTurtle);
 }
 void enemyManger::goombaUpdate()
 {

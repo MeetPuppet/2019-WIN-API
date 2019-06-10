@@ -20,7 +20,16 @@ HRESULT mapTool::init()
 	gameNode::init(true);
 	IMAGEMANAGER->addFrameImage("Tiles", "image/tile/Tiles.bmp", 480, 160, 6, 2, true,RGB(255,0,255));
 	IMAGEMANAGER->addFrameImage("Coin", "image/object/coin.bmp", 240, 70, 3, 1, true, RGB(255, 0, 255));
-	//IMAGEMANAGER->addFrameImage("itemBox", "image/tile/itemBox.bmp", 320, 80, 4, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("Goomba", "image/enemy/goomba.bmp", 240, 80,
+		3, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("greenTurtle", "image/enemy/greenTurtle.bmp", 160, 240,
+		2, 2, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("greyTurtle", "image/enemy/greyTurtle.bmp", 160, 240,
+		2, 2, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("bowser", "image/bowser/bowser.bmp", 640, 320,
+		4, 2, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("firanhaFlower", "image/enemy/firanhaFlower.bmp", 160, 120,
+		2, 1, true, RGB(255, 0, 255));
 	//load();
 
 	for (int i = 0; i < TILEY; ++i) {
@@ -74,6 +83,19 @@ void mapTool::update()
 	else if (KEYMANAGER->isOnceKeyDown('L')) {
 		load();
 	}
+	//굼바
+	else if (KEYMANAGER->isOnceKeyDown(VK_NUMPAD1)) {
+		frameIndex = 10;
+	}
+	//거북이
+	else if (KEYMANAGER->isOnceKeyDown(VK_NUMPAD2)) {
+		frameIndex = 11;
+	}
+	//쿠파
+	else if (KEYMANAGER->isOnceKeyDown(VK_NUMPAD3)) {
+		frameIndex = 12;
+
+	}
 	if (KEYMANAGER->isStayKeyDown(VK_LEFT) && tiles[0].rc.left < 10) {
 		for (int i = 0; i < MAX; ++i) {
 			tiles[i].rc.left += 10;
@@ -106,6 +128,23 @@ void mapTool::update()
 					tiles[i].objFrameX = frameIndex;
 					tiles[i].objFrameY = mode;
 				}
+				else if (frameIndex >= 10) {
+					//몬스터 생성용
+					tiles[i].objFrameX = frameIndex;
+					switch (frameIndex)
+					{
+					case OBJ_ENEMY_GOOMBA:
+						tiles[i].obj = OBJ_ENEMY_GOOMBA;
+						break;
+					case OBJ_ENEMY_TURTLE:
+						tiles[i].obj = OBJ_ENEMY_TURTLE;
+						break;
+					case OBJ_BOSS_BOWSER:
+						tiles[i].obj = OBJ_BOSS_BOWSER;
+						break;
+					}
+					tiles[i].obj = OBJ_ITEMBOX;
+				}
 				else {
 					if (frameIndex == 3 || frameIndex == 5) {
 						tiles[i].obj = OBJ_ITEMBOX;
@@ -129,17 +168,46 @@ void mapTool::render()
 	PatBlt(getMemDC(), 0, 0, WINSIZEX, WINSIZEY, WHITENESS);
 	//==================== 건들지마라 ======================
 
+	char str[256];
 	for (int i = 0; i < MAX; ++i) {
-		if (tiles[i].rc.right > 0 && tiles[i].rc.left < 1200)
+		if (tiles[i].rc.right > 0 && tiles[i].rc.left < 1200) {
 			IMAGEMANAGER->frameRender("Tiles", getMemDC(),
 				tiles[i].rc.left, tiles[i].rc.top,
 				tiles[i].terrainFrameX, tiles[i].terrainFrameY);
+			sprintf_s(str, "%d", i);
+			TextOut(getMemDC(), tiles[i].rc.left, tiles[i].rc.top + 10, str, strlen(str));
+			sprintf_s(str, "%d", tiles[i].terrain);
+			TextOut(getMemDC(), tiles[i].rc.left, tiles[i].rc.top + 30, str, strlen(str));
+			sprintf_s(str, "%d", tiles[i].objFrameX);
+			TextOut(getMemDC(), tiles[i].rc.left, tiles[i].rc.top + 50, str, strlen(str));
+		}
 	}
 
 	//실제 스테이지에서 부를때는 obj랑 deco 매니저를 돌려서 만들 것
 	for (int i = 0; i < MAX; ++i) {
 
-		if (tiles[i].objFrameX == 9) {
+		if (tiles[i].objFrameX >= 10) {
+
+			switch (tiles[i].objFrameX)
+			{
+			case OBJ_ENEMY_GOOMBA:
+				IMAGEMANAGER->frameRender("Goomba", getMemDC(),
+					tiles[i].rc.left, tiles[i].rc.top,
+					0, 0);
+				break;
+			case OBJ_ENEMY_TURTLE:
+				IMAGEMANAGER->frameRender("greenTurtle", getMemDC(),
+					tiles[i].rc.left, tiles[i].rc.top,
+					0, 0);
+				break;
+			case OBJ_BOSS_BOWSER:
+				IMAGEMANAGER->frameRender("bowser", getMemDC(),
+					tiles[i].rc.left, tiles[i].rc.top,
+					0, 0);
+				break;
+			}
+		}
+		else if (tiles[i].objFrameX == 9) {
 			IMAGEMANAGER->frameRender("Coin", getMemDC(),
 				tiles[i].rc.left, tiles[i].rc.top,
 				0, 0);
