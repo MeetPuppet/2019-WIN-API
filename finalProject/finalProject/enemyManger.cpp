@@ -111,9 +111,11 @@ void enemyManger::KillGreyTurtle()
 void enemyManger::goombaRender()
 {	
 	for (int i = 0; i < vEnemy.size(); ++i) {
+		if (vEnemy[i]->getRect().right >= 0 && vEnemy[i]->getRect().left <= 1200)
 		vEnemy[i]->render();
 	}
 	for (int i = 0; i < vTurtle.size(); ++i) {
+		if (vTurtle[i]->getRect().right >= 0 && vTurtle[i]->getRect().left <= 1200)
 		vTurtle[i]->render();
 	}
 }

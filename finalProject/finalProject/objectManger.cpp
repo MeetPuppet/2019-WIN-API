@@ -43,12 +43,15 @@ void objectManger::update()
 void objectManger::render()
 {
 	for (int i = 0; i < vTile.size(); ++i) {
-		vTile[i]->render();
+		if(vTile[i]->getRect().right >= 0 && vTile[i]->getRect().left <= 1200)
+			vTile[i]->render();
 	}
 	for (int i = 0; i < vCoin.size(); ++i) {
+		if (vCoin[i]->getRect().right >= 0 && vCoin[i]->getRect().left <= 1200)
 		vCoin[i]->render();
 	}
 	for (int i = 0; i < vShell.size(); ++i) {
+		if (vShell[i]->getRect().right >= 0 && vShell[i]->getRect().left <= 1200)
 		vShell[i]->render();
 	}
 }

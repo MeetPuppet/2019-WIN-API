@@ -58,15 +58,16 @@ void stageNode::render()
 {
 	char str[256];
 	for (int i = 0; i < MAX; ++i) {
-		if (tiles[i].rc.right > 0 && tiles[i].rc.left < 1200)
+		if (tiles[i].rc.right > 0 && tiles[i].rc.left < 1200) {
 			IMAGEMANAGER->frameRender("Tiles", getMemDC(),
 				tiles[i].rc.left, tiles[i].rc.top,
 				tiles[i].terrainFrameX, tiles[i].terrainFrameY);
-		if (KEYMANAGER->isToggleKey(VK_F3)) {
-			sprintf_s(str, "%d", i);
-			TextOut(getMemDC(), tiles[i].rc.left + 10, tiles[i].rc.top + 10, str, strlen(str));
-			sprintf_s(str, "%d", tiles[i].terrain);
-			TextOut(getMemDC(), tiles[i].rc.left + 20, tiles[i].rc.top + 20, str, strlen(str));
+			if (KEYMANAGER->isToggleKey(VK_F3)) {
+				sprintf_s(str, "%d", i);
+				TextOut(getMemDC(), tiles[i].rc.left + 10, tiles[i].rc.top + 10, str, strlen(str));
+				sprintf_s(str, "%d", tiles[i].terrain);
+				TextOut(getMemDC(), tiles[i].rc.left + 20, tiles[i].rc.top + 20, str, strlen(str));
+			}
 		}
 	}
 }
