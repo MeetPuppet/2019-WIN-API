@@ -1,7 +1,50 @@
-﻿  greenShell.cpp
+﻿  Mario.cpp
 d:\2019-win-api\finalproject\finalproject\stdafx.h(80): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 d:\2019-win-api\finalproject\finalproject\stdafx.h(88): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 d:\2019-win-api\finalproject\finalproject\stdafx.h(89): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.h(63): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\stagenode.h(44): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\mario.cpp(88): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\mario.cpp(92): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\mario.cpp(95): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\mario.cpp(100): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\mario.cpp(129): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\mario.cpp(141): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\mario.cpp(145): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\mario.cpp(148): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\mario.cpp(182): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\mario.cpp(193): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  boss.cpp
+d:\2019-win-api\finalproject\finalproject\stdafx.h(80): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\stdafx.h(88): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\stdafx.h(89): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\boss.h(62): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\stagenode.h(44): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\boss.cpp(15): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+d:\2019-win-api\finalproject\finalproject\boss.cpp(38): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\boss.cpp(39): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\boss.cpp(44): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\boss.cpp(53): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\boss.cpp(77): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+d:\2019-win-api\finalproject\finalproject\boss.cpp(145): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
+d:\2019-win-api\finalproject\finalproject\boss.cpp(156): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+  enemyManger.cpp
+d:\2019-win-api\finalproject\finalproject\stdafx.h(80): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\stdafx.h(88): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\stdafx.h(89): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\enemymanger.cpp(73): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\2019-win-api\finalproject\finalproject\enemymanger.cpp(79): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\2019-win-api\finalproject\finalproject\enemymanger.cpp(93): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\2019-win-api\finalproject\finalproject\enemymanger.cpp(94): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\enemymanger.cpp(95): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\enemymanger.cpp(103): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\2019-win-api\finalproject\finalproject\enemymanger.cpp(104): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\enemymanger.cpp(105): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\enemymanger.cpp(113): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\2019-win-api\finalproject\finalproject\enemymanger.cpp(116): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\2019-win-api\finalproject\finalproject\enemymanger.cpp(122): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\2019-win-api\finalproject\finalproject\enemymanger.cpp(138): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\2019-win-api\finalproject\finalproject\enemymanger.cpp(147): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   mainGame.cpp
 d:\2019-win-api\finalproject\finalproject\stdafx.h(80): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 d:\2019-win-api\finalproject\finalproject\stdafx.h(88): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
@@ -28,15 +71,35 @@ d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(98): warning C4244: '
 d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(106): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
 d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(108): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(109): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(116): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(119): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(122): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(128): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(130): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(150): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(117): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(124): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(130): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(133): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(136): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(142): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(144): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\objectmanger.cpp(164): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  playerNode.cpp
+d:\2019-win-api\finalproject\finalproject\stdafx.h(80): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\stdafx.h(88): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\stdafx.h(89): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.h(63): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\stagenode.h(44): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(20): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(50): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(51): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(69): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(70): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(230): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\playernode.cpp(237): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  stageNode.cpp
+d:\2019-win-api\finalproject\finalproject\stdafx.h(80): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\stdafx.h(88): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\stdafx.h(89): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\2019-win-api\finalproject\finalproject\stagenode.h(44): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   코드를 생성하고 있습니다.
-  3 of 896 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+  0 of 896 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    3 functions had inline decision re-evaluated but remain unchanged
+    9 functions had inline decision re-evaluated but remain unchanged
   코드를 생성했습니다.
   finalProject.vcxproj -> D:\2019-WIN-API\finalProject\Release\finalProject.exe

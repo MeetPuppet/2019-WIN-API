@@ -112,6 +112,20 @@ void objectManger::changeToGreyTurtle()
 		vShell.erase(vShell.begin() + i);
 	}
 }
+void objectManger::killGreenTurtle()
+{
+	for (int i = 0; i < vShell.size(); ++i) {
+		delete vShell[i];
+		vShell.erase(vShell.begin() + i);
+	}
+}
+void objectManger::killGreyTurtle()
+{
+	for (int i = 0; i < vShell.size(); ++i) {
+		delete vShell[i];
+		vShell.erase(vShell.begin() + i);
+	}
+}
 void objectManger::moveWorld(int x) {
 	for (int i = 0; i < vTile.size(); ++i) {
 		vTile[i]->moveX(x);

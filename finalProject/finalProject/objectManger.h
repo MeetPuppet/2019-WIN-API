@@ -28,6 +28,8 @@ public:
 	void LinkToenemyManger(enemyManger* em);
 	void changeToGreenTurtle();
 	void changeToGreyTurtle();
+	void killGreenTurtle();
+	void killGreyTurtle();
 
 	vector<objectNode*> getvTile() { return vTile; }
 	bool collisionTile(RECT r, float& y);
