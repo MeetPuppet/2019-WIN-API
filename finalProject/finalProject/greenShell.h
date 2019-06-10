@@ -12,6 +12,10 @@ public:
 	HRESULT init(int x, int y, int sizeX, int sizeY);
 	void update();
 	void render();
+	int getTimenum()
+	{
+		return timenum;
+	}
 
 };
 

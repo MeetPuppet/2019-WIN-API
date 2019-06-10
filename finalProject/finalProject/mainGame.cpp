@@ -119,9 +119,7 @@ void mainGame::update()				//연산 함수
 	if (KEYMANAGER->isOnceKeyDown(VK_SPACE)) {
 		E_Manager->KillGreenTurtle();
 	}
-	if (KEYMANAGER->isOnceKeyDown(VK_HOME)) {
-		O_Manger->changeToGreenTurtle();
-	}
+	O_Manger->changeToGreenTurtle();
 
 	coin->update();
 	Firan->update();

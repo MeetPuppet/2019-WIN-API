@@ -31,7 +31,7 @@ void greenShell::update()
 			frameX = 0;
 	}
 	if (timenum > 500) {
-
+		// º¯½Å
 	}
 }
 

@@ -3,6 +3,7 @@
 #include <vector>
 
 class objectNode;
+class greenShell;
 class enemyManger;
 
 class objectManger :
@@ -12,7 +13,7 @@ private:
 	//타일 전용
 	vector<objectNode*> vTile;
 	vector<objectNode*> vCoin;
-	vector<objectNode*> vShell;
+	vector<greenShell*> vShell;
 	enemyManger* emP;
 public:
 	objectManger();

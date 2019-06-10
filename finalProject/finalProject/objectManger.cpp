@@ -85,20 +85,23 @@ void objectManger::setgreenShell(int vx, int vy)
 }
 void objectManger::setgreyShell(int vx, int vy)
 {
-	greyShell* Shell = new greyShell;
-	Shell->init(vx, vy, 80, 75);
-	vShell.emplace_back(Shell);
+	//greyShell* Shell = new greyShell;
+	//Shell->init(vx, vy, 80, 75);
+	//vShell.emplace_back(Shell);
 }
 
 void objectManger::changeToGreenTurtle()
 {
 	for (int i = 0; i < vShell.size(); ++i) {
-		POINT p;
-		p.x = vShell[i]->getPoint().x;
-		p.y = vShell[i]->getPoint().y;
-		emP->makeGreenTurtle(p);
-		delete vShell[i];
-		vShell.erase(vShell.begin() + i);
+		if (vShell[i]->getTimenum()>500)
+		{
+			POINT p;
+			p.x = vShell[i]->getPoint().x;
+			p.y = vShell[i]->getPoint().y;
+			emP->makeGreenTurtle(p);
+			delete vShell[i];
+			vShell.erase(vShell.begin() + i);
+		}
 	}
 }
 void objectManger::changeToGreyTurtle()

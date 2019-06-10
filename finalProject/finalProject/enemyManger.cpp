@@ -90,7 +90,7 @@ void enemyManger::KillGoomba()
 }
 void enemyManger::KillGreenTurtle()
 {
-	for (int i = 0; i < vTurtle.size(); ++i) {
+	for (int i = 0; i < vTurtle.size(); i) {
 		int vx = vTurtle[i]->getPoint().x;
 		int vy = vTurtle[i]->getPoint().y;
 		omP->setgreenShell(vx, vy);
