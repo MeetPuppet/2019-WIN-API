@@ -204,9 +204,6 @@
     <ClCompile Include="fireShot.cpp">
       <Filter>mainGame\map\objectManager\object</Filter>
     </ClCompile>
-    <ClCompile Include="enemyManger.cpp">
-      <Filter>mainGame\enemyManager\enemys</Filter>
-    </ClCompile>
     <ClCompile Include="greenTurtle.cpp">
       <Filter>mainGame\enemyManager\enemys</Filter>
     </ClCompile>
@@ -218,6 +215,9 @@
     </ClCompile>
     <ClCompile Include="greyShell.cpp">
       <Filter>mainGame\map\objectManager\object</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyManger.cpp">
+      <Filter>mainGame\enemyManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
