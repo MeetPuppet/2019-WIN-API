@@ -97,16 +97,31 @@ void enemyManger::KillGoomba()
 {
 	RECT temp;
 	for (int i = 0; i < vEnemy.size(); ++i) {
-		if (vEnemy[i]->getState() != DEAD && player1 &&
-			IntersectRect(&temp, &player1->getFoot(), &vEnemy[i]->getRect())) {
+		if (vEnemy[i]->getState() != DEAD && player1 && player1->getState() != PS_DEAD &&
+			IntersectRect(&temp, &player1->getRect(), &vEnemy[i]->getRect())) {
 			if (player1->getState() == PS_JUMP) {
 				player1->jumpUp();
+				vEnemy[i]->makeStateDead();
+				//delete vEnemy[i];
+				//vEnemy.erase(vEnemy.begin() + i);
+			}
+			else {
+				player1->powerDown();
+				if (player1->getState() != PS_DEAD)
+					player1->jumpUp();
+			}
+		}
+		else if (vEnemy[i]->getState() != DEAD && player2 && player2->getState() != PS_DEAD &&
+			IntersectRect(&temp, &player2->getRect(), &vEnemy[i]->getRect())) {
+			if (player2->getState() == PS_JUMP) {
+				player2->jumpUp();
 				delete vEnemy[i];
 				vEnemy.erase(vEnemy.begin() + i);
 			}
 			else {
-				player1->powerDown();
-				player1->jumpUp();
+				player2->powerDown();
+				if (player2->getState() != PS_DEAD)
+					player2->jumpUp();
 			}
 		}
 	}
@@ -115,7 +130,8 @@ void enemyManger::KillGreenTurtle()
 {
 	RECT temp;
 	for (int i = 0; i < vTurtle.size(); ++i) {
-		if (player1 && IntersectRect(&temp, &player1->getFoot(), &vTurtle[i]->getRect())) {
+		if (player1 && player1->getState() != PS_DEAD &&
+			IntersectRect(&temp, &player1->getFoot(), &vTurtle[i]->getRect())) {
 			if (player1->getState() == PS_JUMP) {
 				//사운드
 				player1->jumpUp();
@@ -127,7 +143,25 @@ void enemyManger::KillGreenTurtle()
 			}
 			else {
 				player1->powerDown();
-				player1->jumpUp();
+				if(player1->getState() != PS_DEAD)
+					player1->jumpUp();
+			}
+		}
+		else if (player2 && player2->getState() != PS_DEAD &&
+			IntersectRect(&temp, &player2->getFoot(), &vTurtle[i]->getRect())) {
+			if (player2->getState() == PS_JUMP) {
+				//사운드
+				player2->jumpUp();
+				int vx = vTurtle[i]->getPoint().x;
+				int vy = vTurtle[i]->getPoint().y;
+				omP->setgreenShell(vx, vy);
+				delete vTurtle[i];
+				vTurtle.erase(vTurtle.begin() + i);
+			}
+			else {
+				player2->powerDown();
+				if (player2->getState() != PS_DEAD)
+					player2->jumpUp();
 			}
 		}
 	}

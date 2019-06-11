@@ -41,7 +41,7 @@ HRESULT mainGame::init()			//초기화 함수
 			E_Manager->LinkToP1(mario);
 		}
 		if (luigi) {
-			E_Manager->LinkToP1(luigi);
+			E_Manager->LinkToP2(luigi);
 		}
 		
 	}

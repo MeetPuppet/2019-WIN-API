@@ -203,7 +203,7 @@ void Luigi::keySet()
 		break;
 	}
 
-	if (KEYMANAGER->isOnceKeyDown('Q')) {
+	if (KEYMANAGER->isOnceKeyDown('E')) {
 		if (mode == PM_SMALL) {
 			mode = PM_BIG;
 		}

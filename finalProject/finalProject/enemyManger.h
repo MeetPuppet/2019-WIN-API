@@ -3,6 +3,7 @@
 #include "gameNode.h"
 
 class enemyNode;
+class Goomba;
 class objectManger;
 class stageNode;
 class playerNode;
@@ -11,7 +12,7 @@ class enemyManger :
 	public gameNode
 {
 private:
-	vector<enemyNode*> vEnemy;
+	vector<Goomba*> vEnemy;
 	vector<enemyNode*> vTurtle;
 
 	void goombaUpdate();
