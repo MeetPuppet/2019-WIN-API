@@ -6,10 +6,14 @@
 #include "greenTurtle.h"
 //#include "greyTurtle.h"
 #include "objectManger.h"
+
+#include "playerNode.h"
+
 enemyManger::enemyManger()
 {
 	vEnemy;//든거 없음
 	omP = NULL;
+	player1 = NULL;
 }
 
 
@@ -81,6 +85,7 @@ void enemyManger::turtleUpdate()
 	for (int i = 0; i < vTurtle.size(); ++i) {
 		vTurtle[i]->update();
 	}
+	KillGreenTurtle();
 }
 
 void enemyManger::LinkToobjectManger(objectManger* om)
@@ -92,12 +97,24 @@ void enemyManger::KillGoomba()
 }
 void enemyManger::KillGreenTurtle()
 {
-	for (int i = 0; i < vTurtle.size(); i) {
-		int vx = vTurtle[i]->getPoint().x;
-		int vy = vTurtle[i]->getPoint().y;
-		omP->setgreenShell(vx, vy);
-		delete vTurtle[i];
-		vTurtle.erase(vTurtle.begin() + i);
+	RECT temp;
+	for (int i = 0; i < vTurtle.size(); ++i) {
+
+		if (player1 && IntersectRect(&temp, &player1->getFoot(), &vTurtle[i]->getRect())) {
+			if (player1->getState() == PS_JUMP) {
+				//사운드
+				player1->jumpUp();
+				int vx = vTurtle[i]->getPoint().x;
+				int vy = vTurtle[i]->getPoint().y;
+				omP->setgreenShell(vx, vy);
+				delete vTurtle[i];
+				vTurtle.erase(vTurtle.begin() + i);
+			}
+			else {
+				player1->powerDown();
+				player1->jumpUp();
+			}
+		}
 	}
 }
 void enemyManger::KillGreyTurtle()
@@ -150,5 +167,8 @@ bool enemyManger::GoombaCollisionCheck(const RECT& rc)
 void enemyManger::moveWorld(int x) {
 	for (int i = 0; i < vEnemy.size(); ++i) {
 		vEnemy[i]->moveX(x);
+	}
+	for (int i = 0; i < vTurtle.size(); ++i) {
+		vTurtle[i]->moveX(x);
 	}
 }

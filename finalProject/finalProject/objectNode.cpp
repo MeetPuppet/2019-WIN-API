@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "objectNode.h"
 
+#include "playerNode.h"
 
 
 objectNode::objectNode()
@@ -10,6 +11,9 @@ objectNode::objectNode()
 	rc = { 0,0,0,0 };
 	frameX = 0;
 	frameY = 0;
+
+	player1 = NULL;
+	player2 = NULL;
 }
 
 

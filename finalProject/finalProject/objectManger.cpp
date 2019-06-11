@@ -3,12 +3,19 @@
 #include "ItemBox.h"
 #include "Block.h"
 #include "Coin.h"
+
 #include "greenShell.h"
 #include "greyShell.h"
 #include "enemyManger.h"
 
+#include "playerNode.h"
+
 objectManger::objectManger()
 {
+	emP = NULL;
+	stage = NULL;
+	player1 = NULL;
+	player2 = NULL;
 }
 
 
@@ -25,7 +32,6 @@ HRESULT objectManger::init()
 	IMAGEMANAGER->addFrameImage("greenShell", "image/object/greenShell.bmp", 160, 75, 2, 1, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("greyShell", "image/object/greyShell.bmp", 160, 75, 2, 1, true, RGB(255, 0, 255));
 
-	emP = NULL;
 	return S_OK;
 }
 void objectManger::update()
@@ -39,6 +45,7 @@ void objectManger::update()
 	for (int i = 0; i < vShell.size(); ++i) {
 		vShell[i]->update();
 	}
+	kickGreenShell();
 }
 void objectManger::render()
 {
@@ -67,6 +74,10 @@ void objectManger::setItemBox(RECT rc, int itemNum)
 		(rc.bottom - rc.top) / 2 + rc.top,
 		rc.right - rc.left,
 		rc.bottom - rc.top, itemNum);
+	if (player1)
+		box->LinkToP1(player1);
+	if (player2)
+		box->LinkToP2(player2);
 
 	vTile.emplace_back(box);
 }
@@ -77,6 +88,10 @@ void objectManger::setBlock(RECT rc, int mode, int coins)
 		(rc.bottom - rc.top) / 2 + rc.top,
 		rc.right - rc.left,
 		rc.bottom - rc.top, mode, coins);
+	if (player1)
+		box->LinkToP1(player1);
+	if (player2)
+		box->LinkToP2(player2);
 
 	vTile.emplace_back(box);
 }
@@ -84,6 +99,10 @@ void objectManger::setgreenShell(int vx, int vy)
 {
 	greenShell* Shell = new greenShell;
 	Shell->init(vx, vy, 80, 75);
+	if (player1)
+		Shell->LinkToP1(player1);
+	if (player2)
+		Shell->LinkToP2(player2);
 	vShell.emplace_back(Shell);
 }
 void objectManger::setgreyShell(int vx, int vy)
@@ -93,10 +112,10 @@ void objectManger::setgreyShell(int vx, int vy)
 	//vShell.emplace_back(Shell);
 }
 
-void objectManger::changeToGreenTurtle()
+void objectManger::changeToGreenShell()
 {
 	for (int i = 0; i < vShell.size(); ++i) {
-		if (vShell[i]->getTimenum()>500)
+		if (vShell[i]->getTime() > 2)
 		{
 			POINT p;
 			p.x = vShell[i]->getPoint().x;
@@ -107,7 +126,7 @@ void objectManger::changeToGreenTurtle()
 		}
 	}
 }
-void objectManger::changeToGreyTurtle()
+void objectManger::changeToGreyShell()
 {
 	for (int i = 0; i < vShell.size(); ++i) {
 		POINT p;
@@ -118,14 +137,65 @@ void objectManger::changeToGreyTurtle()
 		vShell.erase(vShell.begin() + i);
 	}
 }
-void objectManger::killGreenTurtle()
+void objectManger::killGreenShell()
 {
+	RECT temp;
 	for (int i = 0; i < vShell.size(); ++i) {
 		delete vShell[i];
 		vShell.erase(vShell.begin() + i);
 	}
 }
-void objectManger::killGreyTurtle()
+void objectManger::kickGreenShell()
+{
+	RECT temp;
+	for (int i = 0; i < vShell.size(); ++i) {
+		//플레이어1이 점프 상태이고 대상 범위와 충돌할때
+		if (player1 && IntersectRect(&temp, &player1->getRect(), &vShell[i]->getRect())) {
+			if (player1->getState() == PS_JUMP) {
+				player1->jumpUp();
+			}
+			if (vShell[i]->getKicked() == false) {
+				if (player1->getPoint().x < vShell[i]->getPoint().x) {
+					vShell[i]->kicked(true);
+				}
+				else {
+					vShell[i]->kicked(false);
+				}
+			}
+			else {
+				if (player1->getState() != PS_JUMP) {
+					player1->powerDown();
+				}
+				player1->jumpUp();
+				vShell[i]->stop();
+				
+			}
+		}
+		//플레이어2가 점프 상태이고 대상 범위와 충돌할때
+		else if (player2 && IntersectRect(&temp, &player2->getRect(), &vShell[i]->getRect())) {
+			if (player2->getState() == PS_JUMP) {
+				player2->jumpUp();
+			}
+			if (vShell[i]->getKicked() == false) {
+				if (player2->getPoint().x < vShell[i]->getPoint().x) {
+					vShell[i]->kicked(true);
+				}
+				else {
+					vShell[i]->kicked(false);
+				}
+			}
+			else {
+				if (player2->getState() != PS_JUMP) {
+					player2->powerDown();
+				}
+				player2->jumpUp();
+				vShell[i]->stop();
+
+			}
+		}
+	}
+}
+void objectManger::killGreyShell()
 {
 	for (int i = 0; i < vShell.size(); ++i) {
 		delete vShell[i];

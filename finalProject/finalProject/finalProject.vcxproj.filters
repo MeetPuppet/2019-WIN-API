@@ -219,6 +219,9 @@
     <ClCompile Include="enemyNode.cpp">
       <Filter>mainGame\enemyManager\node</Filter>
     </ClCompile>
+    <ClCompile Include="Luigi.cpp">
+      <Filter>mainGame\player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="image.h">
@@ -352,6 +355,9 @@
     </ClInclude>
     <ClInclude Include="greyShell.h">
       <Filter>mainGame\map\objectManager\object</Filter>
+    </ClInclude>
+    <ClInclude Include="Luigi.h">
+      <Filter>mainGame\player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -4,7 +4,9 @@ class greenShell :
 	public objectNode
 {
 private:
-	int timenum;
+	float time;
+	bool isRight;
+	bool isKicked;
 public:
 	greenShell();
 	~greenShell();
@@ -12,9 +14,20 @@ public:
 	HRESULT init(int x, int y, int sizeX, int sizeY);
 	void update();
 	void render();
-	int getTimenum()
+	float getTime()
 	{
-		return timenum;
+		return time;
+	}
+	bool getKicked() { return isKicked; }
+	void stop() {
+		isKicked = false;
+	}
+	void kicked(bool isright)
+	{
+		if (isKicked == false) {
+			isKicked = true;
+			isRight = isright;
+		}
 	}
 
 };

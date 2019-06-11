@@ -377,9 +377,9 @@ void playerNode::footCheck()
 	CollisionRC.right -= stage->getEdge0();
 
 	//좀 깍아주면 편하다니 그렇다하자
-	CollisionRC.left += 5;
+	CollisionRC.left += 25;
 	CollisionRC.top += 5;
-	CollisionRC.right -= 5;
+	CollisionRC.right -= 25;
 	CollisionRC.bottom -= 5;
 
 	//예로 10*16에 위치한다면
@@ -429,15 +429,22 @@ void playerNode::powerUp()
 }
 void playerNode::jumpUp()
 {
-	jumpPower = 1;
+	state = PS_JUMP;
+	jumpPower = 8;
 }
-void playerNode::finishem()
+void playerNode::powerDown()
 {
 	if (mode == PM_BIG) {
 		mode = PM_SMALL;
 		return;
 	}
 
+	frameX = 6;
+	state = PS_DEAD;
+}
+void playerNode::dead()
+{
+	mode = PM_SMALL;
 	frameX = 6;
 	state = PS_DEAD;
 }

@@ -4,8 +4,10 @@
 
 class objectNode;
 class greenShell;
+
 class enemyManger;
 class stageNode;
+class playerNode;
 
 class objectManger :
 	public gameNode
@@ -18,6 +20,8 @@ private:
 
 	enemyManger* emP;
 	stageNode* stage;
+	playerNode* player1;
+	playerNode* player2;
 public:
 	objectManger();
 	~objectManger();
@@ -27,15 +31,19 @@ public:
 
 	void LinkToenemyManger(enemyManger* em);
 	void LinkToStage(stageNode* s) { stage = s; }
+	void LinkToP1(playerNode* p1) { player1 = p1; }
+	void LinkToP2(playerNode* p2) { player2 = p2; }
+
 
 	void setItemBox(RECT rc, int itemNum);
 	void setBlock(RECT rc, int mode, int coins);
 	void setgreenShell(int vx, int vy);
 	void setgreyShell(int vx, int vy);
-	void changeToGreenTurtle();
-	void changeToGreyTurtle();
-	void killGreenTurtle();
-	void killGreyTurtle();
+	void changeToGreenShell();
+	void changeToGreyShell();
+	void killGreenShell();
+	void kickGreenShell();
+	void killGreyShell();
 
 	vector<objectNode*> getvTile() { return vTile; }
 	bool collisionTile(RECT r, float& y);

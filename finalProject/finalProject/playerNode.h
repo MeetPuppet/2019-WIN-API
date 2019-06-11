@@ -64,7 +64,14 @@ public:
 
 	int getX() { return point.x; }
 	Point getPoint() { return point; }
+	PLAYERSTATE getState() { return state; }
 	float getSpeed() { return speed; }
+	float getJP() { return jumpPower; }
+	RECT getRect() { return rc; }
+	RECT getFoot() { return foot; }
+
+
+
 	void moveX(float X) 
 	{ 
 		point.x += X;
@@ -79,6 +86,7 @@ public:
 
 	void powerUp();
 	void jumpUp();
-	void finishem();
+	void powerDown();
+	void dead();
 };
 

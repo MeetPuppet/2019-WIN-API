@@ -1,5 +1,8 @@
 #pragma once
 #include "gameNode.h"
+
+class playerNode;
+
 class objectNode :
 	public gameNode
 {
@@ -10,6 +13,9 @@ protected:
 
 	int frameX;
 	int frameY;
+
+	playerNode* player1;
+	playerNode* player2;
 public:
 	objectNode();
 	~objectNode();
@@ -21,5 +27,8 @@ public:
 	void moveX(int x) { p.x += x; }
 	Point getPoint() { return p; }
 	RECT getRect() { return rc; }
+
+	void LinkToP1(playerNode* p1) { player1 = p1; }
+	void LinkToP2(playerNode* p2) { player2 = p2; }
 };
 

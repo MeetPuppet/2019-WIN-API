@@ -88,7 +88,7 @@ void Mario::keySet()
 		break;
 	case PS_MOVE:
 		//gravityChecker(true);
-		if (KEYMANAGER->isStayKeyDown('X')) {
+		if (KEYMANAGER->isStayKeyDown(VK_RSHIFT)) {
 			if (IFS < SPEE2)
 				IFS += SPEE2 * time;
 		}
@@ -117,14 +117,14 @@ void Mario::keySet()
 			jumpPower = JUMPSPEED * 2;
 			state = PS_JUMP;
 		}
-		if (KEYMANAGER->isStayKeyDown(VK_RIGHT) && moveChecker(true)) {
-			if (rc.right < 1200) {
+		if (KEYMANAGER->isStayKeyDown(VK_RIGHT) && moveChecker(true) && rc.right < 1200) {
+			{
 				point.x = point.x + speed;
 				frameY = 0;
 			}
 		}
-		else if (KEYMANAGER->isStayKeyDown(VK_LEFT) && moveChecker(false)) {
-			if (rc.left > 0 ) {
+		else if (KEYMANAGER->isStayKeyDown(VK_LEFT) && moveChecker(false) && rc.left > 0) {
+			{
 				point.x = point.x - speed;
 				frameY = 1;
 			}
@@ -141,7 +141,7 @@ void Mario::keySet()
 		}
 		break;
 	case PS_JUMP:
-		if (KEYMANAGER->isStayKeyDown('X')) {
+		if (KEYMANAGER->isStayKeyDown(VK_RSHIFT)) {
 			if (IFS < SPEE2)
 				IFS += SPEE2 * time;
 		}
@@ -154,13 +154,17 @@ void Mario::keySet()
 		}
 		speed = IFS * time;
 		frameX = 5;
-		if (KEYMANAGER->isStayKeyDown(VK_RIGHT) && moveChecker(true)) {
-			point.x = point.x + speed;
-			frameY = 0;
+		if (KEYMANAGER->isStayKeyDown(VK_RIGHT) && moveChecker(true) && rc.right < 1200) {
+			{
+				point.x = point.x + speed;
+				frameY = 0;
+			}
 		}
-		else if (KEYMANAGER->isStayKeyDown(VK_LEFT) && moveChecker(false)) {
-			point.x = point.x - speed;
-			frameY = 1;
+		else if (KEYMANAGER->isStayKeyDown(VK_LEFT) && moveChecker(false) && rc.left > 0) {
+			{
+				point.x = point.x - speed;
+				frameY = 1;
+			}
 		}
 		if (jumpPower > 0) {
 			gravityChecker(false);

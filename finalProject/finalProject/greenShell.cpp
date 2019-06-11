@@ -5,6 +5,8 @@
 
 greenShell::greenShell()
 {
+	time = 0;
+	isKicked = false;
 }
 
 
@@ -16,22 +18,36 @@ greenShell::~greenShell()
 HRESULT greenShell::init(int x, int y, int sizeX, int sizeY)
 {
 	objectNode::init("greenShell", x, y, sizeX, sizeY);
-	timenum = 0;
+
 	return S_OK;
 }
 void greenShell::update()
 {
 	objectNode::update();
-	timenum++;
-	if (timenum > 100) {
-		if (frameX == 0) {
-			frameX = 1;
+
+	float ET = TIMEMANAGER->getElapsedTime();
+	if (ET < 0) ET = 0.016;
+	if (isKicked) {
+		if (isRight) {
+			p.x += 500 * ET;
 		}
-		else
-			frameX = 0;
+		else {
+			p.x -= 500 * ET;
+		}
 	}
-	if (timenum > 500) {
-		// 변신
+	else {
+		time = time + ET;
+		if(time)
+		if (time > 1) {
+			if (frameX == 0) {
+				frameX = 1;
+			}
+			else
+				frameX = 0;
+		}
+		//if (timenum > 500) {
+		//	// 변신
+		//}
 	}
 }
 

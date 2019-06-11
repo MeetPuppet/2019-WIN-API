@@ -2,15 +2,18 @@
 #include "mainGame.h"
 
 #include "Mario.h"
+#include "Luigi.h"
 #include "enemyManger.h"
 #include "objectManger.h"
 #include "Stage1.h"
 mainGame::mainGame()
 {
 	mario = NULL;
+	luigi = NULL;
 	E_Manager = NULL;
 	O_Manager = NULL;
 	stage1 = NULL;
+
 }
 
 mainGame::~mainGame()
@@ -26,16 +29,32 @@ HRESULT mainGame::init()			//초기화 함수
 		mario = new Mario;
 		mario->init(Point(WINSIZEX / 2, WINSIZEY / 2));
 	}
+	if(luigi == NULL) {
+		luigi = new Luigi;
+		luigi->init(Point(WINSIZEX / 2, WINSIZEY / 2));
+	}
 
 	if (E_Manager == NULL) {
 		E_Manager = new enemyManger;
 		E_Manager->init();
+		if (mario) {
+			E_Manager->LinkToP1(mario);
+		}
+		if (luigi) {
+			E_Manager->LinkToP1(luigi);
+		}
+		
 	}
 	if (O_Manager == NULL) {
 		O_Manager = new objectManger;
 		O_Manager->init();
 		if (mario) {
+			O_Manager->LinkToP1(mario);
 			mario->LinkToOM(O_Manager);
+		}
+		if (luigi) {
+			O_Manager->LinkToP2(luigi);
+			luigi->LinkToOM(O_Manager);
 		}
 	}
 	if (E_Manager) {
@@ -62,6 +81,9 @@ HRESULT mainGame::init()			//초기화 함수
 		if (mario) {
 			mario->LinkToStage(stage1);
 		}
+		if (luigi) {
+			luigi->LinkToStage(stage1);
+		}
 	}
 
 
@@ -77,6 +99,10 @@ void mainGame::release()			//메모리 해제 함수
 	if (mario) {
 		delete mario;
 		mario = NULL;
+	}
+	if (luigi) {
+		delete luigi;
+		luigi = NULL;
 	}
 	if (E_Manager) {
 		delete E_Manager;
@@ -110,16 +136,19 @@ void mainGame::update()				//연산 함수
 	//if (KEYMANAGER->isOnceKeyDown(VK_SPACE)) {
 	//	E_Manager->KillGreenTurtle();
 	//}
-	O_Manager->changeToGreenTurtle();
 
 	if (mario) {
 		mario->update();
+	}
+	if (luigi) {
+		luigi->update();
 	}
 	if (E_Manager) {
 		E_Manager->update();
 	}
 	if (O_Manager) {
 		O_Manager->update();
+		O_Manager->changeToGreenShell();
 	}
 	if (stage1) {
 		stage1->update();
@@ -127,18 +156,24 @@ void mainGame::update()				//연산 함수
 	}
 
 	int moveSpeed = mario->getSpeed();
-	if (mario->getX() > 800 && stage1->getEdge1() > 1200 + mario->getSpeed()) {
+	if (mario->getX() > 800 && stage1->getEdge1() > 1200 + mario->getSpeed()
+		&& (luigi && luigi->getRect().left > 0)) {
 		mario->moveX(-mario->getSpeed());
 		E_Manager->moveWorld(-moveSpeed);
 		O_Manager->moveWorld(-moveSpeed);
 		stage1->moveX(-moveSpeed);
+		if (luigi)
+			luigi->moveX(-moveSpeed);
 	}
-	else if (mario->getX() < 400 && stage1->getEdge0() < 0 - mario->getSpeed()) {
+	else if (mario->getX() < 400 && stage1->getEdge0() < 0 - mario->getSpeed()
+		&&(luigi && luigi->getRect().right < 1200)) {
 		//좌우속도차가 있음
 		mario->moveX(mario->getSpeed());
 		E_Manager->moveWorld(moveSpeed);
 		O_Manager->moveWorld(moveSpeed);
 		stage1->moveX(moveSpeed);
+		if (luigi)
+			luigi->moveX(moveSpeed);
 	}
 	//
 	//if (q->getX() > 800 && stage1->getEdge1() > 1200 + q->getSpeed()) {
@@ -179,6 +214,9 @@ void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
 
 	if (mario) {
 		mario->render();
+	}
+	if (luigi) {
+		luigi->render();
 	}
 	
 	//==================== 건들지마라 =======================

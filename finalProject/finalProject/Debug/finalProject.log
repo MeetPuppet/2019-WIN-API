@@ -1,39 +1,10 @@
-﻿  Mario.cpp
+﻿  mainGame.cpp
 e:\github\2019-win-api\finalproject\finalproject\stdafx.h(80): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 e:\github\2019-win-api\finalproject\finalproject\stdafx.h(88): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 e:\github\2019-win-api\finalproject\finalproject\stdafx.h(89): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 e:\github\2019-win-api\finalproject\finalproject\playernode.h(65): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 e:\github\2019-win-api\finalproject\finalproject\stagenode.h(46): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\mario.cpp(93): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\mario.cpp(97): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\mario.cpp(100): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\mario.cpp(105): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\mario.cpp(134): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\mario.cpp(146): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\mario.cpp(150): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\mario.cpp(153): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\mario.cpp(187): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\mario.cpp(198): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  mainGame.cpp
-e:\github\2019-win-api\finalproject\finalproject\stdafx.h(80): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\stdafx.h(88): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\stdafx.h(89): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\playernode.h(65): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\stagenode.h(46): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\maingame.cpp(129): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  playerNode.cpp
-e:\github\2019-win-api\finalproject\finalproject\stdafx.h(80): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\stdafx.h(88): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\stdafx.h(89): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\playernode.h(65): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\stagenode.h(46): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(20): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(50): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(51): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(69): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(70): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(231): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(238): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
-e:\github\2019-win-api\finalproject\finalproject\playernode.cpp(356): warning C4715: 'playerNode::moveChecker': 모든 제어 경로에서 값을 반환하지는 않습니다.
+e:\github\2019-win-api\finalproject\finalproject\maingame.cpp(158): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\maingame.cpp(166): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\github\2019-win-api\finalproject\finalproject\maingame.cpp(176): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   finalProject.vcxproj -> E:\GitHub\2019-WIN-API\finalProject\Debug\finalProject.exe
