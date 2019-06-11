@@ -6,7 +6,7 @@
 #include "greenTurtle.h"
 //#include "greyTurtle.h"
 #include "objectManger.h"
-
+#include "boss.h"
 #include "playerNode.h"
 
 enemyManger::enemyManger()
@@ -47,6 +47,7 @@ void enemyManger::update()
 {
 	goombaUpdate();
 	turtleUpdate();
+	bowserUpdate();
 }
 
 void enemyManger::render()
@@ -74,6 +75,15 @@ void enemyManger::makeGreyTurtle(POINT point)
 	//newGreyTurtle->init(point);
 	//vTurtle.emplace_back(newGreyTurtle);
 }
+void enemyManger::makeBowser(POINT point)
+{
+	boss* newBoss = new boss;
+	newBoss->init(point.x, point.y, 400, 400);
+	vBoss.emplace_back(newBoss);
+	//newGreenTurtle->init(point);
+	//newGreenTurtle->LinkToStage(stage);
+	//vTurtle.emplace_back(newGreenTurtle);
+}
 void enemyManger::goombaUpdate()
 {
 	for (int i = 0; i < vEnemy.size(); ++i) {
@@ -88,10 +98,31 @@ void enemyManger::turtleUpdate()
 	}
 	KillGreenTurtle();
 }
-
+void enemyManger::bowserUpdate()
+{
+	for (int i = 0; i < vBoss.size(); ++i) {
+		vBoss[i]->update();
+		if ((vBoss[i]->getFireNum()) % 50 == 0) {
+			int FireLocate;
+			if (vBoss[i]->getState() == BL_PATROL ||
+				vBoss[i]->getState() == BL_CHASE ||
+				vBoss[i]->getState() == BL_BRESS)
+			{
+				FireLocate = 1;
+			}
+			else
+				FireLocate = 2;
+			omP->setFireShot(vBoss[i]->getPoint().x, vBoss[i]->getPoint().y, FireLocate);
+		}
+	}
+}
 void enemyManger::LinkToobjectManger(objectManger* om)
 {
 	omP = om;
+}
+void enemyManger::shootFire()
+{
+	
 }
 void enemyManger::KillGoomba()
 {
@@ -185,6 +216,9 @@ void enemyManger::goombaRender()
 	for (int i = 0; i < vTurtle.size(); ++i) {
 		if (vTurtle[i]->getRect().right >= 0 && vTurtle[i]->getRect().left <= 1200)
 		vTurtle[i]->render();
+	}
+	for (int i = 0; i < vBoss.size(); ++i) {
+			vBoss[i]->render();
 	}
 }
 void enemyManger::LinkTarget(POINT* targetPoint)

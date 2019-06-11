@@ -7,16 +7,18 @@ class Goomba;
 class objectManger;
 class stageNode;
 class playerNode;
-
+class boss;
 class enemyManger :
 	public gameNode
 {
 private:
 	vector<Goomba*> vEnemy;
 	vector<enemyNode*> vTurtle;
+	vector<boss*> vBoss;
 
 	void goombaUpdate();
 	void turtleUpdate();
+	void bowserUpdate();
 	void goombaRender();
 
 	objectManger* omP;
@@ -43,6 +45,8 @@ public:
 	void makeGoomba(POINT point);
 	void makeGreenTurtle(POINT point);
 	void makeGreyTurtle(POINT point);
+	void makeBowser(POINT point);
+	void shootFire();
 	//죽이기는 나중에 조건을 달것
 	void KillGoomba();
 	void KillGreenTurtle();

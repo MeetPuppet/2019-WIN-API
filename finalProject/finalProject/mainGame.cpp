@@ -6,6 +6,7 @@
 #include "enemyManger.h"
 #include "objectManger.h"
 #include "Stage1.h"
+
 mainGame::mainGame()
 {
 	mario = NULL;
@@ -13,7 +14,6 @@ mainGame::mainGame()
 	E_Manager = NULL;
 	O_Manager = NULL;
 	stage1 = NULL;
-
 }
 
 mainGame::~mainGame()
@@ -43,8 +43,9 @@ HRESULT mainGame::init()			//초기화 함수
 		if (luigi) {
 			E_Manager->LinkToP2(luigi);
 		}
-		
 	}
+	POINT p = { 600,600 };
+	E_Manager->makeBowser(p);
 	if (O_Manager == NULL) {
 		O_Manager = new objectManger;
 		O_Manager->init();
@@ -85,7 +86,6 @@ HRESULT mainGame::init()			//초기화 함수
 			luigi->LinkToStage(stage1);
 		}
 	}
-
 
 	return S_OK;
 }
@@ -154,7 +154,6 @@ void mainGame::update()				//연산 함수
 		stage1->update();
 		//stage1->setMainPosition({ p->getX(), 0 });
 	}
-
 	int moveSpeed = mario->getSpeed();
 	if (mario->getX() > 800 && stage1->getEdge1() > 1200 + mario->getSpeed()
 		&& (luigi && luigi->getRect().left > 0)) {
@@ -218,7 +217,6 @@ void mainGame::render()		//그려주는 함수(a.k.a WM_PAINT)
 	if (luigi) {
 		luigi->render();
 	}
-	
 	//==================== 건들지마라 =======================
 	TIMEMANAGER->render(getMemDC());
 	this->getBackBuffer()->render(getHDC(), 0, 0);

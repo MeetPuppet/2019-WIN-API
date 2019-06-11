@@ -24,6 +24,7 @@ boss::boss()
 	frameNum = 0;
 	targetPoint = NULL;
 	movenum = FALSE;
+	FireNum = 0;
 }	
 
 
@@ -59,7 +60,7 @@ void boss::update()
 		p.x += 3;
 	}
 	FrameSeter();
-	
+	FireNum += 1;
 	//if (JUMP == TRUE) {
 	//	p.y -= 5 * cos((3.1415926535 / 180) * jumpnum);
 	//	jumpnum += 3;
@@ -113,6 +114,14 @@ void boss::render()
 B_STATE boss::getState()
 {
 	return state;
+}
+Point boss::getPoint()
+{
+	return p;
+}
+int boss::getFireNum()
+{
+	return FireNum;
 }
 void boss::FrameSeter()
 {

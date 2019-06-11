@@ -7,7 +7,7 @@
 #include "greenShell.h"
 #include "greyShell.h"
 #include "enemyManger.h"
-
+#include "fireShot.h"
 #include "playerNode.h"
 
 objectManger::objectManger()
@@ -45,6 +45,9 @@ void objectManger::update()
 	for (int i = 0; i < vShell.size(); ++i) {
 		vShell[i]->update();
 	}
+	for (int i = 0; i < vFireShot.size(); ++i) {
+		vFireShot[i]->update();
+	}
 	kickGreenShell();
 }
 void objectManger::render()
@@ -60,6 +63,10 @@ void objectManger::render()
 	for (int i = 0; i < vShell.size(); ++i) {
 		if (vShell[i]->getRect().right >= 0 && vShell[i]->getRect().left <= 1200)
 			vShell[i]->render();
+	}
+	for (int i = 0; i < vFireShot.size(); ++i) {
+		if (vFireShot[i]->getRect().right >= 0 && vFireShot[i]->getRect().left <= 1200)
+			vFireShot[i]->render();
 	}
 }
 
@@ -111,7 +118,12 @@ void objectManger::setgreyShell(int vx, int vy)
 	//Shell->init(vx, vy, 80, 75);
 	//vShell.emplace_back(Shell);
 }
-
+void objectManger::setFireShot(int vx, int vy,int Move)
+{
+	fireShot* Fire = new fireShot;
+	Fire->init(vx, vy, 120, 40, Move);
+	vFireShot.emplace_back(Fire);
+}
 void objectManger::changeToGreenShell()
 {
 	for (int i = 0; i < vShell.size(); ++i) {

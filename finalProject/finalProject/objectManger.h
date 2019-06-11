@@ -8,7 +8,7 @@ class greenShell;
 class enemyManger;
 class stageNode;
 class playerNode;
-
+class fireShot;
 class objectManger :
 	public gameNode
 {
@@ -17,6 +17,7 @@ private:
 	vector<objectNode*> vTile;
 	vector<objectNode*> vCoin;
 	vector<greenShell*> vShell;
+	vector<fireShot*> vFireShot;
 
 	enemyManger* emP;
 	stageNode* stage;
@@ -39,6 +40,7 @@ public:
 	void setBlock(RECT rc, int mode, int coins);
 	void setgreenShell(int vx, int vy);
 	void setgreyShell(int vx, int vy);
+	void setFireShot(int vx, int vy,int Move);
 	void changeToGreenShell();
 	void changeToGreyShell();
 	void killGreenShell();
