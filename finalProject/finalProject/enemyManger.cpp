@@ -79,6 +79,7 @@ void enemyManger::goombaUpdate()
 	for (int i = 0; i < vEnemy.size(); ++i) {
 		vEnemy[i]->update();
 	}
+	KillGoomba();
 }
 void enemyManger::turtleUpdate()
 {
@@ -94,12 +95,26 @@ void enemyManger::LinkToobjectManger(objectManger* om)
 }
 void enemyManger::KillGoomba()
 {
+	RECT temp;
+	for (int i = 0; i < vEnemy.size(); ++i) {
+		if (vEnemy[i]->getState() != DEAD && player1 &&
+			IntersectRect(&temp, &player1->getFoot(), &vEnemy[i]->getRect())) {
+			if (player1->getState() == PS_JUMP) {
+				player1->jumpUp();
+				delete vEnemy[i];
+				vEnemy.erase(vEnemy.begin() + i);
+			}
+			else {
+				player1->powerDown();
+				player1->jumpUp();
+			}
+		}
+	}
 }
 void enemyManger::KillGreenTurtle()
 {
 	RECT temp;
 	for (int i = 0; i < vTurtle.size(); ++i) {
-
 		if (player1 && IntersectRect(&temp, &player1->getFoot(), &vTurtle[i]->getRect())) {
 			if (player1->getState() == PS_JUMP) {
 				//»ç¿îµå

@@ -50,6 +50,7 @@ public:
 	//충돌 확인용
 	Point getPoint() { return p; }
 	RECT getRect() { return rc; }
+	E_STATE getState() { return state; }
 
 	//좌표를 바꾸는게 맞지만 그만알아보고 싶으니 나중에 하자
 	void moveX(int x) { p.x += x; }

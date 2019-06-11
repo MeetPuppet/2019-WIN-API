@@ -37,12 +37,7 @@ HRESULT gameNode::init(bool managerInit)
 		IMAGEMANAGER->init();
 		TIMEMANAGER->init();
 		SOUNDMANAGER->init();
-		//EFFECTMANAGER->init(); - 2019.05.13 기억안나는건 주석처리
 		SCENEMANAGER->init();
-		KEYANIMANAGER->init();
-		//TXTDATA->init(); - 2019.05.13 기억안나는건 주석처리
-//		INIDATA->init();
-		//DATABASE->init(); - 2019.05.13 기억안나는건 주석처리
 	}
 
 
@@ -53,17 +48,11 @@ void gameNode::release()
 {
 	if ( _managerInit )
 	{
-		//KillTimer(_hWnd, 1);
 		KEYMANAGER->releaseSingleton();
 		IMAGEMANAGER->releaseSingleton();
 		TIMEMANAGER->releaseSingleton();
 		SOUNDMANAGER->releaseSingleton();
-		//EFFECTMANAGER->releaseSingleton(); - 2019.05.13 기억안나는건 주석처리
 		SCENEMANAGER->releaseSingleton();
-		KEYANIMANAGER->releaseSingleton();
-		//TXTDATA->releaseSingleton();  - 2019.05.13 기억안나는건 주석처리
-//		INIDATA->releaseSingleton();
-		//DATABASE->releaseSingleton(); - 2019.05.13 기억안나는건 주석처리
 	}
 
 	ReleaseDC(_hWnd, _hdc);

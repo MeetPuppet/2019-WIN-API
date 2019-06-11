@@ -1,5 +1,4 @@
 #pragma once
-#include "animation.h"
 //======================================
 // ## 2017. 10. 25 ## - image Class - ##
 //======================================
@@ -103,7 +102,6 @@ public:
 
 	void alphaFrameRender(HDC hdc, int destX, int destY, int currentFrameX, int currentFrameY, BYTE alpha);
 
-	void aniRender(HDC hdc, int destX, int destY, animation* ani);
 
 	inline HDC getMemDC() { return _imageInfo->hMemDC; }
 

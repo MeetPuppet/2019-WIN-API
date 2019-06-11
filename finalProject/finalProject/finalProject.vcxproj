@@ -139,8 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="action.cpp" />
-    <ClCompile Include="animation.cpp" />
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="boss.cpp" />
     <ClCompile Include="Coin.cpp" />
@@ -159,7 +157,6 @@
     <ClCompile Include="image.cpp" />
     <ClCompile Include="imageManager.cpp" />
     <ClCompile Include="ItemBox.cpp" />
-    <ClCompile Include="keyAniManager.cpp" />
     <ClCompile Include="keyManager.cpp" />
     <ClCompile Include="Luigi.cpp" />
     <ClCompile Include="mainGame.cpp" />
@@ -168,7 +165,6 @@
     <ClCompile Include="objectManger.cpp" />
     <ClCompile Include="objectNode.cpp" />
     <ClCompile Include="playerNode.cpp" />
-    <ClCompile Include="progressBar.cpp" />
     <ClCompile Include="sceneManager.cpp" />
     <ClCompile Include="soundManager.cpp" />
     <ClCompile Include="Stage1.cpp" />
@@ -182,8 +178,6 @@
     <ClCompile Include="winMain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="action.h" />
-    <ClInclude Include="animation.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="boss.h" />
     <ClInclude Include="Coin.h" />
@@ -203,7 +197,6 @@
     <ClInclude Include="image.h" />
     <ClInclude Include="imageManager.h" />
     <ClInclude Include="ItemBox.h" />
-    <ClInclude Include="keyAniManager.h" />
     <ClInclude Include="keyManager.h" />
     <ClInclude Include="Luigi.h" />
     <ClInclude Include="mainGame.h" />
@@ -212,7 +205,6 @@
     <ClInclude Include="objectManger.h" />
     <ClInclude Include="objectNode.h" />
     <ClInclude Include="playerNode.h" />
-    <ClInclude Include="progressBar.h" />
     <ClInclude Include="randomFunction.h" />
     <ClInclude Include="sceneManager.h" />
     <ClInclude Include="singletonBase.h" />

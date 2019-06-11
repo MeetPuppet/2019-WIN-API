@@ -16,12 +16,6 @@
     <Filter Include="2DframeWork">
       <UniqueIdentifier>{e6850773-16a0-42ac-a497-6944ec78d6bf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="2DframeWork\action">
-      <UniqueIdentifier>{48bb7b9b-386b-461b-8dbd-8c9eb79e3633}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="2DframeWork\animation">
-      <UniqueIdentifier>{46a969a6-5545-443e-aff3-50aa94c1378b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="2DframeWork\image">
       <UniqueIdentifier>{688b32c7-e6f6-435d-8747-7b48d1fa1a12}</UniqueIdentifier>
     </Filter>
@@ -36,9 +30,6 @@
     </Filter>
     <Filter Include="2DframeWork\utils">
       <UniqueIdentifier>{e219d859-f842-4858-982a-5aee6b8f866d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="2DframeWork\prograssbar">
-      <UniqueIdentifier>{da6a7ffe-648a-454f-aca0-66c50da00400}</UniqueIdentifier>
     </Filter>
     <Filter Include="mainGame">
       <UniqueIdentifier>{5eeac829-f058-4a84-a41f-5b70f4826370}</UniqueIdentifier>
@@ -105,16 +96,7 @@
     <ClCompile Include="image.cpp">
       <Filter>2DframeWork\image</Filter>
     </ClCompile>
-    <ClCompile Include="action.cpp">
-      <Filter>2DframeWork\action</Filter>
-    </ClCompile>
-    <ClCompile Include="animation.cpp">
-      <Filter>2DframeWork\animation</Filter>
-    </ClCompile>
     <ClCompile Include="imageManager.cpp">
-      <Filter>2DframeWork\Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="keyAniManager.cpp">
       <Filter>2DframeWork\Manager</Filter>
     </ClCompile>
     <ClCompile Include="keyManager.cpp">
@@ -140,9 +122,6 @@
     </ClCompile>
     <ClCompile Include="gameNode.cpp">
       <Filter>2DframeWork</Filter>
-    </ClCompile>
-    <ClCompile Include="progressBar.cpp">
-      <Filter>2DframeWork\prograssbar</Filter>
     </ClCompile>
     <ClCompile Include="mainGame.cpp">
       <Filter>mainGame</Filter>
@@ -227,16 +206,7 @@
     <ClInclude Include="image.h">
       <Filter>2DframeWork\image</Filter>
     </ClInclude>
-    <ClInclude Include="action.h">
-      <Filter>2DframeWork\action</Filter>
-    </ClInclude>
-    <ClInclude Include="animation.h">
-      <Filter>2DframeWork\animation</Filter>
-    </ClInclude>
     <ClInclude Include="imageManager.h">
-      <Filter>2DframeWork\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="keyAniManager.h">
       <Filter>2DframeWork\Manager</Filter>
     </ClInclude>
     <ClInclude Include="keyManager.h">
@@ -262,9 +232,6 @@
     </ClInclude>
     <ClInclude Include="gameNode.h">
       <Filter>2DframeWork</Filter>
-    </ClInclude>
-    <ClInclude Include="progressBar.h">
-      <Filter>2DframeWork\prograssbar</Filter>
     </ClInclude>
     <ClInclude Include="mainGame.h">
       <Filter>mainGame</Filter>
