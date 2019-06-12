@@ -79,6 +79,7 @@ void Luigi::keySet()
 			state = PS_MOVE;
 		}
 		else if (KEYMANAGER->isStayKeyDown('W')) {
+			SOUNDMANAGER->play("11.jump", 1.0f);
 			frameX = 5;
 			jumpPower = JUMPSPEED * 2;
 			state = PS_JUMP;
@@ -114,6 +115,7 @@ void Luigi::keySet()
 				state = PS_SIT;
 		}
 		if (KEYMANAGER->isStayKeyDown('W')) {
+			SOUNDMANAGER->play("11. jump", 1.0f);
 			frameX = 5;
 			jumpPower = JUMPSPEED * 2;
 			state = PS_JUMP;

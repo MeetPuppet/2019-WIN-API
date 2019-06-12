@@ -146,8 +146,9 @@ void enemyManger::KillGoomba()
 			IntersectRect(&temp, &player2->getRect(), &vEnemy[i]->getRect())) {
 			if (player2->getState() == PS_JUMP) {
 				player2->jumpUp();
-				delete vEnemy[i];
-				vEnemy.erase(vEnemy.begin() + i);
+				vEnemy[i]->makeStateDead();
+				//delete vEnemy[i];
+				//vEnemy.erase(vEnemy.begin() + i);
 			}
 			else {
 				player2->powerDown();

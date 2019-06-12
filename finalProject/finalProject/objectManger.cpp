@@ -28,7 +28,7 @@ HRESULT objectManger::init()
 	IMAGEMANAGER->addFrameImage("ItemBox", "image/object/itemBox.bmp", 320, 80, 4, 1, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("Block", "image/object/block.bmp", 240, 160, 3, 2, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("Coin", "image/object/coin.bmp", 240, 70, 3, 1, true, RGB(255, 0, 255));
-	IMAGEMANAGER->addFrameImage("fireShot", "image/bowser/fireShot.bmp", 96, 18, 2, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("fireShot", "image/bowser/fireShot.bmp", 240, 40, 2, 1, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("greenShell", "image/object/greenShell.bmp", 160, 75, 2, 1, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("greyShell", "image/object/greyShell.bmp", 160, 75, 2, 1, true, RGB(255, 0, 255));
 
@@ -224,15 +224,17 @@ void objectManger::moveWorld(int x) {
 	for (int i = 0; i < vShell.size(); ++i) {
 		vShell[i]->moveX(x);
 	}
+	for (int i = 0; i < vFireShot.size(); ++i) {
+		vFireShot[i]->moveX(x);
+	}
 }
-bool objectManger::collisionTile(RECT r, float& y) {
+void objectManger::collisionTile() {
 	RECT temp;
 	for (int i = 0; i < vTile.size(); ++i) {
-		if (IntersectRect(&temp, &r, &vTile[i]->getRect())) {
-			y = vTile[i]->getRect().top - (r.bottom - r.top)/2;
-			return true;
+		if (player1 &&
+			IntersectRect(&temp, &player1->getRect(), &vTile[i]->getRect())) {
+
 		}
-		return false;
 	}
 }
 

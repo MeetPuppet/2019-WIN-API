@@ -15,16 +15,8 @@
 #define TILESIZEX TILESIZE * TILEX
 #define TILESIZEY TILESIZE * TILEY
 
-//타일셋(샘플타일) 의 갯수
-#define SAMPLETILEX 5
-#define SAMPLETILEY 1
-
 //타일의 속성
-//비트필드 느리긴 하나 메모리 관리 따봉
 #define ATTR_UNMOVE 0x00000001
-#define ATTR_SWAMP	0x00000002
-#define ATTR_POISON 0x00000004
-#define ATTR_ICE	0x00000008
 
 //지형에 대한 정의
 enum TERRAIN
@@ -58,6 +50,7 @@ enum OBJECT
 //포지션 (나중에 클래스와 연동키 위함)
 enum POS
 {//아직 손보지 않음
+	//살려는 두겠는데 한번도 안쓰고 뭐에 썼던건지 전혀기억안남
 	POS_FLAG1, POS_FLAG2, POS_TANK1, POS_TANK2
 };
 
@@ -79,13 +72,6 @@ struct tagTile
 		objFrameX = 0;
 		objFrameY = 0;
 	}
-};
-
-struct tagSampleTile
-{
-	RECT rcTile;
-	int terrainFrameX;
-	int terrainFrameY;
 };
 
 struct tagCurrentTile

@@ -408,6 +408,7 @@ void playerNode::footCheck()
 			IntersectRect(&temp, &TileRect, &foot)) {
 			//그럼 아무것도 안함
 			if (state == PS_JUMP && jumpPower < 0) {
+				point.y = rc.bottom - img->getFrameHeight() / 2;
 				state = PS_MOVE;
 				frameX = 1;
 			}

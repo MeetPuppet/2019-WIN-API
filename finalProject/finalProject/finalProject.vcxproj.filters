@@ -88,6 +88,9 @@
     <Filter Include="mainGame\player\node">
       <UniqueIdentifier>{58213c62-14de-40c0-b080-627e80d10721}</UniqueIdentifier>
     </Filter>
+    <Filter Include="mainGame\world">
+      <UniqueIdentifier>{7a4b09f8-f867-451c-bab5-5624cbd96a53}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="winMain.cpp">
@@ -200,6 +203,12 @@
     </ClCompile>
     <ClCompile Include="Luigi.cpp">
       <Filter>mainGame\player</Filter>
+    </ClCompile>
+    <ClCompile Include="world1.cpp">
+      <Filter>mainGame\world</Filter>
+    </ClCompile>
+    <ClCompile Include="title.cpp">
+      <Filter>mainGame\world</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -325,6 +334,12 @@
     </ClInclude>
     <ClInclude Include="Luigi.h">
       <Filter>mainGame\player</Filter>
+    </ClInclude>
+    <ClInclude Include="world1.h">
+      <Filter>mainGame\world</Filter>
+    </ClInclude>
+    <ClInclude Include="title.h">
+      <Filter>mainGame\world</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

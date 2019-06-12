@@ -34,6 +34,7 @@ public:
 	HRESULT init(void);
 	void release(void);
 	void update(void);
+	void soundSet();
 
 	void addSound(string keyName, string soundName, bool bgm, bool loop);
 	
