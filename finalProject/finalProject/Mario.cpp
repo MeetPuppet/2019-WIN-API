@@ -31,6 +31,9 @@ void Mario::update()
 {    
 	if (state == PS_DEAD) {
 		//죽을때 돌릴 부분
+		jumpPower = jumpPower - JUMPSPEED * 2 * time;
+		point.y = point.y - jumpPower;
+		rc = RectMakeCenter(point.x, point.y, img->getFrameWidth(), img->getFrameHeight());
 	}
 	else {
 		playerNode::update();
@@ -78,6 +81,7 @@ void Mario::keySet()
 			state = PS_MOVE;
 		}
 		else if (KEYMANAGER->isStayKeyDown(VK_UP)) {
+			SOUNDMANAGER->play("11.jump");
 			frameX = 5;
 			jumpPower = JUMPSPEED * 2;
 			state = PS_JUMP;
@@ -113,6 +117,7 @@ void Mario::keySet()
 				state = PS_SIT;
 		}
 		if (KEYMANAGER->isStayKeyDown(VK_UP)) {
+			SOUNDMANAGER->play("11.jump");
 			frameX = 5;
 			jumpPower = JUMPSPEED * 2;
 			state = PS_JUMP;
@@ -210,13 +215,8 @@ void Mario::keySet()
 		break;
 	}
 
-	if (KEYMANAGER->isOnceKeyDown('Q')) {
-		if (mode == PM_SMALL) {
-			mode = PM_BIG;
-		}
-		else {
-			mode = PM_SMALL;
-		}
+	if (KEYMANAGER->isToggleKey('Q')) {
+		mode = PM_BIG;
 	}
 	switch (mode)
 	{

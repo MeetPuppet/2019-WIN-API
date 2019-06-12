@@ -15,7 +15,9 @@ world1::world1()
 	E_Manager = NULL;
 	O_Manager = NULL;
 	stage1 = NULL;
+	alpha = 0;
 	players = 1;
+	musictime = 0;
 }
 world1::world1(int getPlayer)
 {
@@ -24,6 +26,8 @@ world1::world1(int getPlayer)
 	E_Manager = NULL;
 	O_Manager = NULL;
 	stage1 = NULL;
+	alpha = 0;
+	players = 1;
 	players = getPlayer;
 }
 
@@ -54,8 +58,6 @@ HRESULT world1::init()			//초기화 함수
 			E_Manager->LinkToP2(luigi);
 		}
 	}
-	POINT p = { 600,600 };
-	E_Manager->makeBowser(p);
 	if (O_Manager == NULL) {
 		O_Manager = new objectManger;
 		O_Manager->init();
@@ -96,7 +98,7 @@ HRESULT world1::init()			//초기화 함수
 			luigi->LinkToStage(stage1);
 		}
 	}
-	SOUNDMANAGER->play("01.world1", 1.0f);
+	SOUNDMANAGER->play("01.world1");
 
 	return S_OK;
 }
@@ -130,58 +132,149 @@ void world1::release()			//메모리 해제 함수
 
 void world1::update()				//연산 함수
 {
+	if (mario && mario->getPoint().x > 1100 && !luigi) {
+		//클리어
+		SOUNDMANAGER->stop("01.world1");
+		if (!SOUNDMANAGER->isPlaySound("02.comple1"))
+			SOUNDMANAGER->play("02.comple1");
+		float time = TIMEMANAGER->getElapsedTime();
+		if (time < 0) time = 0.016;
+		musictime += time;
+		if (alpha < 250) {
+			alpha += 150 * time;
+		}
+		else if (musictime > 9.f) {
+			SOUNDMANAGER->stop("02.comple1");
+			SCENEMANAGER->changeScene("P1world2");
+		}
+	}
+	else if (mario && luigi 
+		&& luigi->getPoint().x > 1100
+		&& mario->getPoint().x > 1100) {
+		//클리어
+		SOUNDMANAGER->stop("01.world1");
+		if (!SOUNDMANAGER->isPlaySound("02.comple1"))
+		SOUNDMANAGER->play("02.comple1");
+		float time = TIMEMANAGER->getElapsedTime();
+		if (time < 0) time = 0.016;
+		musictime += time;
+		if (alpha < 250) {
+			alpha += 150 * time;
+		}
+		else if (musictime > 9.f) {
+			SOUNDMANAGER->stop("02.comple1");
+			SCENEMANAGER->changeScene("P2world2");
+		}
+	}
+	else if (mario == NULL && luigi == NULL) {
+		SOUNDMANAGER->stop("01.world1");
+		SOUNDMANAGER->stop("05.dead");
+		if(!SOUNDMANAGER->isPlaySound("06.gameOver"))
+			SOUNDMANAGER->play("06.gameOver");
+		float time = TIMEMANAGER->getElapsedTime();
+		if (time < 0) time = 0.016;
+		musictime += time;
+		if (alpha < 250) {
+			alpha += 150 * time;
+		}
+		else if (musictime > 7.f) {
+			SOUNDMANAGER->stop("06.gameOver");
+			SCENEMANAGER->changeScene("title");
+		}
+	}
+	else {
 
-	//RECT를 넣어주면 충돌했는지 안했는지 bool값으로 반환 해주는 함수
-	//if (E_Manager->enemyCollisionCheck(RECT)) {}
+		if (mario && mario->getPoint().y > 880) {
+			mario->dead();
+		}
+		if (luigi && luigi->getPoint().y > 880) {
+			mario->dead();
+			luigi->dead();
+		}
 
-
-	//오른쪽 마우스키 누른자리에 적 생성
-	//if (KEYMANAGER->isOnceKeyDown(VK_RBUTTON)) {
-	//	E_Manager->makeGoomba(_ptMouse);
-	//}
-	//if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON)) {
-	//	E_Manager->makeGreenTurtle(_ptMouse);
-	//}
-	//if (KEYMANAGER->isOnceKeyDown(VK_SPACE)) {
-	//	E_Manager->KillGreenTurtle();
-	//}
-
-	if (mario) {
-		mario->update();
-	}
-	if (luigi) {
-		luigi->update();
-	}
-	if (E_Manager) {
-		E_Manager->update();
-	}
-	if (O_Manager) {
-		O_Manager->update();
-		O_Manager->changeToGreenShell();
-	}
-	if (stage1) {
-		stage1->update();
-		//stage1->setMainPosition({ p->getX(), 0 });
-	}
-	int moveSpeed = mario->getSpeed();
-	if (mario->getX() > 800 && stage1->getEdge1() > 1200 + mario->getSpeed()
-		&& (luigi && luigi->getRect().left > 0)) {
-		mario->moveX(-mario->getSpeed());
-		E_Manager->moveWorld(-moveSpeed);
-		O_Manager->moveWorld(-moveSpeed);
-		stage1->moveX(-moveSpeed);
-		if (luigi)
-			luigi->moveX(-moveSpeed);
-	}
-	else if (mario->getX() < 400 && stage1->getEdge0() < 0 - mario->getSpeed()
-		&& (luigi && luigi->getRect().right < 1200)) {
-		//좌우속도차가 있음
-		mario->moveX(mario->getSpeed());
-		E_Manager->moveWorld(moveSpeed);
-		O_Manager->moveWorld(moveSpeed);
-		stage1->moveX(moveSpeed);
-		if (luigi)
-			luigi->moveX(moveSpeed);
+		if (SOUNDMANAGER->isPlaySound("05.dead")) {
+			SOUNDMANAGER->pause("01.world1");
+		}
+		else if (((luigi&&luigi->getState() != PS_DEAD) ||
+			(mario&&mario->getState() != PS_DEAD)) &&
+			SOUNDMANAGER->isPauseSound("01.world1")) {
+			SOUNDMANAGER->resume("01.world1");
+		}
+		if (mario && mario->getPoint().y < 880) {
+			mario->update();
+			if (luigi && luigi->getState() == PS_DEAD) {
+				mario->dead();
+			}
+		}
+		else if (mario && mario->getPoint().y > 880
+			&& mario->getState() == PS_DEAD) {
+			delete mario;
+			mario = NULL;
+			E_Manager->LinkToP1(mario);
+			O_Manager->LinkToP1(mario);
+		}
+		if (luigi&& luigi->getPoint().y < 880) {
+			luigi->update();
+			if (mario && mario->getState() == PS_DEAD) {
+				mario->dead();
+			}
+		}
+		else if (luigi && luigi->getPoint().y > 880
+			&& luigi->getState() == PS_DEAD) {
+			if (luigi) {
+				delete luigi;
+				luigi = NULL;
+				E_Manager->LinkToP2(luigi);
+				O_Manager->LinkToP2(luigi);
+			}
+		}
+		if (E_Manager) {
+			E_Manager->update();
+		}
+		if (O_Manager) {
+			O_Manager->update();
+			O_Manager->changeToGreenShell();
+		}
+		if (stage1) {
+			stage1->update();
+			//stage1->setMainPosition({ p->getX(), 0 });
+		}
+		if (mario) {
+			int moveSpeed = mario->getSpeed();
+			if (mario->getX() > 800 && stage1->getEdge1() > 1200 + mario->getSpeed()
+				&& (luigi && luigi->getRect().left > 0)) {
+				mario->moveX(-mario->getSpeed());
+				E_Manager->moveWorld(-moveSpeed);
+				O_Manager->moveWorld(-moveSpeed);
+				stage1->moveX(-moveSpeed);
+				if (luigi)
+					luigi->moveX(-moveSpeed);
+			}
+			else if (mario->getX() > 800 && stage1->getEdge1() > 1200 + mario->getSpeed()
+				&& !luigi) {
+				mario->moveX(-mario->getSpeed());
+				E_Manager->moveWorld(-moveSpeed);
+				O_Manager->moveWorld(-moveSpeed);
+				stage1->moveX(-moveSpeed);
+			}
+			if (mario->getX() < 400 && stage1->getEdge0() < 0 - mario->getSpeed()
+				&& (luigi && luigi->getRect().right < 1200)) {
+				//좌우속도차가 있음
+				mario->moveX(mario->getSpeed());
+				E_Manager->moveWorld(moveSpeed);
+				O_Manager->moveWorld(moveSpeed);
+				stage1->moveX(moveSpeed);
+				if (luigi)
+					luigi->moveX(moveSpeed);
+			}
+			else if (mario->getX() < 400 && stage1->getEdge0() < 0 - mario->getSpeed()
+				&& !luigi) {
+				mario->moveX(mario->getSpeed());
+				E_Manager->moveWorld(moveSpeed);
+				O_Manager->moveWorld(moveSpeed);
+				stage1->moveX(moveSpeed);
+			}
+		}
 	}
 	//
 	//if (q->getX() > 800 && stage1->getEdge1() > 1200 + q->getSpeed()) {
@@ -222,4 +315,7 @@ void world1::render()		//그려주는 함수(a.k.a WM_PAINT)
 	if (luigi) {
 		luigi->render();
 	}
+
+	IMAGEMANAGER->findImage("black")->alphaRender(getMemDC(), alpha);
+	
 }

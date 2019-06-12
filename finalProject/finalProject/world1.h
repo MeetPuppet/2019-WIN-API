@@ -12,6 +12,8 @@ class world1 :
 {
 private:
 	int players;
+	float musictime;
+	BYTE alpha;
 	Mario* mario;
 	Luigi* luigi;
 

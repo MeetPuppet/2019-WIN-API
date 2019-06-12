@@ -14,6 +14,8 @@ public:
 	void update();
 	void render();
 
+	int getItemNum() { return itemNum; }
+	bool isHaveIn() { return haveIn; }
 	void frameMove();
 	void active();
 };

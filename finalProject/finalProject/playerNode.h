@@ -65,6 +65,7 @@ public:
 	int getX() { return point.x; }
 	Point getPoint() { return point; }
 	PLAYERSTATE getState() { return state; }
+	PLAYERMOD getMode() { return mode; }
 	float getSpeed() { return speed; }
 	float getJP() { return jumpPower; }
 	RECT getRect() { return rc; }

@@ -22,8 +22,8 @@ private:
 	RECT rc;//충돌용 사각형
 	bool JUMP;
 	float FrameCheck;
-	float speed;
-	float gravity;
+	float jumpPower;
+	float time;
 
 	int frameX;
 	int frameY;
@@ -49,6 +49,14 @@ public:
 	void FrameSeter();
 	B_STATE getState();
 	Point getPoint();
+	RECT getRect() { return rc; }
+	void Dead()
+	{
+		jumpPower = 3;
+		state = B_DEAD;
+	}
+
+
 	int getFireNum();
 	//플레이어 할당이 해제될 경우 동작을 막을 것
 	void AI(POINT* playerPoint = NULL);

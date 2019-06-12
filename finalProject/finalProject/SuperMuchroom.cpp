@@ -12,9 +12,9 @@ SuperMuchroom::~SuperMuchroom()
 {
 }
 
-HRESULT SuperMuchroom::init(int x, int y, int sizeX, int sizeY)
+HRESULT SuperMuchroom::init(int x, int y)
 {
-	objectNode::init("Mushroom", x, y, sizeX, sizeY);
+	objectNode::init("Mushroom", x, y, 80, 80);
 
 	return S_OK;
 }

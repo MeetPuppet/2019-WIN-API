@@ -8,6 +8,7 @@ class objectManger;
 class stageNode;
 class playerNode;
 class boss;
+
 class enemyManger :
 	public gameNode
 {
@@ -41,7 +42,7 @@ public:
 	void LinkToStage(stageNode* s) { stage = s; }
 	void LinkToP1(playerNode* p1) { player1 = p1; }
 	void LinkToP2(playerNode* p2) { player2 = p2; }
-	
+
 	void makeGoomba(POINT point);
 	void makeGreenTurtle(POINT point);
 	void makeGreyTurtle(POINT point);
@@ -51,9 +52,17 @@ public:
 	void KillGoomba();
 	void KillGreenTurtle();
 	void KillGreyTurtle();
+	void KillBowser();
 
 	void LinkTarget(POINT* targetPoint = NULL);
 
 	void moveWorld(int x);
+
+	bool bossHere() {
+		if (vBoss.size() > 0) {
+			return true;
+		}
+		return false;
+	};
 };
 

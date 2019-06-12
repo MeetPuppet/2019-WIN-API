@@ -32,7 +32,7 @@ void ItemBox::update()
 		frameMove();
 	}
 	else {
-		frameX = 4;
+		frameX = 3;
 	}
 }
 void ItemBox::render()

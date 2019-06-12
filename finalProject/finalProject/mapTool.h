@@ -30,7 +30,7 @@ public:
 	LRESULT MainProc(HWND, UINT, WPARAM, LPARAM);
 
 	SWITCHER whatSet() override { return MAPTOOL; }
-	void save();
-	void load();
+	void save(const char* mapPath);
+	void load(const char* mapPath);
 };
 

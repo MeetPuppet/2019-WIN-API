@@ -13,8 +13,8 @@ boss::boss()
 	rc = { 0,0,0,0 };
 
 	FrameCheck = 0.2;
-	speed = 0;
-	gravity = 0;
+	jumpPower = 0;
+	time = 0;
 
 	JUMP = TRUE;
 
@@ -51,59 +51,67 @@ void boss::release()
 }
 void boss::update()
 {
+	time = TIMEMANAGER->getElapsedTime();
+	if (time < 0) time = 0.016;
 	rc = RectMakeCenter(p.x, p.y, Img->getFrameWidth(), Img->getFrameHeight());
 	//if (state == BL_BRESS || state == BL_CHASE || state == BL_PATROL) {
-	if (movenum == TRUE) {
-		p.x -= 3;
-	}
-	else if (movenum == FALSE) {
-		p.x += 3;
-	}
-	FrameSeter();
-	FireNum += 1;
-	//if (JUMP == TRUE) {
-	//	p.y -= 5 * cos((3.1415926535 / 180) * jumpnum);
-	//	jumpnum += 3;
-	//}
-	//if (JUMP == FALSE) {
-	//	p.y += 5 * sin((3.1415926535 / 180) * jumpnum);
-	//	jumpnum -= 3;
-	//}
-	//if (jumpnum == 90) {
-	//	JUMP = FALSE;
-	//}
-	//if (jumpnum == 0) {
-	//	JUMP = TRUE;
-	//}
-	jumpnum -= JUMPSPEED * 2 * 0.02;
-	p.y -= jumpnum;
-	if (jumpnum < 0 && p.y > WINSIZEY * 3 / 4) {
-		jumpnum = JUMPSPEED * 2;
-	}
+	if (state != B_DEAD) {
+		if (movenum == TRUE) {
+			p.x -= 3;
+		}
+		else if (movenum == FALSE) {
+			p.x += 3;
+		}
+		FrameSeter();
+		FireNum += 1;
+		//if (JUMP == TRUE) {
+		//	p.y -= 5 * cos((3.1415926535 / 180) * jumpnum);
+		//	jumpnum += 3;
+		//}
+		//if (JUMP == FALSE) {
+		//	p.y += 5 * sin((3.1415926535 / 180) * jumpnum);
+		//	jumpnum -= 3;
+		//}
+		//if (jumpnum == 90) {
+		//	JUMP = FALSE;
+		//}
+		//if (jumpnum == 0) {
+		//	JUMP = TRUE;
+		//}
+		jumpnum -= JUMPSPEED * 2 * 0.02;
+		p.y -= jumpnum;
+		if (jumpnum < 0 && p.y > WINSIZEY * 3 / 4) {
+			jumpnum = JUMPSPEED * 2;
+		}
 
-	if (p.x < oldpx - groundx1) {
-		movenum = FALSE;
-		//if (state == BL_PATROL) {
-		//	state = BR_PATROL;
-		//}
-		//if (state == BL_CHASE) {
-		//	state = BR_CHASE;
-		//}
-		//if (state == BL_BRESS) {
-		//	state = BR_BRESS;
-		//}
+		if (p.x < oldpx - groundx1) {
+			movenum = FALSE;
+			//if (state == BL_PATROL) {
+			//	state = BR_PATROL;
+			//}
+			//if (state == BL_CHASE) {
+			//	state = BR_CHASE;
+			//}
+			//if (state == BL_BRESS) {
+			//	state = BR_BRESS;
+			//}
+		}
+		if (p.x > oldpx + groundx2) {
+			movenum = TRUE;
+			//if (state == BR_PATROL) {
+			//	state = BL_PATROL;
+			//}
+			//if (state == BR_CHASE) {
+			//	state = BL_CHASE;
+			//}
+			//if (state == BR_BRESS) {
+			//	state = BL_BRESS;
+			//}
+		}
 	}
-	if (p.x > oldpx + groundx2) {
-		movenum = TRUE;
-		//if (state == BR_PATROL) {
-		//	state = BL_PATROL;
-		//}
-		//if (state == BR_CHASE) {
-		//	state = BL_CHASE;
-		//}
-		//if (state == BR_BRESS) {
-		//	state = BL_BRESS;
-		//}
+	else {
+		jumpPower = jumpPower - JUMPSPEED * 2 * time;
+		p.y = p.y - jumpPower;
 	}
 }
 void boss::render()

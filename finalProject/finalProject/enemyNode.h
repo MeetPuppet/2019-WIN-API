@@ -45,7 +45,6 @@ public:
 	virtual void update();
 	virtual void render();
 	virtual void FrameSeter();
-	void moveChecker(bool isRight);
 
 	//충돌 확인용
 	Point getPoint() { return p; }
@@ -61,5 +60,4 @@ public:
 	 void LinkToTarget(POINT* playerPoint = NULL){
 		targetPoint = playerPoint;
 	}
-	 void LinkToStage(stageNode* s) { stage = s; }
 };

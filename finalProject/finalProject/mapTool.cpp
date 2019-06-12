@@ -24,12 +24,8 @@ HRESULT mapTool::init()
 		3, 1, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("greenTurtle", "image/enemy/greenTurtle.bmp", 160, 240,
 		2, 2, true, RGB(255, 0, 255));
-	IMAGEMANAGER->addFrameImage("greyTurtle", "image/enemy/greyTurtle.bmp", 160, 240,
-		2, 2, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("bowser", "image/bowser/bowser.bmp", 640, 320,
 		4, 2, true, RGB(255, 0, 255));
-	IMAGEMANAGER->addFrameImage("firanhaFlower", "image/enemy/firanhaFlower.bmp", 160, 120,
-		2, 1, true, RGB(255, 0, 255));
 	//load();
 
 	for (int i = 0; i < TILEY; ++i) {
@@ -38,6 +34,10 @@ HRESULT mapTool::init()
 									,j*TILESIZE + TILESIZE
 									,i*TILESIZE + TILESIZE };
 		}
+	}for (int i = 1200; i < TILEY*TILEX; ++i) {
+		tiles[i].terrain = TR_GROUND;
+		tiles[i].terrainFrameX = 1;
+		tiles[i].terrainFrameY = 0;
 	}
 	frameIndex = 0;
 
@@ -78,10 +78,9 @@ void mapTool::update()
 	}
 	//2~5까지는 오브젝트로
 	else if (KEYMANAGER->isOnceKeyDown('S')) {
-		save();
+		save("map/save1.map");
 	}
 	else if (KEYMANAGER->isOnceKeyDown('L')) {
-		load();
 	}
 	//굼바
 	else if (KEYMANAGER->isOnceKeyDown(VK_NUMPAD1)) {
@@ -95,6 +94,20 @@ void mapTool::update()
 	else if (KEYMANAGER->isOnceKeyDown(VK_NUMPAD3)) {
 		frameIndex = 12;
 
+	}
+
+
+	if (KEYMANAGER->isOnceKeyDown(VK_NUMPAD4)) {
+		save("map/save1.map");
+	}
+	else if (KEYMANAGER->isOnceKeyDown(VK_NUMPAD5)) {
+		save("map/save2.map");
+	}
+	else if (KEYMANAGER->isOnceKeyDown(VK_NUMPAD7)) {
+		load("map/save1.map");
+	}
+	else if (KEYMANAGER->isOnceKeyDown(VK_NUMPAD8)) {
+		load("map/save2.map");
 	}
 	if (KEYMANAGER->isStayKeyDown(VK_LEFT) && tiles[0].rc.left < 10) {
 		for (int i = 0; i < MAX; ++i) {
@@ -226,30 +239,36 @@ void mapTool::render()
 }
 
 
-void mapTool::save()
+void mapTool::save(const char* mapPath)
 {
 	HANDLE file;
 	DWORD write;
 
-	file = CreateFile("map/save1.map", GENERIC_WRITE, FALSE, NULL,
+	file = CreateFile(mapPath, GENERIC_WRITE, FALSE, NULL,
 		CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
 
 	WriteFile(file, tiles, sizeof(tagTile)*MAX, &write, NULL);
 
 	CloseHandle(file);
 }
-void mapTool::load()
+void mapTool::load(const char* mapPath)
 {
 	HANDLE file;
 	DWORD read;
 
-	file = CreateFile("map/save1.map", GENERIC_READ, FALSE, NULL,
+	file = CreateFile(mapPath, GENERIC_READ, FALSE, NULL,
 		OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 
 
 	ReadFile(file, tiles, sizeof(tagTile)*MAX, &read, NULL);
 
 	CloseHandle(file);
+
+	//if(mapPath == "map/save2.map")
+	//for (int i = 0; i < MAX; ++i) {
+	//	tiles[i].terrainFrameY = 1;
+	//}
+
 }
 
 LRESULT mapTool::MainProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)

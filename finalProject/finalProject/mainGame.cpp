@@ -3,6 +3,7 @@
 
 #include "title.h"
 #include "world1.h"
+#include "world2.h"
 
 mainGame::mainGame()
 {
@@ -23,6 +24,10 @@ HRESULT mainGame::init()			//초기화 함수
 	gameNode::init(true);
 
 	SCENEMANAGER->addScene("title", new title);
+	SCENEMANAGER->addScene("P1world1", new world1);
+	SCENEMANAGER->addScene("P2world1", new world1(2));
+	SCENEMANAGER->addScene("P1world2", new world2);
+	SCENEMANAGER->addScene("P2world2", new world2(2));
 	SCENEMANAGER->changeScene("title");
 
 	return S_OK;

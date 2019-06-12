@@ -2,8 +2,11 @@
 #include "gameNode.h"
 #include <vector>
 
+class ItemBox;
 class objectNode;
 class greenShell;
+
+class goal;
 
 class enemyManger;
 class stageNode;
@@ -14,10 +17,14 @@ class objectManger :
 {
 private:
 	//타일 전용
-	vector<objectNode*> vTile;
-	vector<objectNode*> vCoin;
+	vector<ItemBox*> vTile;
 	vector<greenShell*> vShell;
 	vector<fireShot*> vFireShot;
+
+	vector<objectNode*> vCoin;
+	vector<objectNode*> vMush;
+
+	goal* ggoal;
 
 	enemyManger* emP;
 	stageNode* stage;
@@ -36,9 +43,12 @@ public:
 	void LinkToP2(playerNode* p2) { player2 = p2; }
 
 	void setItemBox(RECT rc, int itemNum);
-	void setBlock(RECT rc, int mode, int coins);
+	//void setBlock(RECT rc, int mode, int coins);
+	void collisionTile();
 
 	void setFireShot(int vx, int vy, int Move);
+	void collisionFireShot() {};
+
 	void setgreenShell(int vx, int vy);
 	void changeToGreenShell();
 	void killGreenShell();
@@ -49,13 +59,13 @@ public:
 	void killGreyShell();
 
 
-	vector<objectNode*> getvTile() { return vTile; }
-	void collisionTile();
 	void moveWorld(int x);
 	
 	//특수한 경우가 아니면 set@@, break@@ 으로 만들기
 	void setCoin(RECT rc);
 	void collisionCoin(RECT r);
+	void setMush(RECT rc);
+	void collisionMush();
 
 };
 

@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "title.h"
-#include "world1.h"
 
 
 
@@ -40,10 +39,9 @@ void title::update()
 			alpha += 150* time;
 		else {
 			if(mode == 0)
-				SCENEMANAGER->addScene("world1", new world1);
+				SCENEMANAGER->changeScene("P1world1");
 			else
-				SCENEMANAGER->addScene("world1", new world1(2));
-			SCENEMANAGER->changeScene("world1");
+				SCENEMANAGER->changeScene("P2world1");
 		}
 	}
 	else {

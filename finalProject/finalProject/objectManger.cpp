@@ -1,8 +1,11 @@
 #include "stdafx.h"
 #include "objectManger.h"
+
+#include "superMuchroom.h"
 #include "ItemBox.h"
 #include "Block.h"
 #include "Coin.h"
+#include "goal.h"
 
 #include "greenShell.h"
 #include "greyShell.h"
@@ -16,6 +19,7 @@ objectManger::objectManger()
 	stage = NULL;
 	player1 = NULL;
 	player2 = NULL;
+	ggoal = NULL;
 }
 
 
@@ -25,12 +29,21 @@ objectManger::~objectManger()
 
 HRESULT objectManger::init()
 {
+	IMAGEMANAGER->addFrameImage("Mushroom", "image/object/mushroom.bmp", 80, 80, 1, 1, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("ItemBox", "image/object/itemBox.bmp", 320, 80, 4, 1, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("Block", "image/object/block.bmp", 240, 160, 3, 2, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("Coin", "image/object/coin.bmp", 240, 70, 3, 1, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("fireShot", "image/bowser/fireShot.bmp", 240, 40, 2, 1, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("greenShell", "image/object/greenShell.bmp", 160, 75, 2, 1, true, RGB(255, 0, 255));
 	IMAGEMANAGER->addFrameImage("greyShell", "image/object/greyShell.bmp", 160, 75, 2, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("Flag", "image/object/flag.bmp", 80, 80, 1, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("Goal", "image/object/goal.bmp", 80, 540, 1, 1, true, RGB(255, 0, 255));
+
+	if (ggoal == NULL) {
+		ggoal = new goal;
+		ggoal->init();
+	}
+
 
 	return S_OK;
 }
@@ -48,7 +61,14 @@ void objectManger::update()
 	for (int i = 0; i < vFireShot.size(); ++i) {
 		vFireShot[i]->update();
 	}
+	for (int i = 0; i < vMush.size(); ++i) {
+		vMush[i]->update();
+	}
 	kickGreenShell();
+	collisionTile();
+	collisionMush();
+	collisionFireShot();
+	ggoal->update();
 }
 void objectManger::render()
 {
@@ -68,6 +88,10 @@ void objectManger::render()
 		if (vFireShot[i]->getRect().right >= 0 && vFireShot[i]->getRect().left <= 1200)
 			vFireShot[i]->render();
 	}
+	for (int i = 0; i < vMush.size(); ++i) {
+		vMush[i]->render();
+	}
+	ggoal->render();
 }
 
 void objectManger::LinkToenemyManger(enemyManger* em)
@@ -88,20 +112,20 @@ void objectManger::setItemBox(RECT rc, int itemNum)
 
 	vTile.emplace_back(box);
 }
-void objectManger::setBlock(RECT rc, int mode, int coins)
-{
-	Block* box = new Block;
-	box->init((rc.right - rc.left) / 2 + rc.left,
-		(rc.bottom - rc.top) / 2 + rc.top,
-		rc.right - rc.left,
-		rc.bottom - rc.top, mode, coins);
-	if (player1)
-		box->LinkToP1(player1);
-	if (player2)
-		box->LinkToP2(player2);
-
-	vTile.emplace_back(box);
-}
+//void objectManger::setBlock(RECT rc, int mode, int coins)
+//{
+//	Block* box = new Block;
+//	box->init((rc.right - rc.left) / 2 + rc.left,
+//		(rc.bottom - rc.top) / 2 + rc.top,
+//		rc.right - rc.left,
+//		rc.bottom - rc.top, mode, coins);
+//	if (player1)
+//		box->LinkToP1(player1);
+//	if (player2)
+//		box->LinkToP2(player2);
+//
+//	vTile.emplace_back(box);
+//}
 void objectManger::setgreenShell(int vx, int vy)
 {
 	greenShell* Shell = new greenShell;
@@ -169,9 +193,11 @@ void objectManger::kickGreenShell()
 			if (vShell[i]->getKicked() == false) {
 				if (player1->getPoint().x < vShell[i]->getPoint().x) {
 					vShell[i]->kicked(true);
+					SOUNDMANAGER->play("12.kick");
 				}
 				else {
 					vShell[i]->kicked(false);
+					SOUNDMANAGER->play("12.kick");
 				}
 			}
 			else {
@@ -191,9 +217,11 @@ void objectManger::kickGreenShell()
 			if (vShell[i]->getKicked() == false) {
 				if (player2->getPoint().x < vShell[i]->getPoint().x) {
 					vShell[i]->kicked(true);
+					SOUNDMANAGER->play("12.kick");
 				}
 				else {
 					vShell[i]->kicked(false);
+					SOUNDMANAGER->play("12.kick");
 				}
 			}
 			else {
@@ -227,16 +255,12 @@ void objectManger::moveWorld(int x) {
 	for (int i = 0; i < vFireShot.size(); ++i) {
 		vFireShot[i]->moveX(x);
 	}
-}
-void objectManger::collisionTile() {
-	RECT temp;
-	for (int i = 0; i < vTile.size(); ++i) {
-		if (player1 &&
-			IntersectRect(&temp, &player1->getRect(), &vTile[i]->getRect())) {
-
-		}
+	for (int i = 0; i < vMush.size(); ++i) {
+		vMush[i]->moveX(x);
 	}
+	ggoal->moveX(x);
 }
+
 
 void objectManger::setCoin(RECT rc)
 {
@@ -255,8 +279,79 @@ void objectManger::collisionCoin(RECT r)
 		if (IntersectRect(&temp, &r, &vCoin[i]->getRect())) {
 			//UI에서 점수가 올라가야 한다.
 			//현재 코인을 지워야 한다.
+			SOUNDMANAGER->play("10.coin");
 			delete vCoin[i];
 			vCoin.erase(vCoin.begin() + i);
+		}
+	}
+}
+void objectManger::collisionTile()
+{
+	RECT temp;
+	for (int i = 0; i < vTile.size(); ++i) {
+		if (player1 && player1->getState() == PS_JUMP && vTile[i]->isHaveIn() &&
+			IntersectRect(&temp, &vTile[i]->getRect(), &player1->getRect())) {
+			if (vTile[i]->getItemNum() == 4) {
+				temp = vTile[i]->getRect();
+				temp.top -= 80;
+				temp.bottom -= 80;
+				setMush(temp);
+			}
+			else {
+				temp = vTile[i]->getRect();
+				temp.top -= 80;
+				temp.bottom -= 80;
+				setCoin(temp);
+			}
+
+			vTile[i]->active();
+		}
+		else if (player2 && player2->getState() == PS_JUMP && vTile[i]->isHaveIn() &&
+			IntersectRect(&temp, &vTile[i]->getRect(), &player2->getRect())) {
+			if (vTile[i]->getItemNum() == 4) {
+				temp = vTile[i]->getRect();
+				temp.top -= 80;
+				temp.bottom -= 80;
+				setMush(temp);
+			}
+			else {
+				temp = vTile[i]->getRect();
+				temp.top -= 80;
+				temp.bottom -= 80;
+				setCoin(temp);
+			}
+
+			vTile[i]->active();
+		}
+	}
+}
+
+void objectManger::setMush(RECT rc)
+{
+	SuperMuchroom* Mush = new SuperMuchroom;
+	Mush->init((rc.right - rc.left) / 2 + rc.left,
+		(rc.bottom - rc.top) / 2 + rc.top);
+
+	vMush.emplace_back(Mush);
+}
+void objectManger::collisionMush()
+{
+	RECT temp;
+	for (int i = 0; i < vMush.size(); ++i) {
+		if (player1 && IntersectRect(&temp, &player1->getRect(), &vMush[i]->getRect())) {
+			if (player1->getMode() == PM_SMALL) {
+				player1->powerUp();
+				delete vMush[i];
+				vMush.erase(vMush.begin() + i);
+			}
+			
+		}
+		else if (player2 && IntersectRect(&temp, &player2->getRect(), &vMush[i]->getRect())) {
+			if (player2->getMode() == PM_SMALL) {
+				player2->powerUp();
+				delete vMush[i];
+				vMush.erase(vMush.begin() + i);
+			}
 		}
 	}
 }

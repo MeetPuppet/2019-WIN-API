@@ -32,6 +32,12 @@ void Luigi::update()
 {
 	if (state == PS_DEAD) {
 		//죽을때 돌릴 부분
+		time = TIMEMANAGER->getElapsedTime();
+		if (time < 0 || time > 10) time = 0.16f;
+		jumpPower = jumpPower - JUMPSPEED * 2 * time;
+		point.y = point.y - jumpPower;
+		rc = RectMakeCenter(point.x, point.y, img->getFrameWidth(), img->getFrameHeight());
+
 	}
 	else {
 		playerNode::update();
@@ -79,7 +85,7 @@ void Luigi::keySet()
 			state = PS_MOVE;
 		}
 		else if (KEYMANAGER->isStayKeyDown('W')) {
-			SOUNDMANAGER->play("11.jump", 1.0f);
+			SOUNDMANAGER->play("11.jump");
 			frameX = 5;
 			jumpPower = JUMPSPEED * 2;
 			state = PS_JUMP;
@@ -205,14 +211,10 @@ void Luigi::keySet()
 		break;
 	}
 
-	if (KEYMANAGER->isOnceKeyDown('E')) {
-		if (mode == PM_SMALL) {
-			mode = PM_BIG;
-		}
-		else {
-			mode = PM_SMALL;
-		}
+	if (KEYMANAGER->isToggleKey('E')) {
+		mode = PM_BIG;
 	}
+
 	switch (mode)
 	{
 	case PM_SMALL:

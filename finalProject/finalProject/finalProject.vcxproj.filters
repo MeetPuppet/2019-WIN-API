@@ -52,20 +52,11 @@
     <Filter Include="mainGame\map\objectManager">
       <UniqueIdentifier>{c4d83ebb-acb4-47e0-a6ba-ba23c6c9b499}</UniqueIdentifier>
     </Filter>
-    <Filter Include="mainGame\map\decorator">
-      <UniqueIdentifier>{81bcff6c-8fbb-44f2-b5cb-7b936a3e5829}</UniqueIdentifier>
-    </Filter>
     <Filter Include="mainGame\map\objectManager\object">
       <UniqueIdentifier>{9ff96f73-f586-4157-a832-cd9f6723497b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="mainGame\map\decorator\deco">
-      <UniqueIdentifier>{998fd9d7-763f-4ea7-8a38-396b2e3341f8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="mainGame\map\objectManager\object\node">
       <UniqueIdentifier>{79b0eddc-e5e5-4b84-ae32-14f6ecb69bdc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="mainGame\map\decorator\deco\node">
-      <UniqueIdentifier>{e60effc8-8c6b-4698-b487-bdd9804cb929}</UniqueIdentifier>
     </Filter>
     <Filter Include="switcher">
       <UniqueIdentifier>{adca1de6-9de3-4e3c-a1e8-31a06878e102}</UniqueIdentifier>
@@ -90,6 +81,9 @@
     </Filter>
     <Filter Include="mainGame\world">
       <UniqueIdentifier>{7a4b09f8-f867-451c-bab5-5624cbd96a53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mainGame\map\objectManager\object\goal">
+      <UniqueIdentifier>{e4bbdc45-c90f-4d85-8501-849de05b5ae3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -137,9 +131,6 @@
     </ClCompile>
     <ClCompile Include="mapTool.cpp">
       <Filter>mainGame\map\tool</Filter>
-    </ClCompile>
-    <ClCompile Include="decorator.cpp">
-      <Filter>mainGame\map\decorator</Filter>
     </ClCompile>
     <ClCompile Include="objectManger.cpp">
       <Filter>mainGame\map\objectManager</Filter>
@@ -189,9 +180,6 @@
     <ClCompile Include="greenShell.cpp">
       <Filter>mainGame\map\objectManager\object</Filter>
     </ClCompile>
-    <ClCompile Include="greyTurtle.cpp">
-      <Filter>mainGame\enemyManager\enemys</Filter>
-    </ClCompile>
     <ClCompile Include="greyShell.cpp">
       <Filter>mainGame\map\objectManager\object</Filter>
     </ClCompile>
@@ -208,6 +196,18 @@
       <Filter>mainGame\world</Filter>
     </ClCompile>
     <ClCompile Include="title.cpp">
+      <Filter>mainGame\world</Filter>
+    </ClCompile>
+    <ClCompile Include="Flag.cpp">
+      <Filter>mainGame\map\objectManager\object\goal</Filter>
+    </ClCompile>
+    <ClCompile Include="goal.cpp">
+      <Filter>mainGame\map\objectManager\object\goal</Filter>
+    </ClCompile>
+    <ClCompile Include="stage2.cpp">
+      <Filter>mainGame\map\stage</Filter>
+    </ClCompile>
+    <ClCompile Include="world2.cpp">
       <Filter>mainGame\world</Filter>
     </ClCompile>
   </ItemGroup>
@@ -275,9 +275,6 @@
     <ClInclude Include="stdafx.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="decorator.h">
-      <Filter>mainGame\map\decorator</Filter>
-    </ClInclude>
     <ClInclude Include="objectManger.h">
       <Filter>mainGame\map\objectManager</Filter>
     </ClInclude>
@@ -326,9 +323,6 @@
     <ClInclude Include="greenShell.h">
       <Filter>mainGame\map\objectManager\object</Filter>
     </ClInclude>
-    <ClInclude Include="greyTurtle.h">
-      <Filter>mainGame\enemyManager\enemys</Filter>
-    </ClInclude>
     <ClInclude Include="greyShell.h">
       <Filter>mainGame\map\objectManager\object</Filter>
     </ClInclude>
@@ -339,6 +333,18 @@
       <Filter>mainGame\world</Filter>
     </ClInclude>
     <ClInclude Include="title.h">
+      <Filter>mainGame\world</Filter>
+    </ClInclude>
+    <ClInclude Include="Flag.h">
+      <Filter>mainGame\map\objectManager\object\goal</Filter>
+    </ClInclude>
+    <ClInclude Include="goal.h">
+      <Filter>mainGame\map\objectManager\object\goal</Filter>
+    </ClInclude>
+    <ClInclude Include="stage2.h">
+      <Filter>mainGame\map\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="world2.h">
       <Filter>mainGame\world</Filter>
     </ClInclude>
   </ItemGroup>

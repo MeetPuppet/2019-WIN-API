@@ -116,7 +116,8 @@ void stageNode::load(const char* map)
 		}
 		//그냥 블럭
 		else if (tiles[i].objFrameX == 3) {
-			oManager->setBlock(tiles[i].rc, 0, 0);
+			oManager->setItemBox(tiles[i].rc, tiles[i].objFrameX);
+			//oManager->setBlock(tiles[i].rc, 0, 0);
 		}
 		//코인 블럭
 		else if (tiles[i].objFrameX == 4) {
@@ -124,7 +125,8 @@ void stageNode::load(const char* map)
 		}
 		//UNBREAK
 		else if (tiles[i].objFrameX == 5) {
-			oManager->setBlock(tiles[i].rc, 1, 0);
+			oManager->setItemBox(tiles[i].rc, tiles[i].objFrameX);
+			//oManager->setBlock(tiles[i].rc, 1, 0);
 		}
 		//코인
 		else if (tiles[i].objFrameX == 9) {
@@ -145,6 +147,7 @@ void stageNode::load(const char* map)
 		//쿠파
 		else if (tiles[i].objFrameX == 12) {
 			tiles[i].objFrameX = 0;
+			eManager->makeBowser({ tiles[i].rc.right, tiles[i].rc.bottom });
 
 		}
 	}

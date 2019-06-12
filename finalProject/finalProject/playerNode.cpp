@@ -442,10 +442,14 @@ void playerNode::powerDown()
 
 	frameX = 6;
 	state = PS_DEAD;
+	jumpPower = 6;
+	SOUNDMANAGER->play("05.dead");
 }
 void playerNode::dead()
 {
 	mode = PM_SMALL;
 	frameX = 6;
 	state = PS_DEAD;
+	jumpPower = 6;
+	SOUNDMANAGER->play("05.dead");
 }

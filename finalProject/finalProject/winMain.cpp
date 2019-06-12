@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "mainGame.h"
-#include "mapTool.h"
-#include "switcher.h"
+//#include "mapTool.h"
+//#include "switcher.h"
 
 HINSTANCE _hInstance;	//APP 메시지 번호
 HWND	_hWnd;			//APP 고유 번호
@@ -9,8 +9,8 @@ HWND	_hWnd;			//APP 고유 번호
 
 POINT _ptMouse;
 BOOL _leftMouseButton = FALSE;
-extern SWITCHER switchCheck = SWITCH;
-gameNode* _mg = new switcher;
+extern SWITCHER switchCheck = MAINGAME;
+gameNode* _mg = new mainGame;
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);	//윈도우 프로시져 의 함수 프로토 타입
 
@@ -87,7 +87,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmd
 			case SWITCH:
 				if (_mg->whatSet() != SWITCH) {
 					delete _mg;
-					_mg = new switcher;
+					//_mg = new switcher;
 					_mg->init();
 					switchCheck = SWITCH;
 				}
@@ -103,7 +103,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmd
 			case MAPTOOL:
 				if (_mg->whatSet() != MAPTOOL) {
 					delete _mg;
-					_mg = new mapTool;
+					//_mg = new mapTool;
 					_mg->init();
 					switchCheck = MAPTOOL;
 				}

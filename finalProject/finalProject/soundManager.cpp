@@ -24,7 +24,7 @@ HRESULT soundManager::init(void)
 
 	memset(_sound, 0, sizeof(Sound*) * TOTALSOUNDBUFFER);
 	memset(_channel, 0, sizeof(Channel*) * TOTALSOUNDBUFFER);
-	
+
 	soundSet();
 	return S_OK;
 }
@@ -41,9 +41,12 @@ void soundManager::update(void)
 
 void soundManager::soundSet()
 {
-	addSound("01.world1", "./sound/01world1.mp3", false, false);
+	addSound("01.world1", "./sound/01world1.mp3", false, true);
 	addSound("02.comple1", "sound/02-level-complete.mp3", false, false);
-	
+
+	addSound("03.world2", "./sound/03-castle.mp3", false, true);
+	addSound("04.comple2", "sound/04-castle-complete.mp3", false, false);
+
 	addSound("05.dead", "sound/05-you-re-dead.mp3", false, false);
 	addSound("06.gameOver", "sound/06-game-over.mp3", false, false);
 

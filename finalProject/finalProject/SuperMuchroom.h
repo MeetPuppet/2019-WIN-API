@@ -6,8 +6,9 @@ class SuperMuchroom :
 public:
 	SuperMuchroom();
 	~SuperMuchroom();
-	HRESULT init(int x, int y, int sizeX, int sizeY);
+	HRESULT init(int x, int y);
 	void update();
 	void render();
+
 };
 
