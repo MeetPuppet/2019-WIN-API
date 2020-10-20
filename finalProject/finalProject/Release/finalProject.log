@@ -1,1 +1,411 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.WindowsSDK.targets(46,5): error MSB8036: Windows SDK 버전 10.0.16299.0을(를) 찾을 수 없습니다. 필요한 버전의 Windows SDK를 설치하거나, 솔루션을 마우스 오른쪽 단추로 클릭하고 [솔루션 대상 변경]을 선택하거나 프로젝트 속성 페이지에서 SDK 버전을 변경하세요.
+﻿  Block.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  boss.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\boss.h(72,1): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stageNode.h(46,18): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\boss.cpp(15,18): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\boss.cpp(39,8): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\boss.cpp(40,8): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\boss.cpp(45,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\boss.cpp(45,23): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\boss.cpp(55,28): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\boss.cpp(56,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\boss.cpp(56,23): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\boss.cpp(81,34): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\boss.cpp(162,20): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\boss.cpp(173,21): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+  Coin.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Coin.cpp(30,15): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
+  collision.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  enemyManger.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\boss.h(72,1): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.h(65,27): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(87,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(94,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(101,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(113,65): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(113,41): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(128,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(166,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(173,12): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(174,12): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(191,12): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(192,12): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(207,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(208,10): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(209,10): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(217,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(221,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(225,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(231,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(247,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(256,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(259,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(262,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(263,19): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyManger.cpp(270,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  enemyNode.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stageNode.h(46,18): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyNode.cpp(31,29): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyNode.cpp(34,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyNode.cpp(34,23): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyNode.cpp(46,15): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyNode.cpp(68,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyNode.cpp(68,23): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyNode.cpp(96,11): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyNode.cpp(140,58): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyNode.cpp(140,42): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(86,7): warning C4244: '=': 'T'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              T=int
+          ]
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\enemyNode.cpp(11): message : 컴파일되는 함수 템플릿 인스턴스화 'Point Point::operator ()<int>(T,T)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=int
+          ]
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(87,7): warning C4244: '=': 'T'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              T=int
+          ]
+  firanhaFlower.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\firanhaFlower.cpp(19,8): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\firanhaFlower.cpp(20,8): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\firanhaFlower.cpp(71,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\firanhaFlower.cpp(71,23): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\firanhaFlower.cpp(90,14): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\firanhaFlower.cpp(94,13): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  fireShot.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Flag.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  gameNode.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\gameNode.cpp(81,35): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\gameNode.cpp(82,35): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\gameNode.cpp(76,6): warning C4101: 'hdc' :참조되지 않은 지역 변수입니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\gameNode.cpp(75,14): warning C4101: 'ps' :참조되지 않은 지역 변수입니다.
+  goal.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Goomba.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Goomba.cpp(47,14): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Goomba.cpp(51,13): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  greenShell.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\greenShell.cpp(29,24): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+  greenTurtle.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\greenTurtle.cpp(47,14): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\greenTurtle.cpp(51,13): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  greyShell.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  image.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\image.cpp(339,14): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\image.cpp(338,14): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\image.cpp(351,40): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\image.cpp(351,25): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\image.cpp(491,34): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\image.cpp(491,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\image.cpp(495,44): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\image.cpp(495,29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\image.cpp(500,44): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\image.cpp(500,29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  imageManager.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  ItemBox.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\ItemBox.cpp(48,19): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\ItemBox.cpp(53,18): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+  keyManager.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Luigi.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.h(65,27): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stageNode.h(46,18): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Luigi.cpp(39,37): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Luigi.cpp(39,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Luigi.cpp(101,24): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Luigi.cpp(105,24): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Luigi.cpp(108,24): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Luigi.cpp(113,18): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Luigi.cpp(139,18): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Luigi.cpp(151,24): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Luigi.cpp(155,24): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Luigi.cpp(158,24): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Luigi.cpp(192,23): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Luigi.cpp(203,18): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  컴파일하고 있습니다...
+  mainGame.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  mapTool.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\mapTool.cpp(282,34): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\mapTool.cpp(283,34): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\mapTool.cpp(277,6): warning C4101: 'hdc' :참조되지 않은 지역 변수입니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\mapTool.cpp(276,14): warning C4101: 'ps' :참조되지 않은 지역 변수입니다.
+  Mario.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.h(65,27): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stageNode.h(46,18): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Mario.cpp(36,37): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Mario.cpp(36,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Mario.cpp(97,24): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Mario.cpp(101,24): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Mario.cpp(104,24): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Mario.cpp(109,18): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Mario.cpp(139,18): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Mario.cpp(151,24): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Mario.cpp(155,24): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Mario.cpp(158,24): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Mario.cpp(196,23): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\Mario.cpp(207,18): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  objectManger.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.h(65,27): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(52,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(55,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(58,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(61,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(64,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(75,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(79,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(83,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(87,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(91,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(153,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(157,31): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(158,31): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(167,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(169,30): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(170,30): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(179,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(178,7): warning C4101: 'temp' :참조되지 않은 지역 변수입니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(187,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(240,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(246,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(249,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(252,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(255,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(258,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(278,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(291,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectManger.cpp(340,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  objectNode.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.h(65,27): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectNode.cpp(39,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\objectNode.cpp(39,23): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  playerNode.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.h(65,27): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stageNode.h(46,18): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.cpp(20,21): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.cpp(20,16): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.cpp(50,36): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.cpp(50,27): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.cpp(51,29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.cpp(69,36): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.cpp(69,27): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.cpp(70,29): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.cpp(231,25): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.cpp(238,22): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.cpp(411,25): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  sceneManager.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  soundManager.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Stage1.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stageNode.h(46,18): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  stage2.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stageNode.h(46,18): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  stageNode.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stageNode.h(46,18): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  stdafx.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  SuperMuchroom.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  switcher.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\switcher.cpp(52,1): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1774): message : 'sprintf' 선언을 참조하십시오.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\switcher.cpp(59,1): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1774): message : 'sprintf' 선언을 참조하십시오.
+  timeManager.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  timer.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  title.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\title.cpp(35,28): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\title.cpp(39,22): warning C4244: '+=': 'float'에서 'BYTE'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  utils.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  winMain.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  world1.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.h(65,27): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stageNode.h(46,18): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world1.cpp(141,29): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world1.cpp(144,23): warning C4244: '+=': 'float'에서 'BYTE'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world1.cpp(159,29): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world1.cpp(162,23): warning C4244: '+=': 'float'에서 'BYTE'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world1.cpp(175,29): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world1.cpp(178,23): warning C4244: '+=': 'float'에서 'BYTE'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world1.cpp(243,18): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world1.cpp(251,19): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world1.cpp(268,19): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  컴파일하고 있습니다...
+  world2.cpp
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,25): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(71,31): warning C4244: '초기화 중': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(79,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stdafx.h(80,8): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.h(65,27): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\stageNode.h(46,18): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world2.cpp(142,29): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world2.cpp(145,23): warning C4244: '+=': 'float'에서 'BYTE'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world2.cpp(157,29): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world2.cpp(160,23): warning C4244: '+=': 'float'에서 'BYTE'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world2.cpp(224,18): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world2.cpp(232,19): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\world2.cpp(249,19): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다.
+  Previous IPDB not found, fall back to full compilation.
+F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\finalProject\playerNode.cpp(356): warning C4715: 'playerNode::moveChecker': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  All 1100 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  코드를 생성했습니다.
+  finalProject.vcxproj -> F:\보관자료\학교\2020 2학기\NGP\WIN_API\finalProject\Release\finalProject.exe
